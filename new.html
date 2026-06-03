@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MRST Fashion</title>
+   <link rel="stylesheet" href="new.css">
+</head>
+<body>
+
+<header>
+<h1>MRST Fashion</h1>
+<p>Luxury Fashion Collection</p>
+</header>
+
+<h2 class="title">Shop Categories</h2>
+
+<div class="categories">
+
+<div class="cat-card" onclick="showProducts('shoes')">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800">
+<h3>Shoes Collection</h3>
+</div>
+
+<div class="cat-card" onclick="showProducts('tshirt')">
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800">
+<h3>T-Shirt Collection</h3>
+</div>
+
+<div class="cat-card" onclick="showProducts('watch')">
+<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800">
+<h3>Watch Collection</h3>
+</div>
+<div class="cat-card" onclick="showProducts('cap')">
+<img src="https://t3.ftcdn.net/jpg/16/95/80/80/360_F_1695808082_HiOa072VYUmOgyhR7IQ8b5EJ8HLzIzdX.jpg">
+<h3>cap Collection</h3>
+</div>
+
+<div class="cat-card" onclick="showProducts('Pant')">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_MVNONXAI25NPY2I20scHw7k-zyUj-tuR4Q&s">
+<h3>Pant Collection</h3>
+</div>
+
+<div class="cat-card" onclick="showProducts('bag')">
+<img src="https://cdn.pixabay.com/photo/2014/09/13/15/38/handbag-444171_1280.jpg">
+<h3>bag Collection</h3>
+</div>
+<div class="cat-card" onclick="showProducts('jackets')">
+<img src="https://img.gem.app/2004057942/1t/1768775763/bmw-womens-jacket-red-m-bmw-m-series-womens-red.jpg">
+<h3>jackets Collection</h3>
+</div>
+
+<div class="cat-card" onclick="showProducts('sunglasses')">
+<img src="https://images.pexels.com/photos/343720/pexels-photo-343720.jpeg?cs=srgb&dl=pexels-asim-razan-343720.jpg&fm=jpg">
+<h3>sunglasses Collection</h3>
+</div>
+
+<div class="cat-card" onclick="showProducts('vip ')">
+<img src="https://rukminim2.flixcart.com/image/480/640/xif0q/makeup-kit/s/3/v/-original-imagwfw3hteyxyf9.jpeg?q=90">
+<h3>vip Collection</h3>
+</div>
+
+</div>
+
+<section class="products" id="productsSection">
+<h2 class="title" id="productTitle">Products</h2>
+<div class="product-grid" id="productGrid"></div>
+</section>
+
+<div class="form-popup" id="formPopup">
+<div class="form-box">
+
+<div class="close-btn" onclick="closeForm()">×</div>
+
+<div class="product-preview" id="productPreview"></div>
+
+<form id="orderForm">
+
+<div class="form-group">
+<label>Name</label>
+<input type="text" id="name" required>
+</div>
+
+<div class="form-group">
+<label>Phone</label>
+<input type="tel" id="phone" required>
+</div>
+
+<div class="form-group">
+<label>Gmail</label>
+<input type="email" id="gmail" required>
+</div>
+
+<div class="form-group">
+<label>Bivag</label>
+<input type="text" id="bivag" required>
+</div>
+
+<div class="form-group">
+<label>Jela</label>
+<input type="text" id="jela" required>
+</div>
+
+<div class="form-group">
+<label>Thana</label>
+<input type="text" id="thana" required>
+</div>
+
+<div class="form-group">
+<label>Union</label>
+<input type="text" id="union" required>
+</div>
+
+<div class="form-group">
+<label>Gram</label>
+<input type="text" id="gram" required>
+</div>
+
+<div class="form-group">
+<label>Size</label>
+<select id="size">
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+<option>42</option>
+<option>43</option>
+<option>44</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Color</label>
+<input type="text" id="color" required>
+</div>
+
+<div class="form-group">
+<label>Address</label>
+<textarea id="address" rows="3" required></textarea>
+</div>
+
+<button type="submit" class="submit-btn">Send WhatsApp Order</button>
+
+</form>
+</div>
+</div>
+
+<footer>
+© 2026 MRST Fashion | Premium Fashion Store
+</footer>
+<script src="new.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1235 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MRST Fashion Store</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5f7fb;
+color:#222;
+}
+
+/* ================= HEADER ================= */
+header{
+background:#0f172a;
+padding:15px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#facc15;
+}
+
+.search-box{
+width:45%;
+}
+
+.search-box input{
+width:100%;
+padding:12px 14px;
+border:none;
+border-radius:10px;
+outline:none;
+background:#f1f5f9;
+font-size:15px;
+}
+
+.menu{
+display:flex;
+gap:20px;
+}
+
+.menu a{
+text-decoration:none;
+color:white;
+font-size:15px;
+transition:0.3s;
+}
+
+.menu a:hover{
+color:#facc15;
+}
+
+/* ================= HERO ================= */
+.hero{
+height:400px;
+background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1400');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:18px;
+opacity:0.9;
+margin-bottom:20px;
+}
+
+.hero button{
+background:#facc15;
+border:none;
+padding:14px 30px;
+border-radius:10px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+.hero button:hover{
+transform:scale(1.05);
+}
+
+/* ================= SECTION TITLE (HOT SALE RED) ================= */
+.section-title{
+text-align:center;
+padding:40px 20px 20px;
+font-size:32px;
+font-weight:900;
+color:#dc2626;
+text-transform:uppercase;
+letter-spacing:1px;
+position:relative;
+}
+
+.section-title::after{
+content:"HOT SALE";
+display:block;
+font-size:12px;
+color:white;
+background:#dc2626;
+width:120px;
+margin:10px auto 0;
+padding:5px 10px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(220,38,38,0.3);
+}
+
+/* ================= PRODUCTS GRID ================= */
+.products{
+width:92%;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:22px;
+padding-bottom:40px;
+}
+
+/* ================= PRODUCT CARD ================= */
+.product-card{
+background:#fff;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+position:relative;
+border:1px solid #fee2e2;
+}
+
+.product-card:hover{
+transform:translateY(-10px);
+box-shadow:0 18px 40px rgba(220,38,38,0.15);
+border-color:#dc2626;
+}
+
+.product-card img{
+width:100%;
+height:260px;
+object-fit:cover;
+transition:0.3s;
+}
+
+.product-card:hover img{
+transform:scale(1.05);
+}
+
+/* ================= BADGE ================= */
+.badge{
+position:absolute;
+top:12px;
+left:12px;
+background:linear-gradient(45deg,#dc2626,#ef4444);
+color:white;
+padding:6px 12px;
+font-size:12px;
+font-weight:bold;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(220,38,38,0.3);
+animation:pulse 1.2s infinite;
+text-transform:uppercase;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.15);}
+100%{transform:scale(1);}
+}
+
+/* ================= PRODUCT INFO ================= */
+.product-info{
+padding:15px;
+}
+
+.product-info h3{
+font-size:18px;
+margin-bottom:8px;
+}
+
+.price{
+color:#dc2626;
+font-size:20px;
+font-weight:800;
+margin-bottom:10px;
+}
+
+.old-price{
+text-decoration:line-through;
+font-size:13px;
+color:#9ca3af;
+margin-left:8px;
+}
+
+/* ================= BUTTON ================= */
+.buy-btn{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+background:linear-gradient(90deg,#dc2626,#ef4444);
+color:white;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+.buy-btn:hover{
+transform:scale(1.03);
+box-shadow:0 10px 20px rgba(220,38,38,0.3);
+}
+
+/* ================= LOAD MORE ================= */
+.load-more-box{
+text-align:center;
+padding-bottom:50px;
+}
+
+.load-more{
+padding:14px 28px;
+border:none;
+background:#0f172a;
+color:white;
+font-size:16px;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.load-more:hover{
+background:#dc2626;
+}
+
+/* ================= POPUP ================= */
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:rgba(0,0,0,0.75);
+display:none;
+justify-content:center;
+align-items:center;
+padding:10px;
+z-index:9999;
+overflow-y:auto;
+}
+.popup.active{
+display:flex;
+}
+.popup-content{
+background:#d6cece;
+width:95%;
+max-width:1200px;
+max-height:95vh;
+overflow-y:auto;
+border-radius:20px;
+padding:20px;
+position:relative;
+}
+
+/* দুই পাশের layout */
+.product-page{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.left-side,
+.right-side{
+flex:1;
+min-width:300px;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+.product-page{
+flex-direction:column;
+}
+
+.left-side,
+.right-side{
+width:100%;
+min-width:100%;
+}
+
+}
+
+.close-btn{
+position:absolute;
+right:20px;
+top:15px;
+font-size:35px;
+cursor:pointer;
+color:#111;
+}
+
+.popup-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.main-image{
+width:100%;
+height:450px;
+object-fit:cover;
+border-radius:15px;
+margin-bottom:15px;
+}
+
+.small-images{
+display:flex;
+gap:10px;
+}
+
+.small-images img{
+width:85px;
+height:85px;
+object-fit:cover;
+border-radius:10px;
+cursor:pointer;
+border:3px solid #e5e7eb;
+}
+
+/* ================= ORDER FORM ================= */
+.order-form{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+margin-top:20px;
+}
+
+.order-form input,
+.order-form textarea,
+.order-form select{
+padding:14px;
+border:1px solid #161a1a;
+border-radius:10px;
+outline:none;
+font-size:15px;
+width:100%;
+background: #e8f7ed;
+}
+
+.order-form textarea{
+height:100px;
+resize:none;
+}
+
+.full{
+grid-column:1/-1;
+}
+
+.order-btn{
+background:#25D366;
+color:white;
+padding:16px;
+border:none;
+border-radius:10px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+.order-btn:hover{
+transform:scale(1.03);
+}
+
+/* ================= FOOTER ================= */
+footer{
+background:#0f172a;
+color:white;
+padding:40px 5%;
+margin-top:50px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+footer h3{
+margin-bottom:15px;
+color:#facc15;
+}
+
+footer p{
+line-height:1.8;
+color:#cbd5e1;
+}
+
+.copy{
+text-align:center;
+margin-top:30px;
+padding-top:20px;
+border-top:1px solid #1e293b;
+color:#94a3b8;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+
+.search-box{
+width:100%;
+}
+
+header{
+flex-direction:column;
+gap:15px;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.popup-grid{
+grid-template-columns:1fr;
+}
+
+.order-form{
+grid-template-columns:1fr;
+}
+}
+
+/* ================= DELIVERY BOX ================= */
+
+.delivery-box{
+margin-top:5px;
+}
+
+.delivery-title{
+font-size:20px;
+margin-bottom:15px;
+color:#111827;
+font-weight:800;
+}
+
+.delivery-options{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px;
+}
+
+.delivery-option input{
+display:none;
+}
+
+.delivery-card{
+border:2px solid #e5e7eb;
+padding:20px;
+border-radius:18px;
+cursor:pointer;
+transition:0.35s;
+background:#ffffff;
+position:relative;
+overflow:hidden;
+}
+
+.delivery-card:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 30px rgba(0,0,0,0.08);
+}
+
+.delivery-top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:15px;
+}
+
+.delivery-icon{
+font-size:28px;
+}
+
+.delivery-badge{
+background:#22c55e;
+color:white;
+font-size:11px;
+padding:5px 10px;
+border-radius:30px;
+font-weight:bold;
+letter-spacing:1px;
+}
+
+.delivery-badge.red{
+background:#ef4444;
+}
+
+.delivery-card h4{
+font-size:18px;
+margin-bottom:8px;
+color:#111827;
+}
+
+.delivery-card p{
+font-size:14px;
+color:#6b7280;
+margin-bottom:15px;
+}
+
+.delivery-price{
+font-size:28px;
+font-weight:900;
+color:#dc2626;
+}
+
+.delivery-option input:checked + .delivery-card{
+border-color:#25D366;
+background:#f0fdf4;
+transform:scale(1.02);
+box-shadow:0 15px 30px rgba(37,211,102,0.15);
+}
+
+/* ================= COD BOX ================= */
+
+.cod-box{
+margin-top:20px;
+background:linear-gradient(135deg,#111827,#1f2937);
+padding:20px;
+border-radius:18px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
+color:white;
+box-shadow:0 15px 30px rgba(0,0,0,0.12);
+}
+
+.cod-icon{
+width:60px;
+height:60px;
+background:#25D366;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:50%;
+font-size:28px;
+flex-shrink:0;
+}
+
+.cod-text h3{
+font-size:20px;
+margin-bottom:5px;
+}
+
+.cod-text p{
+font-size:14px;
+color:#d1d5db;
+}
+
+.cod-badge{
+background:#22c55e;
+padding:10px 16px;
+border-radius:30px;
+font-size:14px;
+font-weight:bold;
+white-space:nowrap;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">MRST Fashion</div>
+
+<div class="search-box">
+<input type="text" placeholder="Search Products...">
+</div>
+
+<div class="menu">
+<a href="#">Home</a>
+<a href="#products">Products</a>
+<a href="#footer">Contact</a>
+</div>
+</header>
+
+<section class="hero">
+<div>
+<h1>Professional Fashion Collection</h1>
+<p>Premium Quality Products With Fast Delivery</p>
+<button onclick="scrollProducts()">Shop Now</button>
+</div>
+</section>
+
+<h2 class="section-title" id="products">Trending Products</h2>
+
+<section class="products" id="productContainer"></section>
+
+<div class="load-more-box">
+<button class="load-more" onclick="loadMoreProducts()">More Products</button>
+</div>
+
+<div class="popup" id="popup">
+<div class="popup-content">
+
+<span class="close-btn" onclick="closePopup()">×</span>
+
+<div class="popup-grid">
+
+<div>
+<img id="mainImage" class="main-image" src="">
+
+<div class="small-images">
+<img id="img1" onclick="changeImage(this.src)">
+<img id="img2" onclick="changeImage(this.src)">
+<img id="img3" onclick="changeImage(this.src)">
+</div>
+</div>
+
+<div class="product-details">
+<h2 id="productName"></h2>
+
+<div class="price" id="productPrice"></div>
+
+<p>
+Premium stylish fashion product. Very comfortable and high quality fabric.
+Best collection for modern fashion lovers.
+</p>
+
+<div class="features">
+<div class="feature-box">🚚 Fast Delivery 1-3 Days</div>
+<div class="feature-box">💯 Premium Quality</div>
+<div class="feature-box">🔥 Trending Collection</div>
+<div class="feature-box">📦 Cash On Delivery</div>
+</div>
+<!-- ===== ORDER FORM ===== -->
+
+<!-- ===== ORDER FORM ===== -->
+
+<form class="order-form" onsubmit="sendWhatsApp(event)">
+
+<input type="text" id="name" placeholder="আপনার নাম" required>
+
+<input type="tel" id="phone" placeholder="ফোন নাম্বার" required>
+
+<input type="email" id="email" placeholder="Gmail Address">
+
+<select id="division">
+<option>বিভাগ নির্বাচন করুন</option>
+<option>Dhaka</option>
+<option>Chattogram</option>
+<option>Khulna</option>
+<option>Rajshahi</option>
+</select>
+
+<input type="text" id="district" placeholder="জেলা">
+
+<input type="text" id="thana" placeholder="থানা">
+
+<textarea id="address" class="full" placeholder="গ্রাম / সম্পূর্ণ ঠিকানা"></textarea>
+
+<!-- ===== DELIVERY CHARGE ===== -->
+
+<div class="full delivery-box">
+
+<h3 class="delivery-title">
+🚚 Select Delivery Option
+</h3>
+
+<div class="delivery-options">
+
+<label class="delivery-option">
+
+<input type="radio" name="delivery" value="Dhaka City - 60 TK" checked>
+
+<div class="delivery-card">
+
+<div class="delivery-top">
+<span class="delivery-icon">🏙</span>
+<span class="delivery-badge">FAST</span>
+</div>
+
+<h4>Dhaka City Delivery</h4>
+
+<p>Inside Dhaka City Area</p>
+
+<div class="delivery-price">
+৳60
+</div>
+
+</div>
+
+</label>
+
+<label class="delivery-option">
+
+<input type="radio" name="delivery" value="All Bangladesh - 100 TK">
+
+<div class="delivery-card">
+
+<div class="delivery-top">
+<span class="delivery-icon">🌍</span>
+<span class="delivery-badge red">
+HOT
+</span>
+</div>
+
+<h4>All Bangladesh Delivery</h4>
+
+<p>Outside Dhaka All Area</p>
+
+<div class="delivery-price">
+৳100
+</div>
+
+</div>
+
+</label>
+
+</div>
+
+</div>
+
+<!-- ===== CASH ON DELIVERY ===== -->
+
+<div class="full cod-box">
+
+<div class="cod-icon">
+🚚
+</div>
+
+<div class="cod-text">
+
+<h3>Cash On Delivery Available</h3>
+
+<p>
+পণ্য হাতে পেয়ে তারপর টাকা পরিশোধ করুন
+</p>
+
+</div>
+
+<div class="cod-badge">
+100% Safe
+</div>
+
+</div>
+
+<button class="order-btn full">
+WhatsApp এ অর্ডার করুন
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+<footer id="footer">
+<div class="footer-grid">
+
+<div>
+<h3>About Us</h3>
+<p>
+MRST Fashion provides premium quality products with stylish modern fashion design.
+</p>
+</div>
+
+<div>
+<h3>Support</h3>
+<p>
+WhatsApp: 01605019908<br>
+Fast Customer Support<br>
+Trusted Online Shop
+</p>
+</div>
+
+<div>
+<h3>Delivery</h3>
+<p>
+1-3 Days Fast Delivery<br>
+Cash On Delivery Available<br>
+All Bangladesh Delivery
+</p>
+</div>
+
+</div>
+
+<div class="copy">
+© 2026 MRST Fashion - All Rights Reserved
+</div>
+</footer>
+
+<script>
+
+const productContainer = document.getElementById('productContainer');
+
+let loaded = 0;
+
+// ===== PRODUCTS =====
+
+const products = [
+
+{
+name:'Premium Hoodie',
+price:1299,
+old:1699,
+badge:'Hot',
+img1:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200',
+description:'Premium quality stylish hoodie with modern fashion look.'
+},
+
+{
+name:'Stylish T-Shirt',
+price:899,
+old:1299,
+badge:'Sale',
+img1:'https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1523398002811-999ca8dec234?q=80&w=1200',
+description:'Comfortable cotton t-shirt for everyday fashion.'
+},
+
+{
+name:'Fashion Sneakers',
+price:1999,
+old:2499,
+badge:'New',
+img1:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
+description:'Trendy sneakers with premium comfort and quality.'
+},
+
+{
+name:'Luxury Watch',
+price:2499,
+old:3299,
+badge:'Premium',
+img1:'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?q=80&w=1200',
+description:'Luxury watch with elegant modern design.'
+},
+
+{
+name:'Premium Cap',
+price:699,
+old:999,
+badge:'Popular',
+img1:'https://images.unsplash.com/photo-1521369909029-2afed882baee?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200',
+description:'Premium stylish cap for smart casual look.'
+},
+{
+name:'Premium Hoodie',
+price:1299,
+old:1699,
+badge:'Hot',
+img1:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200',
+description:'Premium quality stylish hoodie with modern fashion look.'
+},
+
+{
+name:'Stylish T-Shirt',
+price:899,
+old:1299,
+badge:'Sale',
+img1:'https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1523398002811-999ca8dec234?q=80&w=1200',
+description:'Comfortable cotton t-shirt for everyday fashion.'
+},
+
+{
+name:'Fashion Sneakers',
+price:1999,
+old:2499,
+badge:'New',
+img1:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
+description:'Trendy sneakers with premium comfort and quality.'
+},
+
+{
+name:'Luxury Watch',
+price:2499,
+old:3299,
+badge:'Premium',
+img1:'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?q=80&w=1200',
+description:'Luxury watch with elegant modern design.'
+},
+
+{
+name:'Premium Cap',
+price:699,
+old:999,
+badge:'Popular',
+img1:'https://images.unsplash.com/photo-1521369909029-2afed882baee?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200',
+description:'Premium stylish cap for smart casual look.'
+},
+{
+name:'Premium Hoodie',
+price:1299,
+old:1699,
+badge:'Hot',
+img1:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200',
+description:'Premium quality stylish hoodie with modern fashion look.'
+},
+
+{
+name:'Stylish T-Shirt',
+price:899,
+old:1299,
+badge:'Sale',
+img1:'https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1523398002811-999ca8dec234?q=80&w=1200',
+description:'Comfortable cotton t-shirt for everyday fashion.'
+},
+
+{
+name:'Fashion Sneakers',
+price:1999,
+old:2499,
+badge:'New',
+img1:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
+description:'Trendy sneakers with premium comfort and quality.'
+},
+
+{
+name:'Luxury Watch',
+price:2499,
+old:3299,
+badge:'Premium',
+img1:'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?q=80&w=1200',
+description:'Luxury watch with elegant modern design.'
+},
+
+{
+name:'Premium Cap',
+price:699,
+old:999,
+badge:'Popular',
+img1:'https://images.unsplash.com/photo-1521369909029-2afed882baee?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200',
+description:'Premium stylish cap for smart casual look.'
+},
+{
+name:'Premium Hoodie',
+price:1299,
+old:1699,
+badge:'Hot',
+img1:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200',
+description:'Premium quality stylish hoodie with modern fashion look.'
+},
+
+{
+name:'Stylish T-Shirt',
+price:899,
+old:1299,
+badge:'Sale',
+img1:'https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1523398002811-999ca8dec234?q=80&w=1200',
+description:'Comfortable cotton t-shirt for everyday fashion.'
+},
+
+{
+name:'Fashion Sneakers',
+price:1999,
+old:2499,
+badge:'New',
+img1:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
+description:'Trendy sneakers with premium comfort and quality.'
+},
+
+{
+name:'Luxury Watch',
+price:2499,
+old:3299,
+badge:'Premium',
+img1:'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?q=80&w=1200',
+description:'Luxury watch with elegant modern design.'
+},
+
+{
+name:'Premium Cap',
+price:699,
+old:999,
+badge:'Popular',
+img1:'https://images.unsplash.com/photo-1521369909029-2afed882baee?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200',
+description:'Premium stylish cap for smart casual look.'
+}
+
+];
+
+// ===== LOAD PRODUCTS =====
+
+function loadProducts(){
+
+// সব products শেষ হলে
+if(loaded >= products.length){
+
+document.querySelector('.load-more').innerText =
+'No More Products';
+
+document.querySelector('.load-more').disabled = true;
+
+return;
+
+}
+
+// একবারে ৫টা products
+for(let i = loaded; i < loaded +  8 && i < products.length; i++){
+
+const p = products[i];
+
+productContainer.innerHTML += `
+
+<div class="product-card">
+
+<div class="product-badge">
+${p.badge}
+</div>
+
+<img src="${p.img1}">
+
+<div class="product-info">
+
+<h3>${p.name}</h3>
+
+<p class="product-description">
+${p.description}
+</p>
+
+<div class="price">
+৳${p.price}
+<span class="old-price">৳${p.old}</span>
+</div>
+
+<button class="buy-btn" onclick="openPopup(${i})">
+View Product
+</button>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+// পরের ৫টা
+loaded += 5;
+
+}
+
+loadProducts();
+
+// ===== MORE PRODUCTS =====
+
+function loadMoreProducts(){
+loadProducts();
+}
+
+// ===== OPEN PRODUCT POPUP =====
+
+function openPopup(index){
+
+const p = products[index];
+
+document.getElementById('popup').style.display='flex';
+
+document.getElementById('mainImage').src=p.img1;
+
+document.getElementById('img1').src=p.img1;
+document.getElementById('img2').src=p.img2;
+document.getElementById('img3').src=p.img3;
+
+document.getElementById('productName').innerText=p.name;
+
+document.getElementById('productPrice').innerHTML=
+'৳'+p.price+
+' <span class="old-price">৳'+p.old+'</span>';
+
+}
+
+// ===== CLOSE POPUP =====
+
+function closePopup(){
+
+document.getElementById('popup').style.display='none';
+
+}
+
+// ===== CHANGE IMAGE =====
+
+function changeImage(src){
+
+document.getElementById('mainImage').src=src;
+
+}
+
+// ===== SCROLL =====
+
+function scrollProducts(){
+
+document.getElementById('products').scrollIntoView({
+behavior:'smooth'
+});
+
+}
+
+// ===== WHATSAPP ORDER =====
+// ===== WHATSAPP ORDER =====
+
+function sendWhatsApp(e){
+
+e.preventDefault();
+
+let name =
+document.getElementById('name').value;
+
+let phone =
+document.getElementById('phone').value;
+
+let email =
+document.getElementById('email').value;
+
+let division =
+document.getElementById('division').value;
+
+let district =
+document.getElementById('district').value;
+
+let thana =
+document.getElementById('thana').value;
+
+let address =
+document.getElementById('address').value;
+
+let delivery =
+document.querySelector('input[name="delivery"]:checked').value;
+
+let product =
+document.getElementById('productName').innerText;
+
+let message =
+
+`🛒 New Order
+
+📦 Product: ${product}
+
+👤 Name: ${name}
+📞 Phone: ${phone}
+📧 Email: ${email}
+
+🚚 Delivery: ${delivery}
+
+📍 Division: ${division}
+🏙 District: ${district}
+🚏 Thana: ${thana}
+
+🏠 Address:
+${address}
+
+✅ Fast Delivery
+✅ Premium Quality
+✅ Cash On Delivery`;
+
+let url =
+'https://wa.me/8801605019908?text=' +
+encodeURIComponent(message);
+
+window.open(url,'_blank');
+
+}
+</script>
+
+</body>
+</html>
+```

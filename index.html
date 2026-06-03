@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>MRST Fashion</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<marquee class=" fast" direction=" "> 📢 🚚 সারা দেশে ডেলিভারি — এখনই অর্ডার করুন 📦 ঘরে বসেই অর্ডার করুন — WhatsApp: 01605019908 </marquee>
+<header>MRST Fashion Store</header>
+
+
+<!-- BANNER SLIDER -->
+<!-- Simple Slider (No CSS needed extra) -->
+
+
+<div class="navbarr">
+
+<div class="logo">MRST Fashion</div>
+
+<div class="search">
+<input type="text" id="searchBox" placeholder="Search products...">
+<button>🔍</button>
+</div>
+
+<div class="icons">
+
+  <div class="icon-box">
+    <span>❤️</span>
+    <small>Favorite</small>
+  </div>
+
+  <div class="icon-box" onclick="openCart()">
+    <span class="cart-icon">
+      🛒
+      <span id="cartCount">0</span>
+    </span>
+    <small>Cart</small>
+  </div>
+
+  <div class="icon-box" onclick="openProfile()">
+    <span>👤</span>
+    <small>Account</small>
+  </div>
+
+</div>
+
+</div>
+
+<div class="profile-popup" id="profilePopup">
+
+<div class="profile-box">
+
+<span class="close-profile"
+onclick="closeProfile()">✖</span>
+
+<img src="img/profile.jpg"
+class="profile-img"
+id="profileImage">
+
+<input type="file"
+id="imageUpload"
+accept="image/*"
+hidden>
+
+<button onclick="document.getElementById('imageUpload').click()">
+Upload Photo
+</button>
+
+<h2>MRST Fashion</h2>
+
+<p>Welcome Back 👋</p>
+
+<button>Login</button>
+
+<button>Create Account</button>
+
+</div>
+
+</div>
+
+<div class="slider">
+  <img id="banner" src="" alt="Banner">
+
+  <a id="orderBtn" class="banner-btn">
+    Order Now
+  </a>
+</div>
+
+<div class="offer">
+
+<div>
+🔥 Flash Sale <br>
+50% OFF Today
+</div>
+
+<div id="timer">
+02:15:30
+</div>
+
+
+
+
+</div>
+<hr>
+<br>
+<nav class="navbar">
+
+<a href="home.html" class="nav-item active">
+  <img src="imgjuta/about.jpg">
+  <span>Home</span>
+</a>
+
+<a href="contact.html" class="nav-item">
+  <img src="imgjuta/connect.jpg">
+  <span>Contact</span>
+</a>
+
+<a href="about.html" class="nav-item">
+  <img src="imgjuta/abou.jpg">
+  <span>About</span>
+</a>
+
+<a href="Smart Electronics.html" class="nav-item">
+  <img src="imgjuta/electronic.jpg">
+  <span>Electronics</span>
+</a>
+
+<a href="MRST Cricket Zone.html" class="nav-item">
+  <img src="imgjuta/crickets.jpg">
+  <span>Cricket</span>
+</a>
+
+<a href="MRST Girls Collection.html" class="nav-item">
+  <img src="imgjuta/Girls.jpg">
+  <span>Girls</span>
+</a>
+
+<a href="Baby Boy & Girl Shoes.html" class="nav-item">
+  <img src="imgjuta/boy.jpg">
+  <span>Shoes</span>
+</a>
+
+</nav>
+<hr>
+<br>
+
+<section class="new-category">
+
+<h2>For You</h2>
+
+<div class="new-cat-box">
+
+<a href="shoes.html">
+<div class="new-cat-card">
+<img src="imgjuta/juta.jpg">
+<span>Shoes</span>
+</div>
+</a>
+
+<a href="t-shirt.html">
+<div class="new-cat-card">
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800">
+<span>T-Shirt</span>
+</div>
+</a>
+
+<a href="Polo Shirt.html">
+<div class="new-cat-card">
+<img src="foryou/code12.jpg">
+<span>Polo Shirt</span>
+</div>
+</a>
+
+<a href="Pant .html">
+<div class="new-cat-card">
+<img src="foryou/code13.jpg">
+<span>Pant / Jeans</span>
+</div>
+</a>
+<a href="Sunglasses.html">
+<div class="new-cat-card">
+<img src="foryou/code14.jpg">
+<span>Sunglasses</span>
+</div>
+</a>
+
+<a href="shirt.html">
+<div class="new-cat-card">
+<img src="foryou/code15.jpg">
+<span>Shirt</span>
+</div>
+</a>
+
+<a href="Side Bag.html">
+<div class="new-cat-card">
+<img src="imgjuta/bag1.jpg">
+<span>Side Bag</span>
+</div>
+</a>
+
+<a href="Watch.html">
+<div class="new-cat-card">
+<img src="imgjuta/108.jpg.jpg">
+<span>Watch</span>
+</div>
+</a>
+<a href="3Piece.html">
+<div class="new-cat-card">
+<img src="imgjuta/three.jpg.jpg">
+<span>Three Piece</span>
+</div>
+</a>
+
+<a href="Panjabi.html">
+<div class="new-cat-card">
+<img src="imgjuta/102.jpg.jpg">
+<span>Panjabi</span>
+</div>
+</a>
+
+<a href="Loafers.html">
+<div class="new-cat-card">
+<img src="imgjuta/101.jpg.jpg">
+<span>Loafers</span>
+</div>
+</a>
+
+<a href="#">
+<div class="new-cat-card">
+<img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=800">
+<span>Fashion</span>
+</div>
+</a>
+<a href="#">
+<div class="new-cat-card">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800">
+<span>Shoes</span>
+</div>
+</a>
+
+<a href="#">
+<div class="new-cat-card">
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800">
+<span>T-Shirt</span>
+</div>
+</a>
+
+<a href="#">
+<div class="new-cat-card">
+<img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=800">
+<span>Watch</span>
+</div>
+</a>
+
+<a href="#">
+<div class="new-cat-card">
+<img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=800">
+<span>Fashion</span>
+</div>
+</a>
+
+
+</div>
+
+</section>
+<hr>
+<br>
+
+
+
+<div class="categories">
+
+<div class="cat active" onclick="filterProducts('all',event)">All</div>
+<div class="cat" onclick="filterProducts('t-shirt',event)">
+<span class="cat-icon">👕</span>
+<span class="cat-name">T-Shirt</span>
+</div>
+
+<div class="cat" onclick="filterProducts('shoe',event)">
+<span class="cat-icon">👟</span>
+<span class="cat-name">Shoes</span>
+</div>
+<div class="cat" onclick="filterProducts('watch',event)">
+<span class="cat-icon">⌚</span>
+<span class="cat-name">watch</span>
+</div>
+
+<div class="cat" onclick="filterProducts('sidebag',event)">
+<span class="cat-icon">👜</span>
+<span class="cat-name"> Hand bag</span>
+</div>
+<div class="cat" onclick="filterProducts('pant',event)">
+<span class="cat-icon">👖</span>
+<span class="cat-name">Pant</span>
+</div>
+
+<div class="cat" onclick="filterProducts('shirt',event)">
+<span class="cat-icon">👔</span>
+<span class="cat-name">Shirt</span>
+</div>
+<div class="cat" onclick="filterProducts('sunglasses',event)">
+<span class="cat-icon">🕶️</span>
+<span class="cat-name">Sunglasses</span>
+</div>
+
+<div class="cat" onclick="filterProducts('ofice-bag',event)">
+<span class="cat-icon">💼</span>
+<span class="cat-name">Office Bag</span>
+</div>
+<div class="cat" onclick="filterProducts('ghori',event)">
+<span class="cat-icon">🧕</span>
+<span class="cat-name"> Hijab</span>
+</div>
+<div class="cat" onclick="filterProducts('blazer',event)">
+<span class="cat-icon">👕</span>
+<span class="cat-name">Blazer</span>
+</div>
+
+<div class="cat" onclick="filterProducts('shoe',event)">
+<span class="cat-icon">👟</span>
+<span class="cat-name">Shoes</span>
+</div>
+<div class="cat" onclick="filterProducts('watch',event)">
+<span class="cat-icon">⌚</span>
+<span class="cat-name">watch</span>
+</div>
+
+<div class="cat" onclick="filterProducts('bag4',event)">
+<span class="cat-icon">🧸 </span>
+<span class="cat-name">smart-electronics</span>
+</div>
+<div class="cat" onclick="filterProducts('shoe2',event)">
+<span class="cat-icon">👧</span>
+<span class="cat-name"> Girls Fashion</span>
+</div>
+
+<div class="cat" onclick="filterProducts('pant7',event)">
+<span class="cat-icon">💄</span>
+<span class="cat-name">Beauty</span>
+</div>
+<div class="cat" onclick="filterProducts('umbrella',event)">
+<span class="cat-icon">☂️ </span>
+<span class="cat-name"> Umbrella</span>
+</div>
+
+<div class="cat" onclick="filterProducts('torch',event)">
+<span class="cat-icon">🔦</span>
+<span class="cat-name">Torch Light</span>
+</div>
+<div class="cat" onclick="filterProducts('smart-electronics',event)">
+<span class="cat-icon">🎧 </span>
+<span class="cat-name"> Headphone</span>
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<div class="products" id="products"></div>
+
+<div style="text-align:center;padding:20px;">
+<button id="moreBtn">More Products</button>
+</div>
+
+<!-- ===== POPUP ===== -->
+
+<div class="popup" id="popup">
+
+<div class="popup-box">
+
+<span class="close" onclick="closePopup()">✖</span>
+
+<div>
+
+<img id="bigImg" class="big-img">
+
+<div class="small-imgs" id="smallImgs"></div>
+
+<div class="features">
+
+<div class="feature">
+🛡️
+<h4>100% Original</h4>
+</div>
+
+<div class="feature">
+🚚
+<h4>Fast Delivery</h4>
+</div>
+
+<div class="feature">
+⭐
+<h4>Best Quality</h4>
+</div>
+
+</div>
+
+<div class="description">
+
+<h2>Product Details</h2>
+
+<br>
+
+✅ Premium Quality <br>
+✅ Stylish Product <br>
+✅ Cash On Delivery <br>
+✅ All Bangladesh Delivery
+
+</div>
+
+</div>
+
+<div>
+
+<h1 id="pName"></h1>
+
+<div class="rating-big">
+⭐⭐⭐⭐⭐ (150 Reviews)
+</div>
+
+<div id="pPrice"></div>
+
+<div class="delivery">
+
+✅ Cash On Delivery <br>
+🚚 Delivery 2-3 Days <br>
+🔄 Easy Return
+
+</div>
+<!-- ===== DELIVERY CHARGE ===== -->
+
+<div class="full delivery-box">
+
+<h3 class="delivery-title">
+🚚 Select Delivery Option
+</h3>
+
+<div class="delivery-options">
+
+<label class="delivery-option">
+
+<input type="radio" name="delivery" value="Dhaka City - 60 TK" checked>
+
+<div class="delivery-card">
+
+<div class="delivery-top">
+<span class="delivery-icon">🏙</span>
+<span class="delivery-badge">FAST</span>
+</div>
+
+<h4>Dhaka City Delivery</h4>
+
+<p>Inside Dhaka City Area</p>
+
+<div class="delivery-price">
+৳60
+</div>
+
+</div>
+
+</label>
+
+<label class="delivery-option">
+
+<input type="radio" name="delivery" value="All Bangladesh - 100 TK">
+
+<div class="delivery-card">
+
+<div class="delivery-top">
+<span class="delivery-icon">🌍</span>
+<span class="delivery-badge red">
+HOT
+</span>
+</div>
+
+<h4>All Bangladesh Delivery</h4>
+
+<p>Outside Dhaka All Area</p>
+
+<div class="delivery-price">
+৳100
+</div>
+
+</div>
+
+</label>
+
+</div>
+
+</div>
+
+<!-- ===== CASH ON DELIVERY ===== -->
+
+<div class="full cod-box">
+
+<div class="cod-icon">
+🚚
+</div>
+
+<div class="cod-text">
+
+<h3>Cash On Delivery Available</h3>
+
+<p>
+পণ্য হাতে পেয়ে তারপর টাকা পরিশোধ করুন
+</p>
+
+</div>
+
+<div class="cod-badge">
+100% Safe
+</div>
+
+</div>
+
+<div class="order-box">
+
+<div class="order-title">
+Order Now
+</div>
+
+<input type="text" id="name" placeholder="Your Name">
+
+<input type="text" id="phone" placeholder="Phone Number">
+
+<input type="email" id="gmail" placeholder="Gmail Address">
+
+<select id="division">
+<option>Select Division</option>
+<option>Dhaka</option>
+<option>Chattogram</option>
+<option>Rajshahi</option>
+<option>Khulna</option>
+<option>Barishal</option>
+<option>Sylhet</option>
+<option>Rangpur</option>
+</select>
+
+<select id="district">
+<option>Select District</option>
+
+<option>Bagerhat</option>
+<option>Bandarban</option>
+<option>Barguna</option>
+<option>Barishal</option>
+<option>Bhola</option>
+<option>Bogra</option>
+<option>Brahmanbaria</option>
+<option>Chandpur</option>
+<option>Chapainawabganj</option>
+<option>Chattogram</option>
+<option>Chuadanga</option>
+<option>Cox's Bazar</option>
+<option>Cumilla</option>
+<option>Dhaka</option>
+<option>Dinajpur</option>
+<option>Faridpur</option>
+<option>Feni</option>
+<option>Gaibandha</option>
+<option>Gazipur</option>
+<option>Gopalganj</option>
+<option>Habiganj</option>
+<option>Jamalpur</option>
+<option>Jashore</option>
+<option>Jhalokathi</option>
+<option>Jhenaidah</option>
+<option>Joypurhat</option>
+<option>Khagrachhari</option>
+<option>Khulna</option>
+<option>Kishoreganj</option>
+<option>Kurigram</option>
+<option>Kushtia</option>
+<option>Lakshmipur</option>
+<option>Lalmonirhat</option>
+<option>Madaripur</option>
+<option>Magura</option>
+<option>Manikganj</option>
+<option>Meherpur</option>
+<option>Moulvibazar</option>
+<option>Munshiganj</option>
+<option>Mymensingh</option>
+<option>Naogaon</option>
+<option>Narail</option>
+<option>Narayanganj</option>
+<option>Narsingdi</option>
+<option>Natore</option>
+<option>Netrokona</option>
+<option>Nilphamari</option>
+<option>Noakhali</option>
+<option>Pabna</option>
+<option>Panchagarh</option>
+<option>Patuakhali</option>
+<option>Pirojpur</option>
+<option>Rajbari</option>
+<option>Rajshahi</option>
+<option>Rangamati</option>
+<option>Rangpur</option>
+<option>Satkhira</option>
+<option>Shariatpur</option>
+<option>Sherpur</option>
+<option>Sirajganj</option>
+<option>Sunamganj</option>
+<option>Sylhet</option>
+<option>Tangail</option>
+<option>Thakurgaon</option>
+</select>
+
+<select id="thana">
+<option>Select Thana</option>
+<option>Select Thana / Upazila</option>
+
+<!-- Dhaka District -->
+<option>Dhamrai</option>
+<option>Dohar</option>
+<option>Keraniganj</option>
+<option>Nawabganj</option>
+<option>Savar</option>
+
+<!-- Gazipur -->
+<option>Gazipur Sadar</option>
+<option>Kaliakair</option>
+<option>Kaliganj</option>
+<option>Kapasia</option>
+<option>Sreepur</option>
+
+<!-- Narayanganj -->
+<option>Narayanganj Sadar</option>
+<option>Araihazar</option>
+<option>Bandar</option>
+<option>Rupganj</option>
+<option>Sonargaon</option>
+
+<!-- Munshiganj -->
+<option>Munshiganj Sadar</option>
+<option>Gazaria</option>
+<option>Lohajang</option>
+<option>Sirajdikhan</option>
+<option>Sreenagar</option>
+<option>Tongibari</option>
+
+<!-- Kishoreganj -->
+<option>Kishoreganj Sadar</option>
+<option>Austagram</option>
+<option>Bajitpur</option>
+<option>Bhairab</option>
+<option>Hossainpur</option>
+<option>Itna</option>
+<option>Karimganj</option>
+<option>Katiadi</option>
+<option>Kuliarchar</option>
+<option>Mithamain</option>
+<option>Nikli</option>
+<option>Pakundia</option>
+<option>Tarail</option>
+
+<!-- Faridpur -->
+<option>Faridpur Sadar</option>
+<option>Alfadanga</option>
+<option>Bhanga</option>
+<option>Boalmari</option>
+<option>Charbhadrasan</option>
+<option>Madhukhali</option>
+<option>Nagarkanda</option>
+<option>Sadarpur</option>
+<option>Saltha</option>
+
+<!-- Gopalganj -->
+<option>Gopalganj Sadar</option>
+<option>Kashiani</option>
+<option>Kotalipara</option>
+<option>Muksudpur</option>
+<option>Tungipara</option>
+
+<!-- Madaripur -->
+<option>Madaripur Sadar</option>
+<option>Kalkini</option>
+<option>Rajoir</option>
+<option>Shibchar</option>
+
+<!-- Rajbari -->
+<option>Rajbari Sadar</option>
+<option>Baliakandi</option>
+<option>Goalanda</option>
+<option>Kalukhali</option>
+<option>Pangsha</option>
+
+<!-- Shariatpur -->
+<option>Shariatpur Sadar</option>
+<option>Bhedarganj</option>
+<option>Damudya</option>
+<option>Gosairhat</option>
+<option>Naria</option>
+<option>Zajira</option>
+
+<!-- Tangail -->
+<option>Tangail Sadar</option>
+<option>Basail</option>
+<option>Bhuapur</option>
+<option>Delduar</option>
+<option>Dhanbari</option>
+<option>Ghatail</option>
+<option>Gopalpur</option>
+<option>Kalihati</option>
+<option>Madhupur</option>
+<option>Mirzapur</option>
+<option>Nagarpur</option>
+<option>Sakhipur</option>
+
+<!-- Manikganj -->
+<option>Manikganj Sadar</option>
+<option>Daulatpur</option>
+<option>Ghior</option>
+<option>Harirampur</option>
+<option>Saturia</option>
+<option>Shibalaya</option>
+<option>Singair</option>
+
+<!-- Narsingdi -->
+<option>Narsingdi Sadar</option>
+<option>Belabo</option>
+<option>Monohardi</option>
+<option>Palash</option>
+<option>Raipura</option>
+<option>Shibpur</option>
+<!-- Chattogram District -->
+<option>Chattogram Sadar</option>
+<option>Anwara</option>
+<option>Banshkhali</option>
+<option>Boalkhali</option>
+<option>Chandanaish</option>
+<option>Fatikchhari</option>
+<option>Hathazari</option>
+<option>Lohagara</option>
+<option>Mirsharai</option>
+<option>Patiya</option>
+<option>Rangunia</option>
+<option>Raozan</option>
+<option>Sandwip</option>
+<option>Satkania</option>
+<option>Sitakunda</option>
+
+<!-- Cox's Bazar -->
+<option>Cox's Bazar Sadar</option>
+<option>Chakaria</option>
+<option>Kutubdia</option>
+<option>Maheshkhali</option>
+<option>Pekua</option>
+<option>Ramu</option>
+<option>Teknaf</option>
+<option>Ukhia</option>
+
+<!-- Cumilla -->
+<option>Cumilla Sadar</option>
+<option>Barura</option>
+<option>Brahmanpara</option>
+<option>Burichang</option>
+<option>Chandina</option>
+<option>Chauddagram</option>
+<option>Daudkandi</option>
+<option>Debidwar</option>
+<option>Homna</option>
+<option>Laksam</option>
+<option>Meghna</option>
+<option>Monohorganj</option>
+<option>Muradnagar</option>
+<option>Nangalkot</option>
+<option>Titas</option>
+
+<!-- Feni -->
+<option>Feni Sadar</option>
+<option>Chhagalnaiya</option>
+<option>Daganbhuiyan</option>
+<option>Parshuram</option>
+<option>Sonagazi</option>
+
+<!-- Brahmanbaria -->
+<option>Brahmanbaria Sadar</option>
+<option>Akhaura</option>
+<option>Ashuganj</option>
+<option>Bancharampur</option>
+<option>Bijoynagar</option>
+<option>Kasba</option>
+<option>Nabinagar</option>
+<option>Nasirnagar</option>
+<option>Sarail</option>
+
+<!-- Noakhali -->
+<option>Noakhali Sadar</option>
+<option>Begumganj</option>
+<option>Chatkhil</option>
+<option>Companiganj</option>
+<option>Hatiya</option>
+<option>Kabirhat</option>
+<option>Senbagh</option>
+<option>Sonaimuri</option>
+<option>Subarnachar</option>
+
+<!-- Lakshmipur -->
+<option>Lakshmipur Sadar</option>
+<option>Raipur</option>
+<option>Ramganj</option>
+<option>Ramgati</option>
+<option>Kamalnagar</option>
+
+<!-- Khagrachhari -->
+<option>Khagrachhari Sadar</option>
+<option>Dighinala</option>
+<option>Lakshmichhari</option>
+<option>Mahalchhari</option>
+<option>Manikchhari</option>
+<option>Matiranga</option>
+<option>Panchhari</option>
+<option>Ramgarh</option>
+
+<!-- Rangamati -->
+<option>Rangamati Sadar</option>
+<option>Bagaichhari</option>
+<option>Barkal</option>
+<option>Belaichhari</option>
+<option>Juraichhari</option>
+<option>Kaptai</option>
+<option>Kaukhali</option>
+<option>Langadu</option>
+<option>Naniarchar</option>
+<option>Rajasthali</option>
+
+<!-- Bandarban -->
+<option>Bandarban Sadar</option>
+<option>Alikadam</option>
+<option>Lama</option>
+<option>Naikhongchhari</option>
+<option>Rowangchhari</option>
+<option>Ruma</option>
+<option>Thanchi</option>
+<!-- Rajshahi -->
+<option>Rajshahi Sadar</option>
+<option>Bagha</option>
+<option>Bagmara</option>
+<option>Charghat</option>
+<option>Durgapur</option>
+<option>Godagari</option>
+<option>Mohanpur</option>
+<option>Paba</option>
+<option>Puthia</option>
+<option>Tanore</option>
+
+<!-- Bogura -->
+<option>Bogura Sadar</option>
+<option>Adamdighi</option>
+<option>Dhunat</option>
+<option>Dhupchanchia</option>
+<option>Gabtali</option>
+<option>Kahaloo</option>
+<option>Nandigram</option>
+<option>Sariakandi</option>
+<option>Shajahanpur</option>
+<option>Sherpur</option>
+<option>Shibganj</option>
+<option>Sonatola</option>
+
+<!-- Joypurhat -->
+<option>Joypurhat Sadar</option>
+<option>Akkelpur</option>
+<option>Kalai</option>
+<option>Khetlal</option>
+<option>Panchbibi</option>
+
+<!-- Naogaon -->
+<option>Naogaon Sadar</option>
+<option>Atrai</option>
+<option>Badalgachhi</option>
+<option>Dhamoirhat</option>
+<option>Manda</option>
+<option>Mahadebpur</option>
+<option>Niamatpur</option>
+<option>Patnitala</option>
+<option>Porsha</option>
+<option>Raninagar</option>
+<option>Sapahar</option>
+
+<!-- Natore -->
+<option>Natore Sadar</option>
+<option>Bagatipara</option>
+<option>Baraigram</option>
+<option>Gurudaspur</option>
+<option>Lalpur</option>
+<option>Singra</option>
+
+<!-- Chapainawabganj -->
+<option>Chapainawabganj Sadar</option>
+<option>Bholahat</option>
+<option>Gomastapur</option>
+<option>Nachole</option>
+<option>Shibganj</option>
+
+<!-- Pabna -->
+<option>Pabna Sadar</option>
+<option>Atgharia</option>
+<option>Bera</option>
+<option>Bhangura</option>
+<option>Chatmohar</option>
+<option>Faridpur</option>
+<option>Ishwardi</option>
+<option>Santhia</option>
+<option>Sujanagar</option>
+
+<!-- Sirajganj -->
+<option>Sirajganj Sadar</option>
+<option>Belkuchi</option>
+<option>Chauhali</option>
+<option>Kazipur</option>
+<option>Kamarkhanda</option>
+<option>Raiganj</option>
+<option>Shahjadpur</option>
+<option>Tarash</option>
+<option>Ullapara</option>
+<!-- Khulna -->
+<option>Khulna Sadar</option>
+<option>Batiaghata</option>
+<option>Dacope</option>
+<option>Dumuria</option>
+<option>Dighalia</option>
+<option>Koyra</option>
+<option>Paikgachha</option>
+<option>Phultala</option>
+<option>Rupsa</option>
+<option>Terokhada</option>
+
+<!-- Bagerhat -->
+<option>Bagerhat Sadar</option>
+<option>Chitalmari</option>
+<option>Fakirhat</option>
+<option>Kachua</option>
+<option>Mollahat</option>
+<option>Mongla</option>
+<option>Morrelganj</option>
+<option>Rampal</option>
+<option>Sarankhola</option>
+
+<!-- Satkhira -->
+<option>Satkhira Sadar</option>
+<option>Assasuni</option>
+<option>Debhata</option>
+<option>Kalaroa</option>
+<option>Kaliganj</option>
+<option>Shyamnagar</option>
+<option>Tala</option>
+
+<!-- Jashore -->
+<option>Jashore Sadar</option>
+<option>Abhaynagar</option>
+<option>Bagherpara</option>
+<option>Chaugachha</option>
+<option>Jhikargachha</option>
+<option>Keshabpur</option>
+<option>Manirampur</option>
+<option>Sharsha</option>
+
+<!-- Jhenaidah -->
+<option>Jhenaidah Sadar</option>
+<option>Harinakunda</option>
+<option>Kaliganj</option>
+<option>Kotchandpur</option>
+<option>Maheshpur</option>
+<option>Shailkupa</option>
+
+<!-- Magura -->
+<option>Magura Sadar</option>
+<option>Mohammadpur</option>
+<option>Shalikha</option>
+<option>Sreepur</option>
+
+<!-- Narail -->
+<option>Narail Sadar</option>
+<option>Lohagara</option>
+<option>Kalia</option>
+
+<!-- Kushtia -->
+<option>Kushtia Sadar</option>
+<option>Bheramara</option>
+<option>Daulatpur</option>
+<option>Mirpur</option>
+<option>Khoksa</option>
+<option>Kumarkhali</option>
+
+<!-- Chuadanga -->
+<option>Chuadanga Sadar</option>
+<option>Alamdanga</option>
+<option>Damurhuda</option>
+<option>Jibannagar</option>
+
+<!-- Meherpur -->
+<option>Meherpur Sadar</option>
+<option>Mujibnagar</option>
+<option>Gangni</option>
+<!-- Barishal -->
+<option>Barishal Sadar</option>
+<option>Agailjhara</option>
+<option>Babuganj</option>
+<option>Bakerganj</option>
+<option>Banaripara</option>
+<option>Gaurnadi</option>
+<option>Hizla</option>
+<option>Mehendiganj</option>
+<option>Muladi</option>
+<option>Wazirpur</option>
+
+<!-- Bhola -->
+<option>Bhola Sadar</option>
+<option>Burhanuddin</option>
+<option>Char Fasson</option>
+<option>Daulatkhan</option>
+<option>Lalmohan</option>
+<option>Manpura</option>
+<option>Tazumuddin</option>
+
+<!-- Patuakhali -->
+<option>Patuakhali Sadar</option>
+<option>Bauphal</option>
+<option>Dashmina</option>
+<option>Galachipa</option>
+<option>Kalapara</option>
+<option>Mirzaganj</option>
+<option>Rangabali</option>
+
+<!-- Pirojpur -->
+<option>Pirojpur Sadar</option>
+<option>Bhandaria</option>
+<option>Indurkani</option>
+<option>Mathbaria</option>
+<option>Nesarabad (Swarupkathi)</option>
+<option>Kawkhali</option>
+<option>Zianagar</option>
+
+<!-- Jhalokathi -->
+<option>Jhalokathi Sadar</option>
+<option>Kanthalia</option>
+<option>Nalchity</option>
+<option>Rajapur</option>
+
+<!-- Barguna -->
+<option>Barguna Sadar</option>
+<option>Amtali</option>
+<option>Bamna</option>
+<option>Betagi</option>
+<option>Patharghata</option>
+<option>Taltali</option>
+<!-- Sylhet -->
+<option>Sylhet Sadar</option>
+<option>Beanibazar</option>
+<option>Biswanath</option>
+<option>Companiganj</option>
+<option>Fenchuganj</option>
+<option>Golapganj</option>
+<option>Gowainghat</option>
+<option>Jaintiapur</option>
+<option>Kanaighat</option>
+<option>Zakiganj</option>
+<option>South Surma</option>
+<option>Balaganj</option>
+<option>Osmani Nagar</option>
+
+<!-- Moulvibazar -->
+<option>Moulvibazar Sadar</option>
+<option>Barlekha</option>
+<option>Juri</option>
+<option>Kamalganj</option>
+<option>Kulaura</option>
+<option>Rajnagar</option>
+<option>Sreemangal</option>
+
+<!-- Habiganj -->
+<option>Habiganj Sadar</option>
+<option>Ajmiriganj</option>
+<option>Baniachang</option>
+<option>Bahubal</option>
+<option>Chunarughat</option>
+<option>Lakhai</option>
+<option>Madhabpur</option>
+<option>Nabiganj</option>
+<option>Shayestaganj</option>
+
+<!-- Sunamganj -->
+<option>Sunamganj Sadar</option>
+<option>Biswamvarpur</option>
+<option>Chhatak</option>
+<option>Derai</option>
+<option>Dharampasha</option>
+<option>Dowarabazar</option>
+<option>Jagannathpur</option>
+<option>Jamalganj</option>
+<option>Sullah</option>
+<option>Tahirpur</option>
+<option>South Sunamganj</option>
+<!-- Rangpur -->
+<option>Rangpur Sadar</option>
+<option>Badarganj</option>
+<option>Gangachara</option>
+<option>Kaunia</option>
+<option>Mithapukur</option>
+<option>Pirgachha</option>
+<option>Pirganj</option>
+<option>Taraganj</option>
+
+<!-- Dinajpur -->
+<option>Dinajpur Sadar</option>
+<option>Birampur</option>
+<option>Birganj</option>
+<option>Biral</option>
+<option>Bochaganj</option>
+<option>Chirirbandar</option>
+<option>Fulbari</option>
+<option>Ghoraghat</option>
+<option>Hakimpur</option>
+<option>Kaharole</option>
+<option>Khansama</option>
+<option>Nawabganj</option>
+<option>Parbatipur</option>
+
+<!-- Gaibandha -->
+<option>Gaibandha Sadar</option>
+<option>Fulchhari</option>
+<option>Gobindaganj</option>
+<option>Palashbari</option>
+<option>Sadullapur</option>
+<option>Saghata</option>
+<option>Sundarganj</option>
+
+<!-- Kurigram -->
+<option>Kurigram Sadar</option>
+<option>Bhurungamari</option>
+<option>Char Rajibpur</option>
+<option>Chilmari</option>
+<option>Phulbari</option>
+<option>Nageshwari</option>
+<option>Rajarhat</option>
+<option>Raomari</option>
+<option>Ulipur</option>
+
+<!-- Lalmonirhat -->
+<option>Lalmonirhat Sadar</option>
+<option>Aditmari</option>
+<option>Hatibandha</option>
+<option>Kaliganj</option>
+<option>Patgram</option>
+
+<!-- Nilphamari -->
+<option>Nilphamari Sadar</option>
+<option>Dimla</option>
+<option>Domar</option>
+<option>Jaldhaka</option>
+<option>Kishoreganj</option>
+<option>Syedpur</option>
+
+<!-- Panchagarh -->
+<option>Panchagarh Sadar</option>
+<option>Atwari</option>
+<option>Boda</option>
+<option>Debiganj</option>
+<option>Tetulia</option>
+
+<!-- Thakurgaon -->
+<option>Thakurgaon Sadar</option>
+<option>Baliadangi</option>
+<option>Haripur</option>
+<option>Pirganj</option>
+<option>Ranisankail</option>
+<!-- Mymensingh -->
+<option>Mymensingh Sadar</option>
+<option>Bhaluka</option>
+<option>Fulbaria</option>
+<option>Gaffargaon</option>
+<option>Gauripur</option>
+<option>Haluaghat</option>
+<option>Ishwarganj</option>
+<option>Muktagachha</option>
+<option>Nandail</option>
+<option>Phulpur</option>
+<option>Trishal</option>
+
+<!-- Jamalpur -->
+<option>Jamalpur Sadar</option>
+<option>Dewanganj</option>
+<option>Baksiganj</option>
+<option>Islampur</option>
+<option>Madarganj</option>
+<option>Melandaha</option>
+<option>Sarishabari</option>
+
+<!-- Sherpur -->
+<option>Sherpur Sadar</option>
+<option>Nakla</option>
+<option>Nalitabari</option>
+<option>Sreebardi</option>
+
+<!-- Netrokona -->
+<option>Netrokona Sadar</option>
+<option>Atpara</option>
+<option>Barhatta</option>
+<option>Durgapur</option>
+<option>Khaliajuri</option>
+<option>Kalmakanda</option>
+<option>Madan</option>
+<option>Mohanganj</option>
+<option>Purbadhala</option>
+<option>Kendua</option>
+</select>
+
+<div class="row">
+
+<select id="size">
+<option>Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<select id="color">
+<option>Select Color</option>
+<option>Black</option>
+<option>White</option>
+<option>Blue</option>
+</select>
+
+</div>
+
+<textarea id="address"
+placeholder="Full Address"
+style="height:100px;"></textarea>
+
+<button class="order-btn"
+onclick="sendOrder()">
+
+💬 Order WhatsApp Now
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ===== CART ===== -->
+
+<div class="cart" id="cart">
+  <span class="close-cart" onclick="closeCart()">✖</span>
+  
+
+<h2>My Cart</h2>
+
+<br>
+
+<div id="cartItems"></div>
+
+<!-- TOTAL -->
+
+<h3>
+Total: ৳<span id="total">0</span>
+</h3>
+
+<br>
+
+<!-- FORM -->
+
+<input type="text" id="cname"
+placeholder="Your Name">
+
+<input type="text" id="cphone"
+placeholder="Phone Number">
+
+<input type="email" id="cgmail"
+placeholder="Gmail Address">
+
+<input type="text" id="cdivision"
+placeholder="Division">
+
+<input type="text" id="cdistrict"
+placeholder="District">
+
+<input type="text" id="cthana"
+placeholder="Thana">
+
+<input type="text" id="cvillage"
+placeholder="Village">
+
+<select id="csize">
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<select id="ccolor">
+<option>Black</option>
+<option>White</option>
+<option>Blue</option>
+</select>
+
+<button class="order-btn"
+onclick="sendOrder()">
+
+WhatsApp Now
+
+</button>
+
+</div>
+
+<div class="dark-btn" onclick="darkMode()">
+🌙
+</div>
+
+<a href="https://wa.me/8801605019908"
+class="whatsapp">
+💬
+</a>
+
+<div class="bottom">
+
+<div>🏠</div>
+<div>❤️</div>
+<div>🛒</div>
+<div>👤</div>
+
+</div>
+
+
+
+<hr>
+<br>
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- LEFT COLUMN (ABOUT) -->
+    <div class="footer-box">
+      <h2>About Me</h2>
+      <p>
+      আমরা মানসম্মত ফ্যাশন পণ্য সাশ্রয়ী দামে এবং দ্রুত ডেলিভারির মাধ্যমে প্রদান করি। 
+      আমাদের সাথে থাকুন এবং উপভোগ করুন সহজ ও নির্ভরযোগ্য অনলাইন শপিং অভিজ্ঞতা।
+      </p>
+    </div>
+
+    <!-- RIGHT COLUMN (ADDRESS) -->
+    <div class="footer-box">
+      <h2>Contact Info</h2>
+
+      <p><b>📍 Address:</b> machpara,pangsha,Rajbari,Dhaka,bangladesh</p>
+      <p><b>🏠 Area:</b> mrst tuhin mahamud</p>
+      <p><b>📞 Phone,WhatsApp:</b> +8801605019908</p>
+      <p><b>✉️ Email:</b> mrstfashion@gmail.com</p>
+    </div>
+
+  </div>
+
+  <div class="bottom">
+    © 2026 TUHIN MAHAMUD | All Rights To this website are  Reserved
+  </div>
+
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

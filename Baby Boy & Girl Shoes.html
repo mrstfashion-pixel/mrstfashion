@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MRST Fashion</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#70b1bd;
+}
+
+/* ===== HEADER ===== */
+
+header{
+background:linear-gradient(90deg,#111827,#2563eb);
+color:white;
+padding:18px;
+text-align:center;
+font-size:30px;
+font-weight:bold;
+}
+
+/* ===== NAVBAR ===== */
+
+.navbar{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+padding:12px;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+position:sticky;
+top:0;
+z-index:999;
+}
+
+.navbar a{
+text-decoration:none;
+padding:10px 18px;
+background:#eff6ff;
+color:#111827;
+border-radius:30px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.navbar a:hover{
+background:#2563eb;
+color:white;
+}
+
+/* ===== BANNER ===== */
+
+.banner{
+width:100%;
+height:420px;
+overflow:hidden;
+}
+
+.banner img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* ===== CATEGORY ===== */
+
+.categories{
+display:flex;
+gap:15px;
+overflow-x:auto;
+padding:15px;
+background:white;
+}
+
+.categories div{
+min-width:90px;
+text-align:center;
+cursor:pointer;
+}
+
+.categories img{
+width:80px;
+height:80px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid #2563eb;
+}
+
+.categories p{
+margin-top:6px;
+font-weight:bold;
+}
+
+/* ===== PRODUCTS ===== */
+
+.products{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+padding:20px;
+}
+
+/* ===== PRODUCT CARD ===== */
+
+.item{
+background:rgb(246, 250, 249);
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.item:hover{
+transform:translateY(-6px);
+}
+
+.item img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.info{
+padding:15px;
+}
+
+.title{
+font-size:20px;
+font-weight:bold;
+margin-bottom:8px;
+}
+
+.price{
+font-size:24px;
+font-weight:bold;
+color:#ef4444;
+margin-bottom:8px;
+}
+
+.stars{
+color:orange;
+margin-bottom:12px;
+}
+
+.bottom{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.views{
+font-size:14px;
+font-weight:bold;
+color:#555;
+}
+
+.order-btn{
+padding:10px 16px;
+border:none;
+background:#22c55e;
+color:white;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.order-btn:hover{
+background:#16a34a;
+}
+
+/* ===== LOAD MORE ===== */
+
+.load-wrap{
+text-align:center;
+padding:20px;
+}
+
+#loadBtn{
+padding:14px 30px;
+border:none;
+background:#111827;
+color:white;
+border-radius:40px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+#loadBtn:hover{
+background:#2563eb;
+}
+
+/* ===== POPUP ===== */
+
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+overflow:auto;
+z-index:99999;
+padding:20px;
+}
+
+.popup-content{
+background:rgb(113, 247, 169);
+max-width:950px;
+margin:auto;
+padding:20px;
+border-radius:25px;
+position:relative;
+animation:show 0.3s ease;
+}
+
+@keyframes show{
+from{
+transform:scale(0.8);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+/* ===== CLOSE ===== */
+
+.close{
+position:absolute;
+top:15px;
+right:20px;
+width:45px;
+height:45px;
+background:#ef4444;
+color:white;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:28px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* ===== BIG IMAGE ===== */
+
+.main-image{
+width:100%;
+height:420px;
+object-fit:cover;
+border-radius:20px;
+margin-bottom:15px;
+}
+
+/* ===== SMALL IMAGES ===== */
+
+.gallery{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+}
+
+.gallery img{
+width:100px;
+height:100px;
+object-fit:cover;
+border-radius:15px;
+cursor:pointer;
+border:2px solid #ddd;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.08);
+border-color:#2563eb;
+}
+
+/* ===== DETAILS ===== */
+
+.details{
+background:#f8fafc;
+padding:20px;
+border-radius:20px;
+margin-bottom:20px;
+}
+
+.details h2{
+margin-bottom:12px;
+color:#2563eb;
+}
+
+.details p{
+line-height:2;
+font-size:16px;
+color:#374151;
+}
+
+/* ===== REVIEWS ===== */
+
+.reviews{
+margin-bottom:20px;
+}
+
+.reviews h2{
+margin-bottom:15px;
+}
+
+.review-card{
+display:flex;
+gap:15px;
+background:#f9fafb;
+padding:15px;
+border-radius:18px;
+margin-bottom:15px;
+}
+
+.review-card img{
+width:65px;
+height:65px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.review-card span{
+color:orange;
+}
+
+/* ===== FORM ===== */
+
+.form-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.form-grid input,
+.form-grid textarea{
+padding:14px;
+border:1px solid #d1d5db;
+border-radius:12px;
+font-size:15px;
+width:100%;
+}
+
+.form-grid textarea{
+grid-column:1/3;
+height:120px;
+resize:none;
+}
+
+.submit-btn{
+width:100%;
+padding:16px;
+background:#22c55e;
+color:white;
+border:none;
+border-radius:15px;
+font-size:18px;
+font-weight:bold;
+margin-top:15px;
+cursor:pointer;
+}
+
+.submit-btn:hover{
+background:#16a34a;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:1000px){
+
+.products{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:700px){
+
+.products{
+grid-template-columns:1fr;
+}
+
+.banner{
+height:220px;
+}
+
+.main-image{
+height:250px;
+}
+
+.gallery img{
+width:70px;
+height:70px;
+}
+
+.form-grid{
+grid-template-columns:1fr;
+}
+
+.form-grid textarea{
+grid-column:auto;
+}
+
+}
+
+</style>
+</head>
+<marquee class=" fast" direction=" "> 📢 🚚 সারা দেশে ডেলিভারি — এখনই অর্ডার করুন 📦 ঘরে বসেই অর্ডার করুন — WhatsApp: 01605019908 </marquee>
+
+<body>
+
+<header>MRST Fashion Shop</header>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<a href="index.html">Home</a>
+<a href="new.html">Products</a>
+
+
+</nav>
+
+<!-- BANNER -->
+
+<div class="banner">
+
+<img id="slider"
+src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1600&auto=format&fit=crop">
+
+</div>
+
+<!-- ===== CATEGORY ===== -->
+
+<div class="categories">
+
+<div onclick="filterCategory('all')">
+<img src="https://picsum.photos/id/1/100/100">
+<p>All</p>
+</div>
+
+<div onclick="filterCategory('shoes')">
+<img src="https://picsum.photos/id/21/100/100">
+<p>Shoes</p>
+</div>
+
+<div onclick="filterCategory('tshirt')">
+<img src="https://picsum.photos/id/1005/100/100">
+<p>T-Shirt</p>
+</div>
+
+<div onclick="filterCategory('pant')">
+<img src="https://picsum.photos/id/1011/100/100">
+<p>Pant</p>
+</div>
+
+<div onclick="filterCategory('kids')">
+<img src="https://picsum.photos/id/1027/100/100">
+<p>Kids</p>
+</div>
+
+</div>
+
+<!-- PRODUCTS -->
+
+<div class="products" id="products"></div>
+
+<!-- LOAD MORE -->
+
+<div class="load-wrap">
+
+<button id="loadBtn" onclick="loadMore()">
+Load More
+</button>
+
+</div>
+
+<!-- POPUP -->
+
+<div class="popup" id="popup">
+
+<div class="popup-content">
+
+<span class="close"
+onclick="closePopup()">
+×
+</span>
+
+<img id="mainImage"
+class="main-image"
+src="">
+
+<div class="gallery">
+
+<img id="g1"
+onclick="changeImage(this)">
+
+<img id="g2"
+onclick="changeImage(this)">
+
+<img id="g3"
+onclick="changeImage(this)">
+
+</div>
+
+<h1 id="popupTitle"></h1>
+
+<h2 id="popupPrice"
+style="color:#ef4444;margin:10px 0 20px;">
+</h2>
+
+<!-- DETAILS -->
+
+<div class="details">
+
+<h2>🔥 Why Buy From MRST Fashion?</h2>
+
+<p>
+
+✅ 100% Original Premium Quality <br>
+
+🚚 Fast Delivery All Over Bangladesh <br>
+
+📦 Delivery Inside 2-3 Days <br>
+
+💯 Trusted Fashion Brand <br>
+
+🛍 Latest Trending Collection <br>
+
+⭐ Customer Satisfaction Priority <br>
+
+❤️ Thousands Of Happy Customers <br>
+
+</p>
+
+</div>
+
+<!-- REVIEWS -->
+
+<div class="reviews">
+
+<h2>⭐ Customer Reviews</h2>
+
+<div class="review-card">
+
+<img src="https://randomuser.me/api/portraits/women/44.jpg">
+
+<div>
+
+<h3>Sumaiya Islam</h3>
+
+<p>
+Quality onek valo 😍
+</p>
+
+<span>⭐⭐⭐⭐⭐</span>
+
+</div>
+
+</div>
+
+<div class="review-card">
+
+<img src="https://randomuser.me/api/portraits/men/32.jpg">
+
+<div>
+
+<h3>Rakib Hasan</h3>
+
+<p>
+Delivery fast chilo 🔥
+</p>
+
+<span>⭐⭐⭐⭐⭐</span>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- FORM -->
+
+<div class="form-grid">
+
+<input type="text"
+id="name"
+placeholder="Your Name">
+
+<input type="text"
+id="phone"
+placeholder="Phone Number">
+
+<input type="email"
+id="gmail"
+placeholder="Gmail">
+
+<input type="text"
+id="division"
+placeholder="division">
+
+<input type="text"
+id="district"
+placeholder="district">
+
+<input type="text"
+id="thana"
+placeholder="Thana">
+
+<input type="text"
+id="village"
+placeholder="village">
+
+<textarea id="message"
+placeholder="Write Message"></textarea>
+
+</div>
+
+<button class="submit-btn"
+onclick="sendOrder()">
+
+Order WhatsApp
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+/* ===== SLIDER ===== */
+
+let slides = [
+
+"https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1600&auto=format&fit=crop",
+
+"https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1600&auto=format&fit=crop",
+
+"https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1600&auto=format&fit=crop"
+
+];
+
+let slideIndex = 0;
+
+setInterval(()=>{
+
+slideIndex++;
+
+if(slideIndex >= slides.length){
+
+slideIndex = 0;
+
+}
+
+document.getElementById("slider").src =
+slides[slideIndex];
+
+},3000);
+
+/* ===== PRODUCTS ===== */
+/* ===== PRODUCTS ===== */
+
+let productData = [
+
+{
+name:"Running Shoes",
+category:"shoes",
+price:"৳1500",
+views:"12k Views",
+img1:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1000&auto=format&fit=crop",
+img2:"https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1000&auto=format&fit=crop",
+img3:"https://images.unsplash.com/photo-1608231387042-66d1773070a5?q=80&w=1000&auto=format&fit=crop"
+},
+
+{
+name:"Premium T-Shirt",
+category:"tshirt",
+price:"৳700",
+views:"8k Views",
+img1:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000&auto=format&fit=crop",
+img2:"https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=1000&auto=format&fit=crop",
+img3:"https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=1000&auto=format&fit=crop"
+},
+
+{
+name:"Kids Shoes",
+category:"kids",
+price:"৳900",
+views:"6k Views",
+img1:"https://images.unsplash.com/photo-1514989940723-e8e51635b782?q=80&w=1000&auto=format&fit=crop",
+img2:"https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1000&auto=format&fit=crop",
+img3:"https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=1000&auto=format&fit=crop"
+},
+
+{
+name:"Fashion Pant",
+category:"pant",
+price:"৳1200",
+views:"15k Views",
+img1:"https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=1000&auto=format&fit=crop",
+img2:"https://images.unsplash.com/photo-1506629905607-4c63d2d5e9cf?q=80&w=1000&auto=format&fit=crop",
+img3:"https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1000&auto=format&fit=crop"
+}
+
+];
+
+let allProducts = [];
+
+for(let i=0;i<5;i++){
+
+allProducts = allProducts.concat(productData);
+
+}
+
+let products = allProducts;
+
+let visible = 8;
+
+let currentProduct = null;
+
+/* ===== SHOW PRODUCTS ===== */
+
+function showProducts(){
+
+let container =
+document.getElementById("products");
+
+container.innerHTML = "";
+
+products.slice(0,visible).forEach((p,index)=>{
+
+container.innerHTML += `
+
+<div class="item">
+
+<img src="${p.img1}">
+
+<div class="info">
+
+<div class="title">
+${p.name}
+</div>
+
+<div class="price">
+${p.price}
+</div>
+
+<div class="stars">
+⭐⭐⭐⭐⭐
+</div>
+
+<div class="bottom">
+
+<div class="views">
+👁 ${p.views}
+</div>
+
+<button class="order-btn"
+onclick="openPopup(${index})">
+
+Add
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+if(visible >= products.length){
+
+document.getElementById("loadBtn").style.display =
+"none";
+
+}else{
+
+document.getElementById("loadBtn").style.display =
+"inline-block";
+
+}
+
+}
+
+showProducts();
+
+/* ===== CATEGORY FILTER ===== */
+
+function filterCategory(cat){
+
+if(cat === "all"){
+
+products = allProducts;
+
+}else{
+
+products = allProducts.filter(p =>
+p.category === cat);
+
+}
+
+visible = 8;
+
+showProducts();
+
+}
+
+/* ===== LOAD MORE ===== */
+
+function loadMore(){
+
+visible += 8;
+
+showProducts();
+
+}
+
+/* ===== OPEN POPUP ===== */
+
+function openPopup(index){
+
+currentProduct = products[index];
+
+document.getElementById("popup").style.display =
+"block";
+
+document.getElementById("mainImage").src =
+currentProduct.img1;
+
+document.getElementById("g1").src =
+currentProduct.img1;
+
+document.getElementById("g2").src =
+currentProduct.img2;
+
+document.getElementById("g3").src =
+currentProduct.img3;
+
+document.getElementById("popupTitle").innerText =
+currentProduct.name;
+
+document.getElementById("popupPrice").innerText =
+currentProduct.price;
+
+}
+
+/* ===== CLOSE POPUP ===== */
+
+function closePopup(){
+
+document.getElementById("popup").style.display =
+"none";
+
+}
+
+/* ===== CHANGE IMAGE ===== */
+
+function changeImage(img){
+
+document.getElementById("mainImage").src =
+img.src;
+
+}
+
+/* ===== WHATSAPP ===== */
+
+function sendOrder(){
+
+let text =
+
+"🛒 MRST Fashion Order\n\n" +
+
+"📦 Product: " +
+currentProduct.name + "\n" +
+
+"💰 Price: " +
+currentProduct.price + "\n\n" +
+
+"👤 Name: " +
+document.getElementById("name").value + "\n" +
+
+"📞 Phone: " +
+document.getElementById("phone").value + "\n" +
+
+"📧 Gmail: " +
+document.getElementById("gmail").value + "\n\n" +
+
+"📍 Address:\n" +
+
+"division: " +
+document.getElementById("division").value + "\n" +
+
+"district: " +
+document.getElementById("district").value + "\n" +
+
+"Thana: " +
+document.getElementById("thana").value + "\n" +
+
+"village: " +
+document.getElementById("village").value + "\n\n" +
+
+"📝 Message: " +
+document.getElementById("message").value;
+
+let url =
+
+"https://wa.me/8801605019908?text=" +
+
+encodeURIComponent(text);
+
+window.open(url,"_blank");
+
+}
+
+</script>
+
+</body>
+</html>
