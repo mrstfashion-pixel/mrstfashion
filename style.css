@@ -157,7 +157,7 @@ display:flex;
 align-items:center;
 gap:0;
 flex:1;
-max-width:450px;
+max-width:950px;
 background:#fff;
 border-radius:50px;
 overflow:hidden;
@@ -711,6 +711,27 @@ overflow:auto;
 right:0;
 }
 
+.cart-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:12px;
+  padding:10px;
+  box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+
+.remove-btn{
+  background:#ff4d4d;
+  color:#fff;
+  border:none;
+  padding:6px 10px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
 /* ===== FLOAT BUTTON ===== */
 
 .whatsapp{
@@ -1139,6 +1160,34 @@ font-size:14px;
 font-weight:bold;
 white-space:nowrap;
 }
+.order-btn{
+  background:#25D366;
+  color:white;
+  border:none;
+  padding:14px 25px;
+  border-radius:12px;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  animation: zoom 1.5s infinite;
+  transition:0.3s;
+}
+
+.order-btn:hover{
+  transform:scale(1.15);
+}
+
+@keyframes zoom{
+  0%{
+    transform:scale(1);
+  }
+  50%{
+    transform:scale(1.1);
+  }
+  100%{
+    transform:scale(1);
+  }
+}
 
 
 /* ===== MOBILE ===== */
@@ -1160,6 +1209,7 @@ height:350px;
 .search{
 width:40%;
 }
+
 
 }
 

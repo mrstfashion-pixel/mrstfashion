@@ -398,15 +398,32 @@ grid-column:1/-1;
 }
 
 .order-btn{
-background:#25D366;
-color:white;
-padding:16px;
-border:none;
-border-radius:10px;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
-transition:0.3s;
+  background:#25D366;
+  color:white;
+  border:none;
+  padding:14px 25px;
+  border-radius:12px;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  animation: zoom 1.5s infinite;
+  transition:0.3s;
+}
+
+.order-btn:hover{
+  transform:scale(1.15);
+}
+
+@keyframes zoom{
+  0%{
+    transform:scale(1);
+  }
+  50%{
+    transform:scale(1.1);
+  }
+  100%{
+    transform:scale(1);
+  }
 }
 
 .order-btn:hover{
@@ -1468,10 +1485,10 @@ HOT
 </div>
 
 </div>
-
-<button class="order-btn full">
-WhatsApp এ অর্ডার করুন
+<button class="order-btn" onclick="sendOrder()">
+  💬 WhatsApp এ অর্ডার করুন
 </button>
+
 
 </form>
 

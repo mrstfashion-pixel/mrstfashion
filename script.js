@@ -8305,11 +8305,11 @@ let currentProducts = [...products];
 const productsDiv =
 document.getElementById("products");
 
-function loadProducts(list=currentProducts){
+function loadProducts(list = currentProducts){
 
 productsDiv.innerHTML = "";
 
-list.slice(0,visibleProducts).forEach((p,index)=>{
+list.slice(0, visibleProducts).forEach((p) => {
 
 productsDiv.innerHTML += `
 
@@ -8343,8 +8343,9 @@ onclick="showPopup(${products.indexOf(p)})">
 View
 </button>
 
+<!-- ✅ এখানে FIX করা হয়েছে -->
 <button class="add"
-onclick="addToCart('${p.name}',${p.price})">
+onclick="addToCart('${p.name}', ${p.price}, ${products.indexOf(p)})">
 Add
 </button>
 
@@ -8355,6 +8356,7 @@ Add
 </div>
 
 `;
+
 
 });
 
@@ -8794,5 +8796,52 @@ document.getElementById("profileImage").src =
 savedImage;
 }
 
+// profile jony//
 
 
+document.addEventListener("DOMContentLoaded", function () {
+
+  const popup = document.getElementById("profilePopup");
+  const imageUpload = document.getElementById("imageUpload");
+  const profileImage = document.getElementById("profileImage");
+
+  // OPEN PROFILE
+  window.openProfile = function () {
+    popup.style.display = "flex";
+  }
+
+  // CLOSE PROFILE
+  window.closeProfile = function () {
+    popup.style.display = "none";
+  }
+
+  // LOAD SAVED IMAGE (refresh korleo thakbe)
+  const savedImage = localStorage.getItem("profileImage");
+
+  if (savedImage) {
+    profileImage.src = savedImage;
+  }
+
+  // IMAGE UPLOAD + SAVE
+  imageUpload.addEventListener("change", function (e) {
+
+    const file = e.target.files[0];
+
+    if (file) {
+
+      const reader = new FileReader();
+
+      reader.onload = function (event) {
+
+        profileImage.src = event.target.result;
+
+        // SAVE in browser
+        localStorage.setItem("profileImage", event.target.result);
+      }
+
+      reader.readAsDataURL(file);
+    }
+
+  });
+
+})
