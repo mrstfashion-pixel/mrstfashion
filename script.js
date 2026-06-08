@@ -8410,19 +8410,17 @@ p.category === category);
 loadProducts(currentProducts);
 
 }
-
 document.getElementById("searchBox")
 .addEventListener("keyup",function(){
 
 let value = this.value.toLowerCase();
 
-currentProducts = products.filter(p=>
-
-p.name.toLowerCase().includes(value)
-
+currentProducts = products.filter(p =>
+  p.name.toLowerCase().includes(value)
 );
 
-let visibleProducts = 10;
+// ❌ REMOVE local variable bug
+visibleProducts = 10;
 
 loadProducts(currentProducts);
 
@@ -8701,6 +8699,11 @@ let banners = [
   image: "bannarfile/cover5.jpg",
   link: "Side-Bag.html",
   text: " Order side bag"
+},
+{
+  image: "bannarfile/cover11.jpeg",
+  link: "Side-Bag.html",
+  text: " Order side bag"
 }
 ];
 
@@ -8796,52 +8799,7 @@ document.getElementById("profileImage").src =
 savedImage;
 }
 
+
 // profile jony//
 
 
-document.addEventListener("DOMContentLoaded", function () {
-
-  const popup = document.getElementById("profilePopup");
-  const imageUpload = document.getElementById("imageUpload");
-  const profileImage = document.getElementById("profileImage");
-
-  // OPEN PROFILE
-  window.openProfile = function () {
-    popup.style.display = "flex";
-  }
-
-  // CLOSE PROFILE
-  window.closeProfile = function () {
-    popup.style.display = "none";
-  }
-
-  // LOAD SAVED IMAGE (refresh korleo thakbe)
-  const savedImage = localStorage.getItem("profileImage");
-
-  if (savedImage) {
-    profileImage.src = savedImage;
-  }
-
-  // IMAGE UPLOAD + SAVE
-  imageUpload.addEventListener("change", function (e) {
-
-    const file = e.target.files[0];
-
-    if (file) {
-
-      const reader = new FileReader();
-
-      reader.onload = function (event) {
-
-        profileImage.src = event.target.result;
-
-        // SAVE in browser
-        localStorage.setItem("profileImage", event.target.result);
-      }
-
-      reader.readAsDataURL(file);
-    }
-
-  });
-
-})
