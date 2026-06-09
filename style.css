@@ -1364,6 +1364,441 @@ color:#444;
     font-size: 12px;
     font-weight: bold;
 }
+
+/*  foter nirche kaj ta products */
+.why-choose-us{
+    padding:30px 15px;
+    background:#fff;
+    margin:20px 10px;
+    border-radius:15px;
+}
+
+.why-choose-us h2{
+    text-align:center;
+    margin-bottom:25px;
+    font-size:28px;
+    font-weight:700;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.why-box{
+    background:#f8f8f8;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.why-box:hover{
+    transform:translateY(-5px);
+}
+
+.icon{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.why-box h3{
+    margin-bottom:10px;
+}
+
+.why-box p{
+    color:#666;
+    font-size:14px;
+}
+
+@media(max-width:768px){
+    .why-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+/*  customer revies */
+.customer-reviews{
+    background:#fff;
+    margin:20px 10px;
+    padding:30px 15px;
+    border-radius:15px;
+}
+
+.customer-reviews h2{
+    text-align:center;
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:5px;
+}
+
+.review-subtitle{
+    text-align:center;
+    color:#777;
+    margin-bottom:25px;
+}
+
+.review-container{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.review-card{
+    background:#f8f8f8;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+    transition:.3s;
+}
+
+.review-card:hover{
+    transform:translateY(-5px);
+}
+
+.stars{
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.review-card p{
+    font-size:14px;
+    color:#555;
+    margin-bottom:15px;
+    line-height:1.6;
+}
+
+.customer img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:8px;
+}
+
+.customer h4{
+    margin:0;
+    font-size:15px;
+}
+
+@media(max-width:768px){
+
+.review-container{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:480px){
+
+.review-container{
+    grid-template-columns:1fr;
+}
+
+} 
+/*  frequrntly asked quesstions */
+.faq-section{
+    background:#fff;
+    margin:20px 10px;
+    padding:30px 15px;
+    border-radius:15px;
+}
+
+.faq-section h2{
+    text-align:center;
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:5px;
+}
+
+.faq-subtitle{
+    text-align:center;
+    color:#777;
+    margin-bottom:25px;
+}
+
+.faq-box{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.faq-box details{
+    background:#f8f8f8;
+    border-radius:12px;
+    padding:15px;
+    border:1px solid #eee;
+}
+
+.faq-box summary{
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    list-style:none;
+    position:relative;
+    padding-right:25px;
+}
+
+.faq-box summary::after{
+    content:"+";
+    position:absolute;
+    right:0;
+    top:0;
+    font-size:22px;
+    color:#ff6600;
+}
+
+.faq-box details[open] summary::after{
+    content:"−";
+}
+
+.faq-box p{
+    margin-top:12px;
+    color:#555;
+    line-height:1.7;
+    font-size:14px;
+}
+
+@media(max-width:768px){
+    .faq-section{
+        padding:20px 12px;
+    }
+
+    .faq-section h2{
+        font-size:22px;
+    }
+
+    .faq-box summary{
+        font-size:15px;
+    }
+}
+/*  subscrbe to our newsletter */
+.newsletter{
+    margin:20px 10px;
+    border-radius:15px;
+    overflow:hidden;
+    background:linear-gradient(135deg,#081b3a,#0c2d62,#081b3a);
+    padding:40px 20px;
+}
+
+.newsletter-content{
+    text-align:center;
+}
+
+.newsletter-content h2{
+    color:#fff;
+    font-size:32px;
+    margin-bottom:10px;
+    font-weight:700;
+}
+
+.newsletter-content p{
+    color:#d1d5db;
+    margin-bottom:25px;
+    font-size:15px;
+}
+
+.newsletter-form{
+    max-width:650px;
+    margin:auto;
+    display:flex;
+    overflow:hidden;
+    border-radius:10px;
+    background:#fff;
+}
+
+.newsletter-form input{
+    flex:1;
+    padding:16px;
+    border:none;
+    outline:none;
+    font-size:15px;
+}
+
+.newsletter-form button{
+    border:none;
+    background:#ff6b00;
+    color:#fff;
+    padding:0 30px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+}
+
+.newsletter-form button:hover{
+    background:#e85f00;
+}
+
+@media(max-width:768px){
+
+.newsletter{
+    padding:30px 15px;
+}
+
+.newsletter-content h2{
+    font-size:24px;
+}
+
+.newsletter-form{
+    flex-direction:column;
+    background:transparent;
+    gap:10px;
+}
+
+.newsletter-form input{
+    width:100%;
+    border-radius:10px;
+}
+
+.newsletter-form button{
+    width:100%;
+    padding:15px;
+    border-radius:10px;
+}
+
+}
+/*  follow us on */
+.follow-us{
+    background:#fff;
+    margin:20px 10px;
+    padding:30px 15px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.follow-us h2{
+    font-size:28px;
+    margin-bottom:8px;
+    color:#111827;
+}
+
+.follow-us p{
+    color:#6b7280;
+    margin-bottom:25px;
+}
+
+.social-links{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.social-card{
+    text-decoration:none;
+    padding:25px 15px;
+    border-radius:15px;
+    color:#fff;
+    transition:.3s;
+}
+
+.social-card span{
+    font-size:35px;
+    display:block;
+    margin-bottom:10px;
+}
+
+.social-card h3{
+    font-size:16px;
+    font-weight:600;
+}
+
+.social-card:hover{
+    transform:translateY(-5px);
+}
+
+.facebook{
+    background:#1877f2;
+}
+
+.instagram{
+    background:#e1306c;
+}
+
+.youtube{
+    background:#ff0000;
+}
+
+.tiktok{
+    background:#111827;
+}
+
+@media(max-width:768px){
+
+.social-links{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:480px){
+
+.social-links{
+    grid-template-columns:1fr;
+}
+
+}
+/*  about me  */
+.footer{
+    background:#111827;
+    color:#08b3f7;
+    margin-top:20px;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    padding:40px 20px;
+}
+
+.footer-box h3{
+    margin-bottom:15px;
+    font-size:22px;
+}
+
+.footer-box p{
+    color:#f8f8f8;
+    line-height:1.8;
+    font-size:20px;
+}
+
+.footer-box ul{
+    list-style:none;
+    padding:0;
+}
+
+.footer-box ul li{
+    margin-bottom:10px;
+}
+
+.footer-box ul li a{
+    color:#d1d5db;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer-box ul li a:hover{
+    color:#ff6b00;
+    padding-left:5px;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.1);
+    text-align:center;
+    padding:15px;
+    color:#9ca3af;
+    font-size:14px;
+}
+
+@media(max-width:768px){
+
+.footer-container{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+}
+
 @keyframes zoom{
   0%{
     transform:scale(1);

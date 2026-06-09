@@ -8701,6 +8701,11 @@ let banners = [
   text: " Order side bag"
 },
 {
+  image: "bannarfile/cover6.jpeg",
+  link: "new.html",
+  text: " FREE T-Thirt oder now"
+},
+{
   image: "bannarfile/cover11.jpeg",
   link: "Side-Bag.html",
   text: " Order side bag"
