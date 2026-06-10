@@ -145,11 +145,40 @@ padding:10px;
 flex-wrap:nowrap;
 }
 
+
 .logo{
-font-size:25px;
-font-weight:bold;
-white-space:nowrap;
-color: #f53d05;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+width:50px;
+height:50px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.logo-text{
+display:flex;
+flex-direction:column;
+line-height:1;
+}
+
+.logo-text h1{
+margin:0;
+font-size:30px;
+font-weight:900;
+color:#fc9701;
+letter-spacing:1px;
+}
+
+.logo-text p{
+margin:0;
+font-size:20px;
+font-weight:600;
+color:#d8a109;
+letter-spacing:2px;
 }
 
 .search{
@@ -301,9 +330,9 @@ box-shadow:0 2px 8px rgba(0,0,0,0.2);
 
 .offer{
 margin:15px;
-height:180px;
-padding:20px;
-border-radius:20px;
+height:400px;
+padding:25px;
+border-radius:24px;
 
 background:url("imgjuta/100.png.jpeg") center/cover no-repeat;
 
@@ -315,39 +344,85 @@ position:relative;
 overflow:hidden;
 
 color:#fff;
-font-size:22px;
-font-weight:700;
 
-box-shadow:0 8px 25px rgba(0,0,0,.25);
+box-shadow:0 12px 35px rgba(0,0,0,.25);
 }
 
-/* Dark overlay */
+/* Premium overlay */
 .offer::before{
 content:"";
 position:absolute;
 inset:0;
 background:linear-gradient(
 90deg,
-rgba(0,0,0,.45),
-rgba(0,0,0,.15)
+rgba(0,0,0,.75) 0%,
+rgba(0,0,0,.45) 50%,
+rgba(0,0,0,.15) 100%
 );
 }
 
-/* Content above image */
-.offer > *{
+.offer-content{
 position:relative;
 z-index:2;
 }
 
-/* Timer Style */
-#timer{
-background:rgba(0,0,0,.45);
+.badge{
+display:inline-block;
+padding:6px 12px;
+border-radius:50px;
+background:rgba(255,255,255,.15);
 backdrop-filter:blur(8px);
-padding:12px 18px;
-border-radius:15px;
-font-size:24px;
-font-weight:700;
-border:1px solid rgba(49, 75, 44, 0.2);
+font-size:42px;
+font-weight:600;
+margin-bottom:10px;
+}
+
+.offer h2{
+  font-size:42px;
+  font-weight:900;
+  margin:0;
+  line-height:1;
+  text-shadow:0 4px 15px rgba(0,0,0,.3);
+}
+.offer p{
+font-size:30px;
+opacity:.9;
+margin:0;
+
+}
+
+/* Timer */
+#timer{
+  margin-top:15px;
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  min-width:170px;
+  height:65px;
+
+  padding:0 25px;
+
+  background:rgba(114, 110, 102, 0.12);
+  backdrop-filter:blur(12px);
+
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:18px;
+
+  color:#f59f01;
+  font-size:28px;
+  font-weight:800;
+  letter-spacing:43px;
+
+  box-shadow:
+  0 10px 25px rgba(0,0,0,.25),
+  inset 0 1px 0 rgba(219, 9, 9, 0.15);
+
+  text-shadow:0 2px 10px rgba(0,0,0,.3);
+}
+.offer-content{
+  text-align:center;
 }
 /* ===== CATEGORY ===== */
 
@@ -874,7 +949,7 @@ font-size:14px;
 
 .new-category{
 padding:20px 10px;
-background:#aaa9a7;
+background:#19c7ad;
 }
 
 .new-category h2{
