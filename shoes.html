@@ -197,24 +197,107 @@ text-transform:uppercase;
 /* ================= PRODUCT INFO ================= */
 .product-info{
 padding:15px;
+}   
+#productName{
+font-size:36px;
+font-weight:800;
+margin:10px 0;
+color:#111827;
 }
 
+.price{
+font-size:42px;
+font-weight:900;
+color:#16a34a;
+margin:10px 0;
+}
+
+.old-price{
+font-size:22px;
+text-decoration:line-through;
+color:#9ca3af;
+margin-left:10px;
+}
+
+.popup-content{
+background:#fff;
+border-radius:25px;
+padding:30px;
+max-width:1200px;
+box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+.popup-grid{
+display:grid;
+grid-template-columns:55% 45%;
+gap:35px;
+}
+
+.main-image{
+width:100%;
+height:600px;
+object-fit:cover;
+border-radius:20px;
+}
+
+.small-images img{
+width:95px;
+height:95px;
+border-radius:15px;
+cursor:pointer;
+border:2px solid #e5e7eb;
+transition:.3s;
+}
+
+.small-images img:hover{
+border-color:#22c55e;
+transform:scale(1.05);
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea{
+background:#fff;
+border:1px solid #d1d5db;
+border-radius:12px;
+padding:14px;
+font-size:15px;
+}
+
+.order-form input:focus,
+.order-form select:focus,
+.order-form textarea:focus{
+border-color:#22c55e;
+box-shadow:0 0 0 4px rgba(34,197,94,.15);
+}
+
+.order-btn{
+height:60px;
+font-size:20px;
+font-weight:700;
+background:#16a34a;
+border-radius:14px;
+}
+
+.order-btn:hover{
+background:#15803d;
+}
 .product-info h3{
 font-size:18px;
 margin-bottom:8px;
 }
 
 .price{
-color:#dc2626;
-font-size:20px;
-font-weight:800;
+color:#15700d;
+font-size:40px;
+font-weight:1000;
 margin-bottom:10px;
 }
 
 .old-price{
 text-decoration:line-through;
-font-size:13px;
-color:#9ca3af;
+font-size:20px;
+color:#4e525a;
 margin-left:8px;
 }
 
@@ -380,12 +463,12 @@ input:focus {
 .order-form textarea,
 .order-form select{
 padding:14px;
-border:1px solid #161a1a;
+border:1px solid #0a0a08e3;
 border-radius:10px;
 outline:none;
 font-size:15px;
 width:100%;
-background: #759bee;
+background: #fdfeff;
 }
 
 .order-form textarea{
@@ -918,7 +1001,7 @@ box-shadow:0 0 0 0 rgba(37,211,102,0);
 </div>
 
 <div class="menu">
-<a href="#">Home</a>
+<a href="index.html">Home</a>
 <a href="#products">Products</a>
 <a href="#footer">Contact</a>
 </div>
@@ -1931,8 +2014,8 @@ const products = [
 
 {
 name:'Fashion Sneakers',
-price:1999,
-old:2499,
+price:950,
+old:1500,
 badge:'New',
 img1:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200',
 img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
@@ -1944,7 +2027,51 @@ name:'nike shoes',
 price:1999,
 old:2499,
 badge:'New',
-img1:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200',
+img1:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
+description:'Trendy sneakers with premium comfort and quality.'
+},
+
+{
+name:'Fashion Sneakers',
+price:1999,
+old:2499,
+badge:'New',
+img1:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
+description:'Trendy sneakers with premium comfort and quality.'
+},
+
+{
+name:'Fashion Sneakers',
+price:1999,
+old:2499,
+badge:'New',
+img1:'https://www.campusshoes.com/cdn/shop/files/VESPER_VESPER_ICE.BLU-NAVY_07.webp?v=1758174881',
+img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
+description:'Trendy sneakers with premium comfort and quality.'
+},
+
+{
+name:'Fashion Sneakers',
+price:1999,
+old:2499,
+badge:'New',
+img1:'https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/bc8187e6886063076b31ddcc60bbf13e.jpg',
+img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
+description:'Trendy sneakers with premium comfort and quality.'
+},
+
+{
+name:'Fashion Sneakers',
+price:1999,
+old:2499,
+badge:'New',
+img1:'https://aiksow.pk/wp-content/uploads/2023/10/Fashion-Running-Shoes-Men-Flame-Printed-Sneakers-Knit-Athletic-Sports-Blade-Cushioning-Jogging-Trainers-Lightweight-2.jpg',
 img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
 img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
 description:'Trendy sneakers with premium comfort and quality.'
@@ -1966,51 +2093,7 @@ name:'Fashion Sneakers',
 price:1999,
 old:2499,
 badge:'New',
-img1:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200',
-img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
-img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
-description:'Trendy sneakers with premium comfort and quality.'
-},
-
-{
-name:'Fashion Sneakers',
-price:1999,
-old:2499,
-badge:'New',
-img1:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200',
-img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
-img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
-description:'Trendy sneakers with premium comfort and quality.'
-},
-
-{
-name:'Fashion Sneakers',
-price:1999,
-old:2499,
-badge:'New',
-img1:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200',
-img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
-img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
-description:'Trendy sneakers with premium comfort and quality.'
-},
-
-{
-name:'Fashion Sneakers',
-price:1999,
-old:2499,
-badge:'New',
-img1:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200',
-img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
-img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
-description:'Trendy sneakers with premium comfort and quality.'
-},
-
-{
-name:'Fashion Sneakers',
-price:1999,
-old:2499,
-badge:'New',
-img1:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200',
+img1:'https://www.orthofeet.com/cdn/shop/files/OTF_HP_WebBanner_Desktop_MultiStoryHero_732x804px_CoreHealthStory_Sneakers_0626.jpg?v=1779140342&width=800',
 img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
 img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
 description:'Trendy sneakers with premium comfort and quality.'
