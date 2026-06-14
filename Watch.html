@@ -197,24 +197,117 @@ text-transform:uppercase;
 /* ================= PRODUCT INFO ================= */
 .product-info{
 padding:15px;
+}   
+#productName{
+font-size:36px;
+font-weight:800;
+margin:10px 0;
+color:#111827;
 }
 
+.price{
+font-size:42px;
+font-weight:900;
+color:#16a34a;
+margin:10px 0;
+}
+
+.old-price{
+font-size:22px;
+text-decoration:line-through;
+color:#9ca3af;
+margin-left:10px;
+}
+.product-badge{
+position:absolute;
+top:10px;
+left:10px;
+background:#dc2626;
+color:#fff;
+padding:5px 10px;
+border-radius:20px;
+font-size:12px;
+font-weight:bold;
+}
+.popup-content{
+background:#fff;
+border-radius:25px;
+padding:30px;
+max-width:1200px;
+box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+.popup-grid{
+display:grid;
+grid-template-columns:55% 45%;
+gap:35px;
+}
+
+.main-image{
+width:100%;
+height:600px;
+object-fit:cover;
+border-radius:20px;
+}
+
+.small-images img{
+width:95px;
+height:95px;
+border-radius:15px;
+cursor:pointer;
+border:2px solid #e5e7eb;
+transition:.3s;
+}
+
+.small-images img:hover{
+border-color:#22c55e;
+transform:scale(1.05);
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea{
+background:#fff;
+border:1px solid #d1d5db;
+border-radius:12px;
+padding:14px;
+font-size:15px;
+}
+
+.order-form input:focus,
+.order-form select:focus,
+.order-form textarea:focus{
+border-color:#22c55e;
+box-shadow:0 0 0 4px rgba(34,197,94,.15);
+}
+
+.order-btn{
+height:60px;
+font-size:20px;
+font-weight:700;
+background:#16a34a;
+border-radius:14px;
+}
+
+.order-btn:hover{
+background:#15803d;
+}
 .product-info h3{
 font-size:18px;
 margin-bottom:8px;
 }
 
 .price{
-color:#dc2626;
-font-size:20px;
-font-weight:800;
+color:#15700d;
+font-size:40px;
+font-weight:1000;
 margin-bottom:10px;
 }
 
 .old-price{
 text-decoration:line-through;
-font-size:13px;
-color:#9ca3af;
+font-size:20px;
+color:#4e525a;
 margin-left:8px;
 }
 
@@ -380,12 +473,12 @@ input:focus {
 .order-form textarea,
 .order-form select{
 padding:14px;
-border:1px solid #161a1a;
+border:1px solid #0a0a08e3;
 border-radius:10px;
 outline:none;
 font-size:15px;
 width:100%;
-background: #759bee;
+background: #fdfeff;
 }
 
 .order-form textarea{
@@ -398,32 +491,15 @@ grid-column:1/-1;
 }
 
 .order-btn{
-  background:#25D366;
-  color:white;
-  border:none;
-  padding:14px 25px;
-  border-radius:12px;
-  font-size:18px;
-  font-weight:bold;
-  cursor:pointer;
-  animation: zoom 1.5s infinite;
-  transition:0.3s;
-}
-
-.order-btn:hover{
-  transform:scale(1.15);
-}
-
-@keyframes zoom{
-  0%{
-    transform:scale(1);
-  }
-  50%{
-    transform:scale(1.1);
-  }
-  100%{
-    transform:scale(1);
-  }
+background:#25D366;
+color:white;
+padding:16px;
+border:none;
+border-radius:10px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
 }
 
 .order-btn:hover{
@@ -621,6 +697,324 @@ font-size:14px;
 font-weight:bold;
 white-space:nowrap;
 }
+.fast-delivery{
+display:flex;
+align-items:center;
+gap:15px;
+background:#fff7ed;
+padding:15px;
+border-radius:15px;
+border:2px solid #fb923c;
+margin-top:15px;
+}
+
+.fast-delivery img{
+width:70px;
+height:70px;
+}
+
+.fast-delivery h3{
+color:#ea580c;
+margin-bottom:5px;
+}
+
+.fast-delivery p{
+font-size:14px;
+color:#444;
+}
+
+.product-details-box{
+margin-top:15px;
+background:#fff;
+padding:20px;
+border-radius:15px;
+border:1px solid #ddd;
+}
+
+.product-details-box h3{
+margin-bottom:12px;
+color:#111827;
+}
+
+.product-details-box ul{
+padding-left:20px;
+}
+
+.product-details-box li{
+margin-bottom:10px;
+font-size:15px;
+}
+/* from zoom out */
+.order-btn{
+width:100%;
+padding:16px;
+border:none;
+border-radius:12px;
+background:#25D366;
+color:#fff;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+animation:pulse 1.5s infinite;
+}
+
+.order-btn:hover{
+transform:scale(1.05);
+}
+/*  customer revies */
+.rating-box{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+    padding:18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    margin:15px 0;
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
+}
+
+.rating-left{
+    text-align:center;
+}
+
+.stars{
+    font-size:24px;
+    margin-bottom:5px;
+}
+
+.rating-left h3{
+    margin:0;
+    color:#222;
+    font-size:22px;
+}
+
+.divider{
+    width:1px;
+    height:60px;
+    background:#ddd;
+}
+
+.rating-right{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.customers{
+    display:flex;
+}
+
+.customers img{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:3px solid #fff;
+    margin-left:-10px;
+}
+
+.customers img:first-child{
+    margin-left:0;
+}
+
+.rating-right span{
+    font-size:16px;
+    color:#444;
+}
+/* kena kata from */
+.safe-box{
+    background: linear-gradient(135deg, #f0fdf4, #e6f9ee);
+    border: 1px solid #bbf7d0;
+    border-radius: 20px;
+    padding: 22px 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin: 18px 0;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+}
+
+.safe-box:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.10);
+}
+
+.safe-icon{
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+    background: #dcfce7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+    box-shadow: inset 0 0 0 2px #86efac;
+}
+
+.safe-content{
+    flex: 1;
+}
+
+.safe-content h3{
+    margin: 0;
+    color: #15803d;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+}
+
+.safe-content p{
+    margin: 6px 0 0;
+    color: #4b5563;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.safe-check{
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+
+    box-shadow: 0 6px 15px rgba(34,197,94,0.35);
+}
+
+/*  from fast cash secure */
+.trust-box{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.trust-item{
+    background: linear-gradient(135deg, #f8fafc, #eef2ff);
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    transition: 0.3s ease;
+}
+
+.trust-item:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.10);
+}
+
+.trust-icon{
+    width: 55px;
+    height: 55px;
+    border-radius: 14px;
+    background: #e0e7ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+
+    box-shadow: inset 0 0 0 2px #c7d2fe;
+}
+
+.trust-text h3{
+    margin: 0;
+    font-size: 18px;
+    font-weight: 800;
+    color: #1f2937;
+}
+
+.trust-text p{
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.4;
+}
+
+/* nil choto kore colour */
+.secure-badge{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 999px;
+
+    font-size: 14px;
+    font-weight: 700;
+    color: #1d4ed8;
+
+    box-shadow: 0 6px 16px rgba(29,78,216,0.12);
+}
+
+.secure-badge .check{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #1d4ed8;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/*  from vitor time */
+.offer-time{
+    margin-top:15px;
+    padding:12px;
+    background:#fff3cd;
+    color:#d35400;
+    border:2px dashed #ff9800;
+    border-radius:10px;
+    text-align:center;
+    font-weight:700;
+    font-size:18px;
+}
+
+#timer{
+    display:block;
+    font-size:66px;
+    margin-top:5px;
+    color:#e53935;
+}
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+box-shadow:0 0 0 0 rgba(37,211,102,0.7);
+}
+
+70%{
+transform:scale(1.08);
+box-shadow:0 0 0 15px rgba(37,211,102,0);
+}
+
+100%{
+transform:scale(1);
+box-shadow:0 0 0 0 rgba(37,211,102,0);
+}
+
+}
 
 
 
@@ -637,7 +1031,7 @@ white-space:nowrap;
 </div>
 
 <div class="menu">
-<a href="#">Home</a>
+<a href="index.html">Home</a>
 <a href="#products">Products</a>
 <a href="#footer">Contact</a>
 </div>
@@ -674,9 +1068,101 @@ white-space:nowrap;
 <img id="img2" onclick="changeImage(this.src)">
 <img id="img3" onclick="changeImage(this.src)">
 </div>
+<!-- Fast Delivery Banner -->
+
+<div class="full fast-delivery">
+    <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png">
+    <div>
+        <h3>🚚 Fast Delivery 1-3 Days</h3>
+        <p>সারা বাংলাদেশে দ্রুত ডেলিভারি। অর্ডার কনফার্মের পর দ্রুত পাঠানো হবে।</p>
+    </div>
+</div>
+<div class="safe-box">
+    <div class="safe-icon">🛡️</div>
+
+    <div class="safe-content">
+        <h3>নিরাপদ কেনাকাটা</h3>
+        <p>আপনার তথ্য ১০০% নিরাপদ ও গোপন রাখা হবে</p>
+    </div>
+
+    <div class="safe-check">✓</div>
+</div>
+<div class="trust-box">
+
+    <div class="trust-item">
+        <div class="trust-icon">🔒</div>
+        <div class="trust-text">
+            <h3>Secure Order</h3>
+            <p>100% safe & encrypted checkout system</p>
+        </div>
+    </div>
+      <div class="trust-item">
+        <div class="trust-icon">🔒</div>
+        <div class="trust-text">
+            <h3>Secure Order</h3>
+            <p>100% safe & encrypted checkout system</p>
+        </div>
+    </div>
+
+    <div class="trust-item">
+        <div class="trust-icon">🚚</div>
+        <div class="trust-text">
+            <h3>Fast Delivery</h3>
+            <p>Get your product within 2-5 days</p>
+        </div>
+    </div>
+
+    <div class="trust-item">
+        <div class="trust-icon">💵</div>
+        <div class="trust-text">
+            <h3>Cash on Delivery</h3>
+            <p>Pay when you receive your order</p>
+        </div>
+    </div>
+
+</div>
+<!--  customers revies -->
+  <div class="rating-box">
+    <div class="rating-left">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <h3>4.9/5 Rating</h3>
+    </div>
+    
+    <div class="divider"></div>
+    
+
+    <div class="rating-right">
+        <div class="customers">
+            <img src="https://i.pravatar.cc/40?img=1">
+            <img src="https://i.pravatar.cc/40?img=2">
+            <img src="https://i.pravatar.cc/40?img=3">
+        </div>
+
+        <span><b>1,250+</b> Happy Customers</span>
+    </div>
+</div>
+
+<!-- Product Details -->
+
+<div class="full product-details-box">
+    <h3>📦 Product Details</h3>
+
+    <ul>
+        <li>✅ Premium Quality Product</li>
+        <li>✅ Comfortable & Stylish Design</li>
+        <li>✅ Long Lasting Material</li>
+        <li>✅ Cash On Delivery Available</li>
+        <li>✅ All Bangladesh Delivery</li>
+    </ul>
+</div>
+
 </div>
 
 <div class="product-details">
+  <div class="secure-badge">
+    <span class="check">✔</span>
+    <span class="text">100% Secure Order</span>
+</div>
 <h2 id="productName"></h2>
 
 <div class="price" id="productPrice"></div>
@@ -692,8 +1178,35 @@ Best collection for modern fashion lovers.
 <div class="feature-box">🔥 Trending Collection</div>
 <div class="feature-box">📦 Cash On Delivery</div>
 </div>
-<!-- ===== ORDER FORM ===== -->
 
+<!-- ===== time FORM ===== -->
+<div class="offer-time">
+    ⏰ Offer Ends In:
+    <span id="timer">04:15:30</span>
+</div>
+<!-- ===== CASH ON DELIVERY ===== -->
+
+<div class="full cod-box">
+
+<div class="cod-icon">
+🚚
+</div>
+
+<div class="cod-text">
+
+<h3>Cash On Delivery Available</h3>
+
+<p>
+পণ্য হাতে পেয়ে তারপর টাকা পরিশোধ করুন
+</p>
+
+</div>
+
+<div class="cod-badge">
+100% Safe
+</div>
+
+</div>
 <!-- ===== ORDER FORM ===== -->
 
 <form class="order-form" onsubmit="sendWhatsApp(event)">
@@ -702,700 +1215,41 @@ Best collection for modern fashion lovers.
 
 <input type="tel" id="phone" placeholder="ফোন নাম্বার" required>
 
-<input type="email" id="email" placeholder="Gmail Address">
+<input type="gmail" id="gmail" placeholder="Gmail Address">
 
-<select id="division">
-  <option>বিভাগ নির্বাচন করুন</option>
-  <option>Dhaka</option>
-  <option>Chattogram</option>
-  <option>Khulna</option>
-  <option>Rajshahi</option>
+<select id="division" onchange="loadDistricts()">
+  <option value="">বিভাগ নির্বাচন করুন</option>
 </select>
 
-<!-- District Dropdown -->
-<select id="district">
-  <option>জেলা নির্বাচন করুন</option>
-<option>Bagerhat</option>
-<option>Bandarban</option>
-<option>Barguna</option>
-<option>Barishal</option>
-<option>Bhola</option>
-<option>Bogra</option>
-<option>Brahmanbaria</option>
-<option>Chandpur</option>
-<option>Chapainawabganj</option>
-<option>Chattogram</option>
-<option>Chuadanga</option>
-<option>Cox's Bazar</option>
-<option>Cumilla</option>
-<option>Dhaka</option>
-<option>Dinajpur</option>
-<option>Faridpur</option>
-<option>Feni</option>
-<option>Gaibandha</option>
-<option>Gazipur</option>
-<option>Gopalganj</option>
-<option>Habiganj</option>
-<option>Jamalpur</option>
-<option>Jashore</option>
-<option>Jhalokathi</option>
-<option>Jhenaidah</option>
-<option>Joypurhat</option>
-<option>Khagrachhari</option>
-<option>Khulna</option>
-<option>Kishoreganj</option>
-<option>Kurigram</option>
-<option>Kushtia</option>
-<option>Lakshmipur</option>
-<option>Lalmonirhat</option>
-<option>Madaripur</option>
-<option>Magura</option>
-<option>Manikganj</option>
-<option>Meherpur</option>
-<option>Moulvibazar</option>
-<option>Munshiganj</option>
-<option>Mymensingh</option>
-<option>Naogaon</option>
-<option>Narail</option>
-<option>Narayanganj</option>
-<option>Narsingdi</option>
-<option>Natore</option>
-<option>Netrokona</option>
-<option>Nilphamari</option>
-<option>Noakhali</option>
-<option>Pabna</option>
-<option>Panchagarh</option>
-<option>Patuakhali</option>
-<option>Pirojpur</option>
-<option>Rajbari</option>
-<option>Rajshahi</option>
-<option>Rangamati</option>
-<option>Rangpur</option>
-<option>Satkhira</option>
-<option>Shariatpur</option>
-<option>Sherpur</option>
-<option>Sirajganj</option>
-<option>Sunamganj</option>
-<option>Sylhet</option>
-<option>Tangail</option>
-<option>Thakurgaon</option>
+<select id="district" onchange="loadUpazilas()">
+  <option value="">জেলা নির্বাচন করুন</option>
 </select>
 
-<!-- Thana Dropdown -->
-<select id="thana">
-  <option>থানা নির্বাচন করুন</option>
-
-<option>Select Thana / Upazila</option>
-
-<!-- Dhaka District -->
-<option>Dhamrai</option>
-<option>Dohar</option>
-<option>Keraniganj</option>
-<option>Nawabganj</option>
-<option>Savar</option>
-
-<!-- Gazipur -->
-<option>Gazipur Sadar</option>
-<option>Kaliakair</option>
-<option>Kaliganj</option>
-<option>Kapasia</option>
-<option>Sreepur</option>
-
-<!-- Narayanganj -->
-<option>Narayanganj Sadar</option>
-<option>Araihazar</option>
-<option>Bandar</option>
-<option>Rupganj</option>
-<option>Sonargaon</option>
-
-<!-- Munshiganj -->
-<option>Munshiganj Sadar</option>
-<option>Gazaria</option>
-<option>Lohajang</option>
-<option>Sirajdikhan</option>
-<option>Sreenagar</option>
-<option>Tongibari</option>
-
-<!-- Kishoreganj -->
-<option>Kishoreganj Sadar</option>
-<option>Austagram</option>
-<option>Bajitpur</option>
-<option>Bhairab</option>
-<option>Hossainpur</option>
-<option>Itna</option>
-<option>Karimganj</option>
-<option>Katiadi</option>
-<option>Kuliarchar</option>
-<option>Mithamain</option>
-<option>Nikli</option>
-<option>Pakundia</option>
-<option>Tarail</option>
-
-<!-- Faridpur -->
-<option>Faridpur Sadar</option>
-<option>Alfadanga</option>
-<option>Bhanga</option>
-<option>Boalmari</option>
-<option>Charbhadrasan</option>
-<option>Madhukhali</option>
-<option>Nagarkanda</option>
-<option>Sadarpur</option>
-<option>Saltha</option>
-
-<!-- Gopalganj -->
-<option>Gopalganj Sadar</option>
-<option>Kashiani</option>
-<option>Kotalipara</option>
-<option>Muksudpur</option>
-<option>Tungipara</option>
-
-<!-- Madaripur -->
-<option>Madaripur Sadar</option>
-<option>Kalkini</option>
-<option>Rajoir</option>
-<option>Shibchar</option>
-
-<!-- Rajbari -->
-<option>Rajbari Sadar</option>
-<option>Baliakandi</option>
-<option>Goalanda</option>
-<option>Kalukhali</option>
-<option>Pangsha</option>
-
-<!-- Shariatpur -->
-<option>Shariatpur Sadar</option>
-<option>Bhedarganj</option>
-<option>Damudya</option>
-<option>Gosairhat</option>
-<option>Naria</option>
-<option>Zajira</option>
-
-<!-- Tangail -->
-<option>Tangail Sadar</option>
-<option>Basail</option>
-<option>Bhuapur</option>
-<option>Delduar</option>
-<option>Dhanbari</option>
-<option>Ghatail</option>
-<option>Gopalpur</option>
-<option>Kalihati</option>
-<option>Madhupur</option>
-<option>Mirzapur</option>
-<option>Nagarpur</option>
-<option>Sakhipur</option>
-
-<!-- Manikganj -->
-<option>Manikganj Sadar</option>
-<option>Daulatpur</option>
-<option>Ghior</option>
-<option>Harirampur</option>
-<option>Saturia</option>
-<option>Shibalaya</option>
-<option>Singair</option>
-
-<!-- Narsingdi -->
-<option>Narsingdi Sadar</option>
-<option>Belabo</option>
-<option>Monohardi</option>
-<option>Palash</option>
-<option>Raipura</option>
-<option>Shibpur</option>
-<!-- Chattogram District -->
-<option>Chattogram Sadar</option>
-<option>Anwara</option>
-<option>Banshkhali</option>
-<option>Boalkhali</option>
-<option>Chandanaish</option>
-<option>Fatikchhari</option>
-<option>Hathazari</option>
-<option>Lohagara</option>
-<option>Mirsharai</option>
-<option>Patiya</option>
-<option>Rangunia</option>
-<option>Raozan</option>
-<option>Sandwip</option>
-<option>Satkania</option>
-<option>Sitakunda</option>
-
-<!-- Cox's Bazar -->
-<option>Cox's Bazar Sadar</option>
-<option>Chakaria</option>
-<option>Kutubdia</option>
-<option>Maheshkhali</option>
-<option>Pekua</option>
-<option>Ramu</option>
-<option>Teknaf</option>
-<option>Ukhia</option>
-
-<!-- Cumilla -->
-<option>Cumilla Sadar</option>
-<option>Barura</option>
-<option>Brahmanpara</option>
-<option>Burichang</option>
-<option>Chandina</option>
-<option>Chauddagram</option>
-<option>Daudkandi</option>
-<option>Debidwar</option>
-<option>Homna</option>
-<option>Laksam</option>
-<option>Meghna</option>
-<option>Monohorganj</option>
-<option>Muradnagar</option>
-<option>Nangalkot</option>
-<option>Titas</option>
-
-<!-- Feni -->
-<option>Feni Sadar</option>
-<option>Chhagalnaiya</option>
-<option>Daganbhuiyan</option>
-<option>Parshuram</option>
-<option>Sonagazi</option>
-
-<!-- Brahmanbaria -->
-<option>Brahmanbaria Sadar</option>
-<option>Akhaura</option>
-<option>Ashuganj</option>
-<option>Bancharampur</option>
-<option>Bijoynagar</option>
-<option>Kasba</option>
-<option>Nabinagar</option>
-<option>Nasirnagar</option>
-<option>Sarail</option>
-
-<!-- Noakhali -->
-<option>Noakhali Sadar</option>
-<option>Begumganj</option>
-<option>Chatkhil</option>
-<option>Companiganj</option>
-<option>Hatiya</option>
-<option>Kabirhat</option>
-<option>Senbagh</option>
-<option>Sonaimuri</option>
-<option>Subarnachar</option>
-
-<!-- Lakshmipur -->
-<option>Lakshmipur Sadar</option>
-<option>Raipur</option>
-<option>Ramganj</option>
-<option>Ramgati</option>
-<option>Kamalnagar</option>
-
-<!-- Khagrachhari -->
-<option>Khagrachhari Sadar</option>
-<option>Dighinala</option>
-<option>Lakshmichhari</option>
-<option>Mahalchhari</option>
-<option>Manikchhari</option>
-<option>Matiranga</option>
-<option>Panchhari</option>
-<option>Ramgarh</option>
-
-<!-- Rangamati -->
-<option>Rangamati Sadar</option>
-<option>Bagaichhari</option>
-<option>Barkal</option>
-<option>Belaichhari</option>
-<option>Juraichhari</option>
-<option>Kaptai</option>
-<option>Kaukhali</option>
-<option>Langadu</option>
-<option>Naniarchar</option>
-<option>Rajasthali</option>
-
-<!-- Bandarban -->
-<option>Bandarban Sadar</option>
-<option>Alikadam</option>
-<option>Lama</option>
-<option>Naikhongchhari</option>
-<option>Rowangchhari</option>
-<option>Ruma</option>
-<option>Thanchi</option>
-<!-- Rajshahi -->
-<option>Rajshahi Sadar</option>
-<option>Bagha</option>
-<option>Bagmara</option>
-<option>Charghat</option>
-<option>Durgapur</option>
-<option>Godagari</option>
-<option>Mohanpur</option>
-<option>Paba</option>
-<option>Puthia</option>
-<option>Tanore</option>
-
-<!-- Bogura -->
-<option>Bogura Sadar</option>
-<option>Adamdighi</option>
-<option>Dhunat</option>
-<option>Dhupchanchia</option>
-<option>Gabtali</option>
-<option>Kahaloo</option>
-<option>Nandigram</option>
-<option>Sariakandi</option>
-<option>Shajahanpur</option>
-<option>Sherpur</option>
-<option>Shibganj</option>
-<option>Sonatola</option>
-
-<!-- Joypurhat -->
-<option>Joypurhat Sadar</option>
-<option>Akkelpur</option>
-<option>Kalai</option>
-<option>Khetlal</option>
-<option>Panchbibi</option>
-
-<!-- Naogaon -->
-<option>Naogaon Sadar</option>
-<option>Atrai</option>
-<option>Badalgachhi</option>
-<option>Dhamoirhat</option>
-<option>Manda</option>
-<option>Mahadebpur</option>
-<option>Niamatpur</option>
-<option>Patnitala</option>
-<option>Porsha</option>
-<option>Raninagar</option>
-<option>Sapahar</option>
-
-<!-- Natore -->
-<option>Natore Sadar</option>
-<option>Bagatipara</option>
-<option>Baraigram</option>
-<option>Gurudaspur</option>
-<option>Lalpur</option>
-<option>Singra</option>
-
-<!-- Chapainawabganj -->
-<option>Chapainawabganj Sadar</option>
-<option>Bholahat</option>
-<option>Gomastapur</option>
-<option>Nachole</option>
-<option>Shibganj</option>
-
-<!-- Pabna -->
-<option>Pabna Sadar</option>
-<option>Atgharia</option>
-<option>Bera</option>
-<option>Bhangura</option>
-<option>Chatmohar</option>
-<option>Faridpur</option>
-<option>Ishwardi</option>
-<option>Santhia</option>
-<option>Sujanagar</option>
-
-<!-- Sirajganj -->
-<option>Sirajganj Sadar</option>
-<option>Belkuchi</option>
-<option>Chauhali</option>
-<option>Kazipur</option>
-<option>Kamarkhanda</option>
-<option>Raiganj</option>
-<option>Shahjadpur</option>
-<option>Tarash</option>
-<option>Ullapara</option>
-<!-- Khulna -->
-<option>Khulna Sadar</option>
-<option>Batiaghata</option>
-<option>Dacope</option>
-<option>Dumuria</option>
-<option>Dighalia</option>
-<option>Koyra</option>
-<option>Paikgachha</option>
-<option>Phultala</option>
-<option>Rupsa</option>
-<option>Terokhada</option>
-
-<!-- Bagerhat -->
-<option>Bagerhat Sadar</option>
-<option>Chitalmari</option>
-<option>Fakirhat</option>
-<option>Kachua</option>
-<option>Mollahat</option>
-<option>Mongla</option>
-<option>Morrelganj</option>
-<option>Rampal</option>
-<option>Sarankhola</option>
-
-<!-- Satkhira -->
-<option>Satkhira Sadar</option>
-<option>Assasuni</option>
-<option>Debhata</option>
-<option>Kalaroa</option>
-<option>Kaliganj</option>
-<option>Shyamnagar</option>
-<option>Tala</option>
-
-<!-- Jashore -->
-<option>Jashore Sadar</option>
-<option>Abhaynagar</option>
-<option>Bagherpara</option>
-<option>Chaugachha</option>
-<option>Jhikargachha</option>
-<option>Keshabpur</option>
-<option>Manirampur</option>
-<option>Sharsha</option>
-
-<!-- Jhenaidah -->
-<option>Jhenaidah Sadar</option>
-<option>Harinakunda</option>
-<option>Kaliganj</option>
-<option>Kotchandpur</option>
-<option>Maheshpur</option>
-<option>Shailkupa</option>
-
-<!-- Magura -->
-<option>Magura Sadar</option>
-<option>Mohammadpur</option>
-<option>Shalikha</option>
-<option>Sreepur</option>
-
-<!-- Narail -->
-<option>Narail Sadar</option>
-<option>Lohagara</option>
-<option>Kalia</option>
-
-<!-- Kushtia -->
-<option>Kushtia Sadar</option>
-<option>Bheramara</option>
-<option>Daulatpur</option>
-<option>Mirpur</option>
-<option>Khoksa</option>
-<option>Kumarkhali</option>
-
-<!-- Chuadanga -->
-<option>Chuadanga Sadar</option>
-<option>Alamdanga</option>
-<option>Damurhuda</option>
-<option>Jibannagar</option>
-
-<!-- Meherpur -->
-<option>Meherpur Sadar</option>
-<option>Mujibnagar</option>
-<option>Gangni</option>
-<!-- Barishal -->
-<option>Barishal Sadar</option>
-<option>Agailjhara</option>
-<option>Babuganj</option>
-<option>Bakerganj</option>
-<option>Banaripara</option>
-<option>Gaurnadi</option>
-<option>Hizla</option>
-<option>Mehendiganj</option>
-<option>Muladi</option>
-<option>Wazirpur</option>
-
-<!-- Bhola -->
-<option>Bhola Sadar</option>
-<option>Burhanuddin</option>
-<option>Char Fasson</option>
-<option>Daulatkhan</option>
-<option>Lalmohan</option>
-<option>Manpura</option>
-<option>Tazumuddin</option>
-
-<!-- Patuakhali -->
-<option>Patuakhali Sadar</option>
-<option>Bauphal</option>
-<option>Dashmina</option>
-<option>Galachipa</option>
-<option>Kalapara</option>
-<option>Mirzaganj</option>
-<option>Rangabali</option>
-
-<!-- Pirojpur -->
-<option>Pirojpur Sadar</option>
-<option>Bhandaria</option>
-<option>Indurkani</option>
-<option>Mathbaria</option>
-<option>Nesarabad (Swarupkathi)</option>
-<option>Kawkhali</option>
-<option>Zianagar</option>
-
-<!-- Jhalokathi -->
-<option>Jhalokathi Sadar</option>
-<option>Kanthalia</option>
-<option>Nalchity</option>
-<option>Rajapur</option>
-
-<!-- Barguna -->
-<option>Barguna Sadar</option>
-<option>Amtali</option>
-<option>Bamna</option>
-<option>Betagi</option>
-<option>Patharghata</option>
-<option>Taltali</option>
-<!-- Sylhet -->
-<option>Sylhet Sadar</option>
-<option>Beanibazar</option>
-<option>Biswanath</option>
-<option>Companiganj</option>
-<option>Fenchuganj</option>
-<option>Golapganj</option>
-<option>Gowainghat</option>
-<option>Jaintiapur</option>
-<option>Kanaighat</option>
-<option>Zakiganj</option>
-<option>South Surma</option>
-<option>Balaganj</option>
-<option>Osmani Nagar</option>
-
-<!-- Moulvibazar -->
-<option>Moulvibazar Sadar</option>
-<option>Barlekha</option>
-<option>Juri</option>
-<option>Kamalganj</option>
-<option>Kulaura</option>
-<option>Rajnagar</option>
-<option>Sreemangal</option>
-
-<!-- Habiganj -->
-<option>Habiganj Sadar</option>
-<option>Ajmiriganj</option>
-<option>Baniachang</option>
-<option>Bahubal</option>
-<option>Chunarughat</option>
-<option>Lakhai</option>
-<option>Madhabpur</option>
-<option>Nabiganj</option>
-<option>Shayestaganj</option>
-
-<!-- Sunamganj -->
-<option>Sunamganj Sadar</option>
-<option>Biswamvarpur</option>
-<option>Chhatak</option>
-<option>Derai</option>
-<option>Dharampasha</option>
-<option>Dowarabazar</option>
-<option>Jagannathpur</option>
-<option>Jamalganj</option>
-<option>Sullah</option>
-<option>Tahirpur</option>
-<option>South Sunamganj</option>
-<!-- Rangpur -->
-<option>Rangpur Sadar</option>
-<option>Badarganj</option>
-<option>Gangachara</option>
-<option>Kaunia</option>
-<option>Mithapukur</option>
-<option>Pirgachha</option>
-<option>Pirganj</option>
-<option>Taraganj</option>
-
-<!-- Dinajpur -->
-<option>Dinajpur Sadar</option>
-<option>Birampur</option>
-<option>Birganj</option>
-<option>Biral</option>
-<option>Bochaganj</option>
-<option>Chirirbandar</option>
-<option>Fulbari</option>
-<option>Ghoraghat</option>
-<option>Hakimpur</option>
-<option>Kaharole</option>
-<option>Khansama</option>
-<option>Nawabganj</option>
-<option>Parbatipur</option>
-
-<!-- Gaibandha -->
-<option>Gaibandha Sadar</option>
-<option>Fulchhari</option>
-<option>Gobindaganj</option>
-<option>Palashbari</option>
-<option>Sadullapur</option>
-<option>Saghata</option>
-<option>Sundarganj</option>
-
-<!-- Kurigram -->
-<option>Kurigram Sadar</option>
-<option>Bhurungamari</option>
-<option>Char Rajibpur</option>
-<option>Chilmari</option>
-<option>Phulbari</option>
-<option>Nageshwari</option>
-<option>Rajarhat</option>
-<option>Raomari</option>
-<option>Ulipur</option>
-
-<!-- Lalmonirhat -->
-<option>Lalmonirhat Sadar</option>
-<option>Aditmari</option>
-<option>Hatibandha</option>
-<option>Kaliganj</option>
-<option>Patgram</option>
-
-<!-- Nilphamari -->
-<option>Nilphamari Sadar</option>
-<option>Dimla</option>
-<option>Domar</option>
-<option>Jaldhaka</option>
-<option>Kishoreganj</option>
-<option>Syedpur</option>
-
-<!-- Panchagarh -->
-<option>Panchagarh Sadar</option>
-<option>Atwari</option>
-<option>Boda</option>
-<option>Debiganj</option>
-<option>Tetulia</option>
-
-<!-- Thakurgaon -->
-<option>Thakurgaon Sadar</option>
-<option>Baliadangi</option>
-<option>Haripur</option>
-<option>Pirganj</option>
-<option>Ranisankail</option>
-<!-- Mymensingh -->
-<option>Mymensingh Sadar</option>
-<option>Bhaluka</option>
-<option>Fulbaria</option>
-<option>Gaffargaon</option>
-<option>Gauripur</option>
-<option>Haluaghat</option>
-<option>Ishwarganj</option>
-<option>Muktagachha</option>
-<option>Nandail</option>
-<option>Phulpur</option>
-<option>Trishal</option>
-
-<!-- Jamalpur -->
-<option>Jamalpur Sadar</option>
-<option>Dewanganj</option>
-<option>Baksiganj</option>
-<option>Islampur</option>
-<option>Madarganj</option>
-<option>Melandaha</option>
-<option>Sarishabari</option>
-
-<!-- Sherpur -->
-<option>Sherpur Sadar</option>
-<option>Nakla</option>
-<option>Nalitabari</option>
-<option>Sreebardi</option>
-
-<!-- Netrokona -->
-<option>Netrokona Sadar</option>
-<option>Atpara</option>
-<option>Barhatta</option>
-<option>Durgapur</option>
-<option>Khaliajuri</option>
-<option>Kalmakanda</option>
-<option>Madan</option>
-<option>Mohanganj</option>
-<option>Purbadhala</option>
-<option>Kendua</option>
+<select id="upazila">
+  <option value="">উপজেলা নির্বাচন করুন</option>
 </select>
+
+<input type="text" id="product" placeholder="প্রোডাক্টের নাম" readonly>
+
+<input type="text" id="price" placeholder="প্রোডাক্টের দাম" readonly>
+
+<input type="text" id="total" placeholder="মোট টাকা" readonly>
+
 <select id="size">
-<option>Select Size</option>
-<option>S</option>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
+  <option value="">সাইজ নির্বাচন করুন</option>
+  <option>Small</option>
+  <option>Medium</option>
+  <option>Large</option>
+  <option>XL</option>
+  <option>XXL</option>
 </select>
 
 <select id="color">
-<option>Select Color</option>
-<option>Black</option>
-<option>White</option>
-<option>Blue</option>
+  <option value="">কালার নির্বাচন করুন</option>
+  <option>Red</option>
+  <option>Blue</option>
+  <option>Black</option>
+  <option>White</option>
 </select>
 
 <textarea id="address" class="full" placeholder="গ্রাম / সম্পূর্ণ ঠিকানা"></textarea>
@@ -1462,33 +1316,9 @@ HOT
 
 </div>
 
-<!-- ===== CASH ON DELIVERY ===== -->
-
-<div class="full cod-box">
-
-<div class="cod-icon">
-🚚
-</div>
-
-<div class="cod-text">
-
-<h3>Cash On Delivery Available</h3>
-
-<p>
-পণ্য হাতে পেয়ে তারপর টাকা পরিশোধ করুন
-</p>
-
-</div>
-
-<div class="cod-badge">
-100% Safe
-</div>
-
-</div>
 <button class="order-btn" onclick="sendOrder()">
-  💬 WhatsApp এ অর্ডার করুন
+ Confirm Order on WhatsApp
 </button>
-
 
 </form>
 
@@ -1546,8 +1376,8 @@ const products = [
 
 {
 name:'Fashion Sneakers',
-price:1999,
-old:2499,
+price:950,
+old:1500,
 badge:'New',
 img1:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200',
 img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
@@ -1555,11 +1385,55 @@ img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
 description:'Trendy sneakers with premium comfort and quality.'
 },
 {
+name:'nike shoes',
+price:1999,
+old:2499,
+badge:'New',
+img1:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
+description:'Trendy sneakers with premium comfort and quality.'
+},
+
+{
 name:'Fashion Sneakers',
 price:1999,
 old:2499,
 badge:'New',
-img1:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200',
+img1:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
+img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
+description:'Trendy sneakers with premium comfort and quality.'
+},
+
+{
+name:'Fashion Sneakers',
+price:1999,
+old:2499,
+badge:'New',
+img1:'https://www.campusshoes.com/cdn/shop/files/VESPER_VESPER_ICE.BLU-NAVY_07.webp?v=1758174881',
+img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
+description:'Trendy sneakers with premium comfort and quality.'
+},
+
+{
+name:'Fashion Sneakers',
+price:1999,
+old:2499,
+badge:'New',
+img1:'https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/bc8187e6886063076b31ddcc60bbf13e.jpg',
+img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
+img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
+description:'Trendy sneakers with premium comfort and quality.'
+},
+
+{
+name:'Fashion Sneakers',
+price:1999,
+old:2499,
+badge:'New',
+img1:'https://aiksow.pk/wp-content/uploads/2023/10/Fashion-Running-Shoes-Men-Flame-Printed-Sneakers-Knit-Athletic-Sports-Blade-Cushioning-Jogging-Trainers-Lightweight-2.jpg',
 img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
 img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
 description:'Trendy sneakers with premium comfort and quality.'
@@ -1581,51 +1455,7 @@ name:'Fashion Sneakers',
 price:1999,
 old:2499,
 badge:'New',
-img1:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200',
-img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
-img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
-description:'Trendy sneakers with premium comfort and quality.'
-},
-
-{
-name:'Fashion Sneakers',
-price:1999,
-old:2499,
-badge:'New',
-img1:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200',
-img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
-img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
-description:'Trendy sneakers with premium comfort and quality.'
-},
-
-{
-name:'Fashion Sneakers',
-price:1999,
-old:2499,
-badge:'New',
-img1:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200',
-img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
-img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
-description:'Trendy sneakers with premium comfort and quality.'
-},
-
-{
-name:'Fashion Sneakers',
-price:1999,
-old:2499,
-badge:'New',
-img1:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200',
-img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
-img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
-description:'Trendy sneakers with premium comfort and quality.'
-},
-
-{
-name:'Fashion Sneakers',
-price:1999,
-old:2499,
-badge:'New',
-img1:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200',
+img1:'https://www.orthofeet.com/cdn/shop/files/OTF_HP_WebBanner_Desktop_MultiStoryHero_732x804px_CoreHealthStory_Sneakers_0626.jpg?v=1779140342&width=800',
 img2:'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200',
 img3:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200',
 description:'Trendy sneakers with premium comfort and quality.'
@@ -1831,9 +1661,18 @@ document.getElementById('img3').src=p.img3;
 
 document.getElementById('productName').innerText=p.name;
 
-document.getElementById('productPrice').innerHTML=
-'৳'+p.price+
-' <span class="old-price">৳'+p.old+'</span>';
+// শুধু বর্তমান দাম দেখাবে
+document.getElementById('productPrice').innerHTML =
+'৳' + p.price;
+
+// form এ auto বসবে
+document.getElementById('product').value = p.name;
+document.getElementById('price').value = p.price;
+
+// price save
+window.currentPrice = p.price;
+
+updateTotal();
 
 }
 
@@ -1927,6 +1766,248 @@ encodeURIComponent(message);
 window.open(url,'_blank');
 
 }
+//  timer niye from kaj kora hoychre//
+
+let time = 4 * 60 * 60; // 2 hours
+
+function updateTimer() {
+    let h = Math.floor(time / 3600);
+    let m = Math.floor((time % 3600) / 60);
+    let s = time % 60;
+
+    document.getElementById("timer").innerText =
+        String(h).padStart(2,"0") + ":" +
+        String(m).padStart(2,"0") + ":" +
+        String(s).padStart(2,"0");
+
+    if(time > 0){
+        time--;
+    }else{
+        document.getElementById("timer").innerText = "Offer Expired";
+    }
+}
+
+setInterval(updateTimer,1000);
+updateTimer();
+
+// from auto kaj kore//
+const data = {
+
+   "ঢাকা বিভাগ": {
+    "ঢাকা": ["ধামরাই","দোহার","কেরানীগঞ্জ","নবাবগঞ্জ","সাভার","তেজগাঁও","গুলশান","ধানমন্ডি","মিরপুর","মোহাম্মদপুর","উত্তরা"],
+    "গাজীপুর": ["গাজীপুর সদর","কালিয়াকৈর","কালীগঞ্জ","কাপাসিয়া","শ্রীপুর"],
+    "নারায়ণগঞ্জ": ["নারায়ণগঞ্জ সদর","আড়াইহাজার","বন্দর","রূপগঞ্জ","সোনারগাঁও"],
+    "নরসিংদী": ["নরসিংদী সদর","পলাশ","শিবপুর","বেলাবো","মনোহরদী","রায়পুরা"],
+    "মানিকগঞ্জ": ["মানিকগঞ্জ সদর","সিঙ্গাইর","শিবালয়","সাটুরিয়া","হরিরামপুর","ঘিওর","দৌলতপুর"],
+    "মুন্সিগঞ্জ": ["মুন্সিগঞ্জ সদর","সিরাজদিখান","শ্রীনগর","লৌহজং","গজারিয়া","টংগীবাড়ি"],
+    "ফরিদপুর": ["ফরিদপুর সদর","আলফাডাঙ্গা","ভাঙ্গা","বোয়ালমারী","চরভদ্রাসন","মধুখালী","নগরকান্দা","সদরপুর","সালথা"],
+    "গোপালগঞ্জ": ["গোপালগঞ্জ সদর","কোটালীপাড়া","মুকসুদপুর","টুঙ্গিপাড়া","কাশিয়ানী"],
+    "মাদারীপুর": ["মাদারীপুর সদর","শিবচর","রাজৈর","কালকিনি"],
+    "রাজবাড়ী": ["রাজবাড়ী সদর","বালিয়াকান্দি","পাংশা","কালুখালী","গোয়ালন্দ"],
+    "শরীয়তপুর": ["শরীয়তপুর সদর","নড়িয়া","জাজিরা","ভেদরগঞ্জ","ডামুড্যা","গোসাইরহাট"],
+    "টাঙ্গাইল": ["টাঙ্গাইল সদর","গোপালপুর","মধুপুর","মির্জাপুর","নাগরপুর","সখিপুর","দেলদুয়ার","বাসাইল","ভূঞাপুর","কালিহাতী","ঘাটাইল","ধনবাড়ী"],
+    "কিশোরগঞ্জ": ["কিশোরগঞ্জ সদর","বাজিতপুর","ভৈরব","হোসেনপুর","ইটনা","করিমগঞ্জ","কটিয়াদী","কুলিয়ারচর","মিঠামইন","নিকলী","পাকুন্দিয়া","তারাইল"]
+  },
+
+  "চট্টগ্রাম": {
+    "চট্টগ্রাম": ["আনোয়ারা","বাঁশখালী","বোয়ালখালী","ফটিকছড়ি","হাটহাজারী"],
+    "কক্সবাজার": ["চকরিয়া","কক্সবাজার সদর","কুতুবদিয়া","মহেশখালী","টেকনাফ"]
+  },
+  "রাজশাহী বিভাগ": {
+  "রাজশাহী": ["রাজশাহী সদর","বাঘা","বাগমারা","চারঘাট","দুর্গাপুর","গোদাগাড়ী","মোহনপুর","পবা","পুঠিয়া","তানোর"],
+  "নওগাঁ": ["নওগাঁ সদর","আত্রাই","বদলগাছী","ধামইরহাট","মান্দা","মহাদেবপুর","নিয়ামতপুর","পত্নীতলা","পোরশা","রাণীনগর","সাপাহার"],
+  "নাটোর": ["নাটোর সদর","বাগাতিপাড়া","বড়াইগ্রাম","গুরুদাসপুর","লালপুর","সিংড়া"],
+  "চাঁপাইনবাবগঞ্জ": ["চাঁপাইনবাবগঞ্জ সদর","ভোলাহাট","গোমস্তাপুর","নাচোল","শিবগঞ্জ"],
+  "পাবনা": ["পাবনা সদর","আটঘরিয়া","বেড়া","ভাঙ্গুড়া","চাটমোহর","ফরিদপুর","ঈশ্বরদী","সাঁথিয়া","সুজানগর"],
+  "সিরাজগঞ্জ": ["সিরাজগঞ্জ সদর","বেলকুচি","চৌহালী","কামারখন্দ","কাজীপুর","রায়গঞ্জ","শাহজাদপুর","তাড়াশ","উল্লাপাড়া"],
+  "বগুড়া": ["বগুড়া সদর","আদমদীঘি","ধুনট","দুপচাঁচিয়া","গাবতলী","কাহালু","নন্দীগ্রাম","সারিয়াকান্দি","শাজাহানপুর","শেরপুর","শিবগঞ্জ","সোনাতলা"],
+  "জয়পুরহাট": ["জয়পুরহাট সদর","আক্কেলপুর","কালাই","ক্ষেতলাল","পাঁচবিবি"]
+},
+"খুলনা বিভাগ": {
+  "খুলনা": ["খুলনা সদর","বটিয়াঘাটা","দাকোপ","দিঘলিয়া","ডুমুরিয়া","কয়রা","পাইকগাছা","ফুলতলা","রূপসা","তেরখাদা"],
+  "বাগেরহাট": ["বাগেরহাট সদর","চিতলমারী","ফকিরহাট","কচুয়া","মোল্লাহাট","মোংলা","মোড়েলগঞ্জ","রামপাল","শরণখোলা"],
+  "সাতক্ষীরা": ["সাতক্ষীরা সদর","আশাশুনি","দেবহাটা","কলারোয়া","কালীগঞ্জ","শ্যামনগর","তালা"],
+  "যশোর": ["যশোর সদর","অভয়নগর","বাঘারপাড়া","চৌগাছা","ঝিকরগাছা","কেশবপুর","মনিরামপুর","শার্শা"],
+  "নড়াইল": ["নড়াইল সদর","কালিয়া","লোহাগড়া"],
+  "মাগুরা": ["মাগুরা সদর","মহম্মদপুর","শালিখা","শ্রীপুর"],
+  "ঝিনাইদহ": ["ঝিনাইদহ সদর","হরিণাকুন্ডু","কালীগঞ্জ","কোটচাঁদপুর","মহেশপুর","শৈলকুপা"],
+  "কুষ্টিয়া": ["কুষ্টিয়া সদর","ভেড়ামারা","দৌলতপুর","খোকসা","কুমারখালী","মিরপুর"],
+  "চুয়াডাঙ্গা": ["চুয়াডাঙ্গা সদর","আলমডাঙ্গা","দামুড়হুদা","জীবননগর"],
+  "মেহেরপুর": ["মেহেরপুর সদর","গাংনী","মুজিবনগর"]
+},
+"বরিশাল বিভাগ": {
+  "বরিশাল": ["বরিশাল সদর","আগৈলঝাড়া","বাবুগঞ্জ","বাকেরগঞ্জ","বানারীপাড়া","গৌরনদী","হিজলা","মেহেন্দিগঞ্জ","মুলাদী","উজিরপুর"],
+  "ভোলা": ["ভোলা সদর","বোরহানউদ্দিন","চরফ্যাশন","দৌলতখান","লালমোহন","মনপুরা","তজুমদ্দিন"],
+  "ঝালকাঠি": ["ঝালকাঠি সদর","কাঁঠালিয়া","নলছিটি","রাজাপুর"],
+  "পটুয়াখালী": ["পটুয়াখালী সদর","বাউফল","দশমিনা","দুমকি","গলাচিপা","কলাপাড়া","মির্জাগঞ্জ","রাঙ্গাবালী"],
+  "পিরোজপুর": ["পিরোজপুর সদর","ভান্ডারিয়া","কাউখালী","মঠবাড়িয়া","নাজিরপুর","নেছারাবাদ","জিয়ানগর"],
+  "বরগুনা": ["বরগুনা সদর","আমতলী","বামনা","বেতাগী","পাথরঘাটা","তালতলী"]
+},
+"সিলেট বিভাগ": {
+  "সিলেট": ["সিলেট সদর","বালাগঞ্জ","বিয়ানীবাজার","বিশ্বনাথ","কোম্পানীগঞ্জ","দক্ষিণ সুরমা","ফেঞ্চুগঞ্জ","গোলাপগঞ্জ","গোয়াইনঘাট","জৈন্তাপুর","কানাইঘাট","ওসমানীনগর","জকিগঞ্জ"],
+  "মৌলভীবাজার": ["মৌলভীবাজার সদর","বড়লেখা","জুড়ী","কমলগঞ্জ","কুলাউড়া","রাজনগর","শ্রীমঙ্গল"],
+  "হবিগঞ্জ": ["হবিগঞ্জ সদর","আজমিরীগঞ্জ","বানিয়াচং","বাহুবল","চুনারুঘাট","লাখাই","মাধবপুর","নবীগঞ্জ"],
+  "সুনামগঞ্জ": ["সুনামগঞ্জ সদর","বিশ্বম্ভরপুর","ছাতক","দিরাই","ধর্মপাশা","দোয়ারাবাজার","জগন্নাথপুর","জামালগঞ্জ","মধ্যনগর","শাল্লা","তাহিরপুর"]
+},
+"রংপুর বিভাগ": {
+  "রংপুর": ["রংপুর সদর","বদরগঞ্জ","গঙ্গাচড়া","কাউনিয়া","মিঠাপুকুর","পীরগঞ্জ","পীরগাছা","তারাগঞ্জ"],
+  "দিনাজপুর": ["দিনাজপুর সদর","বিরামপুর","বীরগঞ্জ","বোচাগঞ্জ","চিরিরবন্দর","ফুলবাড়ী","ঘোড়াঘাট","হাকিমপুর","কাহারোল","খানসামা","নবাবগঞ্জ","পার্বতীপুর"],
+  "কুড়িগ্রাম": ["কুড়িগ্রাম সদর","ভুরুঙ্গামারী","চর রাজিবপুর","চিলমারী","ফুলবাড়ী","নাগেশ্বরী","রাজারহাট","রৌমারী","উলিপুর"],
+  "গাইবান্ধা": ["গাইবান্ধা সদর","ফুলছড়ি","গোবিন্দগঞ্জ","পলাশবাড়ী","সাদুল্লাপুর","সাঘাটা","সুন্দরগঞ্জ"],
+  "লালমনিরহাট": ["লালমনিরহাট সদর","আদিতমারী","হাতীবান্ধা","কালীগঞ্জ","পাটগ্রাম"],
+  "নীলফামারী": ["নীলফামারী সদর","ডিমলা","ডোমার","জলঢাকা","কিশোরগঞ্জ","সৈয়দপুর"],
+  "পঞ্চগড়": ["পঞ্চগড় সদর","আটোয়ারী","বোদা","দেবীগঞ্জ","তেঁতুলিয়া"],
+  "ঠাকুরগাঁও": ["ঠাকুরগাঁও সদর","বালিয়াডাঙ্গী","হরিপুর","পীরগঞ্জ","রাণীশংকৈল"]
+},
+"ময়মনসিংহ বিভাগ": {
+  "ময়মনসিংহ": ["ময়মনসিংহ সদর","ভালুকা","ত্রিশাল","মুক্তাগাছা","ফুলপুর","গফরগাঁও","গৌরীপুর","ঈশ্বরগঞ্জ","নান্দাইল","ধোবাউড়া","ফুলবাড়িয়া","হালুয়াঘাট","তারাকান্দা"],
+  "জামালপুর": ["জামালপুর সদর","বকশীগঞ্জ","দেওয়ানগঞ্জ","ইসলামপুর","মাদারগঞ্জ","মেলান্দহ","সরিষাবাড়ী"],
+  "শেরপুর": ["শেরপুর সদর","ঝিনাইগাতী","নকলা","নালিতাবাড়ী","শ্রীবরদী"],
+  "নেত্রকোনা": ["নেত্রকোনা সদর","আটপাড়া","বারহাট্টা","দুর্গাপুর","খালিয়াজুরী","কলমাকান্দা","কেন্দুয়া","মদন","মোহনগঞ্জ","পূর্বধলা"]
+}
+
+};
+// delivari from kaj//
+function updateTotal(){
+
+let delivery = document.querySelector(
+'input[name="delivery"]:checked'
+);
+
+let deliveryCharge = 0;
+
+if(delivery.value.includes("60")){
+deliveryCharge = 60;
+}
+else{
+deliveryCharge = 100;
+}
+
+let total = Number(window.currentPrice) + deliveryCharge;
+
+document.getElementById('total').value =
+"৳ " + total;
+
+}
+document.querySelectorAll(
+'input[name="delivery"]'
+).forEach(radio => {
+
+radio.addEventListener('change', updateTotal);
+
+});
+// Load Division
+window.onload = function() {
+  let division = document.getElementById("division");
+  for (let d in data) {
+    division.innerHTML += `<option value="${d}">${d}</option>`;
+  }
+};
+
+// Load District
+function loadDistricts() {
+  let division = document.getElementById("division").value;
+  let district = document.getElementById("district");
+
+  district.innerHTML = `<option value="">জেলা নির্বাচন করুন</option>`;
+  document.getElementById("upazila").innerHTML = `<option value="">উপজেলা নির্বাচন করুন</option>`;
+
+  for (let dist in data[division]) {
+    district.innerHTML += `<option value="${dist}">${dist}</option>`;
+  }
+}
+
+// Load Upazila
+function loadUpazilas() {
+  let division = document.getElementById("division").value;
+  let district = document.getElementById("district").value;
+
+  let upazila = document.getElementById("upazila");
+  upazila.innerHTML = `<option value="">উপজেলা নির্বাচন করুন</option>`;
+
+  data[division][district].forEach(u => {
+    upazila.innerHTML += `<option>${u}</option>`;
+  });
+}
+
+// WhatsApp Order Send
+function sendWhatsApp(){
+
+let product =
+document.getElementById("product").value;
+
+let price =
+document.getElementById("price").value;
+
+let total =
+document.getElementById("total").value;
+
+let size =
+document.getElementById("size").value;
+
+let color =
+document.getElementById("color").value;
+
+let name =
+document.getElementById("name").value;
+
+let phone =
+document.getElementById("phone").value;
+
+let gmail =
+document.getElementById("gmail").value;
+
+let division =
+document.getElementById("division").value;
+
+let district =
+document.getElementById("district").value;
+
+let upazila =
+document.getElementById("upazila").value;
+
+let address =
+document.getElementById("address").value;
+
+let delivery =
+document.querySelector(
+'input[name="delivery"]:checked'
+).value;
+
+let message =
+
+`🛒 নতুন অর্ডার
+
+👤 নাম: ${name}
+📞 ফোন: ${phone}
+📧 Gmail: ${gmail}
+
+📦 প্রোডাক্ট: ${product}
+💰 দাম: ৳${price}
+📏 সাইজ: ${size}
+🎨 কালার: ${color}
+
+🚚 ডেলিভারি: ${delivery}
+💵 মোট টাকা: ${total}
+
+📍 বিভাগ: ${division}
+🏙 জেলা: ${district}
+📌 উপজেলা: ${upazila}
+
+🏠 ঠিকানা:
+${address}
+
+✅ Cash On Delivery`;
+
+let url =
+`https://wa.me/8801605019908?text=${encodeURIComponent(message)}`;
+
+window.open(url,'_blank');
+}
+
+
+
+
 </script>
 
 </body>
