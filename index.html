@@ -92,13 +92,57 @@ Upload Photo
 </div>
 
 <div class="slider">
-  <img id="banner" src="" alt="Banner">
 
-  <a id="orderBtn" class="banner-btn">
-    Order Now
-  </a>
+  <div class="slides">
+
+    <div class="slide">
+      <img src="bannarfile/cover1.jpg" alt="Banner">
+      <div class="banner-content">
+        <h2>🔥 Big Fashion Sale</h2>
+        <p>Up To 50% Discount</p>
+        <a href="#products" class="banner-btn">Shop Now</a>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="bannarfile/cover2.jpg" alt="Banner">
+      <div class="banner-content">
+        <h2>👕 New Collection</h2>
+        <p>Latest Trend Fashion</p>
+        <a href="#products" class="banner-btn">Shop Now</a>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="bannarfile/cover3.jpg" alt="Banner">
+      <div class="banner-content">
+        <h2>⌚ Premium Watches</h2>
+        <p>Best Quality Products</p>
+        <a href="#products" class="banner-btn">Shop Now</a>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="bannarfile/cover1.jpg" alt="Banner">
+      <div class="banner-content">
+        <h2>👟 Trending Shoes</h2>
+        <p>Comfort & Style</p>
+        <a href="#products" class="banner-btn">Shop Now</a>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="bannarfile/cover5.jpg" alt="Banner">
+      <div class="banner-content">
+        <h2>🕶 Accessories Sale</h2>
+        <p>Special Offer Today</p>
+        <a href="#products" class="banner-btn">Shop Now</a>
+      </div>
+    </div>
+
+  </div>
+
 </div>
-
 <div class="offer">
   <div class="offer-content">
 
@@ -614,719 +658,62 @@ HOT
 Order Now
 </div>
 
-<input type="text" id="name" placeholder="Your Name">
+<!-- ===== ORDER FORM ===== -->
 
-<input type="text" id="phone" placeholder="Phone Number">
+<form class="order-form" onsubmit="sendWhatsApp(event)">
 
-<input type="email" id="gmail" placeholder="Gmail Address">
+<input type="text" id="name" placeholder="আপনার নাম" required>
 
-<select id="division">
-<option>Select Division</option>
-<option>Dhaka</option>
-<option>Chattogram</option>
-<option>Rajshahi</option>
-<option>Khulna</option>
-<option>Barishal</option>
-<option>Sylhet</option>
-<option>Rangpur</option>
-<option>Mymensingh</option>
+<input type="tel" id="phone" placeholder="ফোন নাম্বার" required>
+
+<input type="gmail" id="gmail" placeholder="Gmail Address">
+
+<select id="division" onchange="loadDistricts()">
+  <option value="">বিভাগ নির্বাচন করুন</option>
 </select>
 
-<select id="district">
-<option>Select District</option>
-
-<option>Bagerhat</option>
-<option>Bandarban</option>
-<option>Barguna</option>
-<option>Barishal</option>
-<option>Bhola</option>
-<option>Bogra</option>
-<option>Brahmanbaria</option>
-<option>Chandpur</option>
-<option>Chapainawabganj</option>
-<option>Chattogram</option>
-<option>Chuadanga</option>
-<option>Cox's Bazar</option>
-<option>Cumilla</option>
-<option>Dhaka</option>
-<option>Dinajpur</option>
-<option>Faridpur</option>
-<option>Feni</option>
-<option>Gaibandha</option>
-<option>Gazipur</option>
-<option>Gopalganj</option>
-<option>Habiganj</option>
-<option>Jamalpur</option>
-<option>Jashore</option>
-<option>Jhalokathi</option>
-<option>Jhenaidah</option>
-<option>Joypurhat</option>
-<option>Khagrachhari</option>
-<option>Khulna</option>
-<option>Kishoreganj</option>
-<option>Kurigram</option>
-<option>Kushtia</option>
-<option>Lakshmipur</option>
-<option>Lalmonirhat</option>
-<option>Madaripur</option>
-<option>Magura</option>
-<option>Manikganj</option>
-<option>Meherpur</option>
-<option>Moulvibazar</option>
-<option>Munshiganj</option>
-<option>Mymensingh</option>
-<option>Naogaon</option>
-<option>Narail</option>
-<option>Narayanganj</option>
-<option>Narsingdi</option>
-<option>Natore</option>
-<option>Netrokona</option>
-<option>Nilphamari</option>
-<option>Noakhali</option>
-<option>Pabna</option>
-<option>Panchagarh</option>
-<option>Patuakhali</option>
-<option>Pirojpur</option>
-<option>Rajbari</option>
-<option>Rajshahi</option>
-<option>Rangamati</option>
-<option>Rangpur</option>
-<option>Satkhira</option>
-<option>Shariatpur</option>
-<option>Sherpur</option>
-<option>Sirajganj</option>
-<option>Sunamganj</option>
-<option>Sylhet</option>
-<option>Tangail</option>
-<option>Thakurgaon</option>
+<select id="district" onchange="loadUpazilas()">
+  <option value="">জেলা নির্বাচন করুন</option>
 </select>
 
-<select id="thana">
-<option>Select Thana</option>
-<option>Select Thana / Upazila</option>
-
-<!-- Dhaka District -->
-<option>Dhamrai</option>
-<option>Dohar</option>
-<option>Keraniganj</option>
-<option>Nawabganj</option>
-<option>Savar</option>
-
-<!-- Gazipur -->
-<option>Gazipur Sadar</option>
-<option>Kaliakair</option>
-<option>Kaliganj</option>
-<option>Kapasia</option>
-<option>Sreepur</option>
-
-<!-- Narayanganj -->
-<option>Narayanganj Sadar</option>
-<option>Araihazar</option>
-<option>Bandar</option>
-<option>Rupganj</option>
-<option>Sonargaon</option>
-
-<!-- Munshiganj -->
-<option>Munshiganj Sadar</option>
-<option>Gazaria</option>
-<option>Lohajang</option>
-<option>Sirajdikhan</option>
-<option>Sreenagar</option>
-<option>Tongibari</option>
-
-<!-- Kishoreganj -->
-<option>Kishoreganj Sadar</option>
-<option>Austagram</option>
-<option>Bajitpur</option>
-<option>Bhairab</option>
-<option>Hossainpur</option>
-<option>Itna</option>
-<option>Karimganj</option>
-<option>Katiadi</option>
-<option>Kuliarchar</option>
-<option>Mithamain</option>
-<option>Nikli</option>
-<option>Pakundia</option>
-<option>Tarail</option>
-
-<!-- Faridpur -->
-<option>Faridpur Sadar</option>
-<option>Alfadanga</option>
-<option>Bhanga</option>
-<option>Boalmari</option>
-<option>Charbhadrasan</option>
-<option>Madhukhali</option>
-<option>Nagarkanda</option>
-<option>Sadarpur</option>
-<option>Saltha</option>
-
-<!-- Gopalganj -->
-<option>Gopalganj Sadar</option>
-<option>Kashiani</option>
-<option>Kotalipara</option>
-<option>Muksudpur</option>
-<option>Tungipara</option>
-
-<!-- Madaripur -->
-<option>Madaripur Sadar</option>
-<option>Kalkini</option>
-<option>Rajoir</option>
-<option>Shibchar</option>
-
-<!-- Rajbari -->
-<option>Rajbari Sadar</option>
-<option>Baliakandi</option>
-<option>Goalanda</option>
-<option>Kalukhali</option>
-<option>Pangsha</option>
-
-<!-- Shariatpur -->
-<option>Shariatpur Sadar</option>
-<option>Bhedarganj</option>
-<option>Damudya</option>
-<option>Gosairhat</option>
-<option>Naria</option>
-<option>Zajira</option>
-
-<!-- Tangail -->
-<option>Tangail Sadar</option>
-<option>Basail</option>
-<option>Bhuapur</option>
-<option>Delduar</option>
-<option>Dhanbari</option>
-<option>Ghatail</option>
-<option>Gopalpur</option>
-<option>Kalihati</option>
-<option>Madhupur</option>
-<option>Mirzapur</option>
-<option>Nagarpur</option>
-<option>Sakhipur</option>
-
-<!-- Manikganj -->
-<option>Manikganj Sadar</option>
-<option>Daulatpur</option>
-<option>Ghior</option>
-<option>Harirampur</option>
-<option>Saturia</option>
-<option>Shibalaya</option>
-<option>Singair</option>
-
-<!-- Narsingdi -->
-<option>Narsingdi Sadar</option>
-<option>Belabo</option>
-<option>Monohardi</option>
-<option>Palash</option>
-<option>Raipura</option>
-<option>Shibpur</option>
-<!-- Chattogram District -->
-<option>Chattogram Sadar</option>
-<option>Anwara</option>
-<option>Banshkhali</option>
-<option>Boalkhali</option>
-<option>Chandanaish</option>
-<option>Fatikchhari</option>
-<option>Hathazari</option>
-<option>Lohagara</option>
-<option>Mirsharai</option>
-<option>Patiya</option>
-<option>Rangunia</option>
-<option>Raozan</option>
-<option>Sandwip</option>
-<option>Satkania</option>
-<option>Sitakunda</option>
-
-<!-- Cox's Bazar -->
-<option>Cox's Bazar Sadar</option>
-<option>Chakaria</option>
-<option>Kutubdia</option>
-<option>Maheshkhali</option>
-<option>Pekua</option>
-<option>Ramu</option>
-<option>Teknaf</option>
-<option>Ukhia</option>
-
-<!-- Cumilla -->
-<option>Cumilla Sadar</option>
-<option>Barura</option>
-<option>Brahmanpara</option>
-<option>Burichang</option>
-<option>Chandina</option>
-<option>Chauddagram</option>
-<option>Daudkandi</option>
-<option>Debidwar</option>
-<option>Homna</option>
-<option>Laksam</option>
-<option>Meghna</option>
-<option>Monohorganj</option>
-<option>Muradnagar</option>
-<option>Nangalkot</option>
-<option>Titas</option>
-
-<!-- Feni -->
-<option>Feni Sadar</option>
-<option>Chhagalnaiya</option>
-<option>Daganbhuiyan</option>
-<option>Parshuram</option>
-<option>Sonagazi</option>
-
-<!-- Brahmanbaria -->
-<option>Brahmanbaria Sadar</option>
-<option>Akhaura</option>
-<option>Ashuganj</option>
-<option>Bancharampur</option>
-<option>Bijoynagar</option>
-<option>Kasba</option>
-<option>Nabinagar</option>
-<option>Nasirnagar</option>
-<option>Sarail</option>
-
-<!-- Noakhali -->
-<option>Noakhali Sadar</option>
-<option>Begumganj</option>
-<option>Chatkhil</option>
-<option>Companiganj</option>
-<option>Hatiya</option>
-<option>Kabirhat</option>
-<option>Senbagh</option>
-<option>Sonaimuri</option>
-<option>Subarnachar</option>
-
-<!-- Lakshmipur -->
-<option>Lakshmipur Sadar</option>
-<option>Raipur</option>
-<option>Ramganj</option>
-<option>Ramgati</option>
-<option>Kamalnagar</option>
-
-<!-- Khagrachhari -->
-<option>Khagrachhari Sadar</option>
-<option>Dighinala</option>
-<option>Lakshmichhari</option>
-<option>Mahalchhari</option>
-<option>Manikchhari</option>
-<option>Matiranga</option>
-<option>Panchhari</option>
-<option>Ramgarh</option>
-
-<!-- Rangamati -->
-<option>Rangamati Sadar</option>
-<option>Bagaichhari</option>
-<option>Barkal</option>
-<option>Belaichhari</option>
-<option>Juraichhari</option>
-<option>Kaptai</option>
-<option>Kaukhali</option>
-<option>Langadu</option>
-<option>Naniarchar</option>
-<option>Rajasthali</option>
-
-<!-- Bandarban -->
-<option>Bandarban Sadar</option>
-<option>Alikadam</option>
-<option>Lama</option>
-<option>Naikhongchhari</option>
-<option>Rowangchhari</option>
-<option>Ruma</option>
-<option>Thanchi</option>
-<!-- Rajshahi -->
-<option>Rajshahi Sadar</option>
-<option>Bagha</option>
-<option>Bagmara</option>
-<option>Charghat</option>
-<option>Durgapur</option>
-<option>Godagari</option>
-<option>Mohanpur</option>
-<option>Paba</option>
-<option>Puthia</option>
-<option>Tanore</option>
-
-<!-- Bogura -->
-<option>Bogura Sadar</option>
-<option>Adamdighi</option>
-<option>Dhunat</option>
-<option>Dhupchanchia</option>
-<option>Gabtali</option>
-<option>Kahaloo</option>
-<option>Nandigram</option>
-<option>Sariakandi</option>
-<option>Shajahanpur</option>
-<option>Sherpur</option>
-<option>Shibganj</option>
-<option>Sonatola</option>
-
-<!-- Joypurhat -->
-<option>Joypurhat Sadar</option>
-<option>Akkelpur</option>
-<option>Kalai</option>
-<option>Khetlal</option>
-<option>Panchbibi</option>
-
-<!-- Naogaon -->
-<option>Naogaon Sadar</option>
-<option>Atrai</option>
-<option>Badalgachhi</option>
-<option>Dhamoirhat</option>
-<option>Manda</option>
-<option>Mahadebpur</option>
-<option>Niamatpur</option>
-<option>Patnitala</option>
-<option>Porsha</option>
-<option>Raninagar</option>
-<option>Sapahar</option>
-
-<!-- Natore -->
-<option>Natore Sadar</option>
-<option>Bagatipara</option>
-<option>Baraigram</option>
-<option>Gurudaspur</option>
-<option>Lalpur</option>
-<option>Singra</option>
-
-<!-- Chapainawabganj -->
-<option>Chapainawabganj Sadar</option>
-<option>Bholahat</option>
-<option>Gomastapur</option>
-<option>Nachole</option>
-<option>Shibganj</option>
-
-<!-- Pabna -->
-<option>Pabna Sadar</option>
-<option>Atgharia</option>
-<option>Bera</option>
-<option>Bhangura</option>
-<option>Chatmohar</option>
-<option>Faridpur</option>
-<option>Ishwardi</option>
-<option>Santhia</option>
-<option>Sujanagar</option>
-
-<!-- Sirajganj -->
-<option>Sirajganj Sadar</option>
-<option>Belkuchi</option>
-<option>Chauhali</option>
-<option>Kazipur</option>
-<option>Kamarkhanda</option>
-<option>Raiganj</option>
-<option>Shahjadpur</option>
-<option>Tarash</option>
-<option>Ullapara</option>
-<!-- Khulna -->
-<option>Khulna Sadar</option>
-<option>Batiaghata</option>
-<option>Dacope</option>
-<option>Dumuria</option>
-<option>Dighalia</option>
-<option>Koyra</option>
-<option>Paikgachha</option>
-<option>Phultala</option>
-<option>Rupsa</option>
-<option>Terokhada</option>
-
-<!-- Bagerhat -->
-<option>Bagerhat Sadar</option>
-<option>Chitalmari</option>
-<option>Fakirhat</option>
-<option>Kachua</option>
-<option>Mollahat</option>
-<option>Mongla</option>
-<option>Morrelganj</option>
-<option>Rampal</option>
-<option>Sarankhola</option>
-
-<!-- Satkhira -->
-<option>Satkhira Sadar</option>
-<option>Assasuni</option>
-<option>Debhata</option>
-<option>Kalaroa</option>
-<option>Kaliganj</option>
-<option>Shyamnagar</option>
-<option>Tala</option>
-
-<!-- Jashore -->
-<option>Jashore Sadar</option>
-<option>Abhaynagar</option>
-<option>Bagherpara</option>
-<option>Chaugachha</option>
-<option>Jhikargachha</option>
-<option>Keshabpur</option>
-<option>Manirampur</option>
-<option>Sharsha</option>
-
-<!-- Jhenaidah -->
-<option>Jhenaidah Sadar</option>
-<option>Harinakunda</option>
-<option>Kaliganj</option>
-<option>Kotchandpur</option>
-<option>Maheshpur</option>
-<option>Shailkupa</option>
-
-<!-- Magura -->
-<option>Magura Sadar</option>
-<option>Mohammadpur</option>
-<option>Shalikha</option>
-<option>Sreepur</option>
-
-<!-- Narail -->
-<option>Narail Sadar</option>
-<option>Lohagara</option>
-<option>Kalia</option>
-
-<!-- Kushtia -->
-<option>Kushtia Sadar</option>
-<option>Bheramara</option>
-<option>Daulatpur</option>
-<option>Mirpur</option>
-<option>Khoksa</option>
-<option>Kumarkhali</option>
-
-<!-- Chuadanga -->
-<option>Chuadanga Sadar</option>
-<option>Alamdanga</option>
-<option>Damurhuda</option>
-<option>Jibannagar</option>
-
-<!-- Meherpur -->
-<option>Meherpur Sadar</option>
-<option>Mujibnagar</option>
-<option>Gangni</option>
-<!-- Barishal -->
-<option>Barishal Sadar</option>
-<option>Agailjhara</option>
-<option>Babuganj</option>
-<option>Bakerganj</option>
-<option>Banaripara</option>
-<option>Gaurnadi</option>
-<option>Hizla</option>
-<option>Mehendiganj</option>
-<option>Muladi</option>
-<option>Wazirpur</option>
-
-<!-- Bhola -->
-<option>Bhola Sadar</option>
-<option>Burhanuddin</option>
-<option>Char Fasson</option>
-<option>Daulatkhan</option>
-<option>Lalmohan</option>
-<option>Manpura</option>
-<option>Tazumuddin</option>
-
-<!-- Patuakhali -->
-<option>Patuakhali Sadar</option>
-<option>Bauphal</option>
-<option>Dashmina</option>
-<option>Galachipa</option>
-<option>Kalapara</option>
-<option>Mirzaganj</option>
-<option>Rangabali</option>
-
-<!-- Pirojpur -->
-<option>Pirojpur Sadar</option>
-<option>Bhandaria</option>
-<option>Indurkani</option>
-<option>Mathbaria</option>
-<option>Nesarabad (Swarupkathi)</option>
-<option>Kawkhali</option>
-<option>Zianagar</option>
-
-<!-- Jhalokathi -->
-<option>Jhalokathi Sadar</option>
-<option>Kanthalia</option>
-<option>Nalchity</option>
-<option>Rajapur</option>
-
-<!-- Barguna -->
-<option>Barguna Sadar</option>
-<option>Amtali</option>
-<option>Bamna</option>
-<option>Betagi</option>
-<option>Patharghata</option>
-<option>Taltali</option>
-<!-- Sylhet -->
-<option>Sylhet Sadar</option>
-<option>Beanibazar</option>
-<option>Biswanath</option>
-<option>Companiganj</option>
-<option>Fenchuganj</option>
-<option>Golapganj</option>
-<option>Gowainghat</option>
-<option>Jaintiapur</option>
-<option>Kanaighat</option>
-<option>Zakiganj</option>
-<option>South Surma</option>
-<option>Balaganj</option>
-<option>Osmani Nagar</option>
-
-<!-- Moulvibazar -->
-<option>Moulvibazar Sadar</option>
-<option>Barlekha</option>
-<option>Juri</option>
-<option>Kamalganj</option>
-<option>Kulaura</option>
-<option>Rajnagar</option>
-<option>Sreemangal</option>
-
-<!-- Habiganj -->
-<option>Habiganj Sadar</option>
-<option>Ajmiriganj</option>
-<option>Baniachang</option>
-<option>Bahubal</option>
-<option>Chunarughat</option>
-<option>Lakhai</option>
-<option>Madhabpur</option>
-<option>Nabiganj</option>
-<option>Shayestaganj</option>
-
-<!-- Sunamganj -->
-<option>Sunamganj Sadar</option>
-<option>Biswamvarpur</option>
-<option>Chhatak</option>
-<option>Derai</option>
-<option>Dharampasha</option>
-<option>Dowarabazar</option>
-<option>Jagannathpur</option>
-<option>Jamalganj</option>
-<option>Sullah</option>
-<option>Tahirpur</option>
-<option>South Sunamganj</option>
-<!-- Rangpur -->
-<option>Rangpur Sadar</option>
-<option>Badarganj</option>
-<option>Gangachara</option>
-<option>Kaunia</option>
-<option>Mithapukur</option>
-<option>Pirgachha</option>
-<option>Pirganj</option>
-<option>Taraganj</option>
-
-<!-- Dinajpur -->
-<option>Dinajpur Sadar</option>
-<option>Birampur</option>
-<option>Birganj</option>
-<option>Biral</option>
-<option>Bochaganj</option>
-<option>Chirirbandar</option>
-<option>Fulbari</option>
-<option>Ghoraghat</option>
-<option>Hakimpur</option>
-<option>Kaharole</option>
-<option>Khansama</option>
-<option>Nawabganj</option>
-<option>Parbatipur</option>
-
-<!-- Gaibandha -->
-<option>Gaibandha Sadar</option>
-<option>Fulchhari</option>
-<option>Gobindaganj</option>
-<option>Palashbari</option>
-<option>Sadullapur</option>
-<option>Saghata</option>
-<option>Sundarganj</option>
-
-<!-- Kurigram -->
-<option>Kurigram Sadar</option>
-<option>Bhurungamari</option>
-<option>Char Rajibpur</option>
-<option>Chilmari</option>
-<option>Phulbari</option>
-<option>Nageshwari</option>
-<option>Rajarhat</option>
-<option>Raomari</option>
-<option>Ulipur</option>
-
-<!-- Lalmonirhat -->
-<option>Lalmonirhat Sadar</option>
-<option>Aditmari</option>
-<option>Hatibandha</option>
-<option>Kaliganj</option>
-<option>Patgram</option>
-
-<!-- Nilphamari -->
-<option>Nilphamari Sadar</option>
-<option>Dimla</option>
-<option>Domar</option>
-<option>Jaldhaka</option>
-<option>Kishoreganj</option>
-<option>Syedpur</option>
-
-<!-- Panchagarh -->
-<option>Panchagarh Sadar</option>
-<option>Atwari</option>
-<option>Boda</option>
-<option>Debiganj</option>
-<option>Tetulia</option>
-
-<!-- Thakurgaon -->
-<option>Thakurgaon Sadar</option>
-<option>Baliadangi</option>
-<option>Haripur</option>
-<option>Pirganj</option>
-<option>Ranisankail</option>
-<!-- Mymensingh -->
-<option>Mymensingh Sadar</option>
-<option>Bhaluka</option>
-<option>Fulbaria</option>
-<option>Gaffargaon</option>
-<option>Gauripur</option>
-<option>Haluaghat</option>
-<option>Ishwarganj</option>
-<option>Muktagachha</option>
-<option>Nandail</option>
-<option>Phulpur</option>
-<option>Trishal</option>
-
-<!-- Jamalpur -->
-<option>Jamalpur Sadar</option>
-<option>Dewanganj</option>
-<option>Baksiganj</option>
-<option>Islampur</option>
-<option>Madarganj</option>
-<option>Melandaha</option>
-<option>Sarishabari</option>
-
-<!-- Sherpur -->
-<option>Sherpur Sadar</option>
-<option>Nakla</option>
-<option>Nalitabari</option>
-<option>Sreebardi</option>
-
-<!-- Netrokona -->
-<option>Netrokona Sadar</option>
-<option>Atpara</option>
-<option>Barhatta</option>
-<option>Durgapur</option>
-<option>Khaliajuri</option>
-<option>Kalmakanda</option>
-<option>Madan</option>
-<option>Mohanganj</option>
-<option>Purbadhala</option>
-<option>Kendua</option>
+<select id="upazila">
+  <option value="">উপজেলা নির্বাচন করুন</option>
 </select>
 
-<div class="row">
+<input type="text" id="product" placeholder="প্রোডাক্টের নাম" readonly>
 
+<input type="text" id="price" placeholder="প্রোডাক্টের দাম" readonly>
+
+<input type="text" id="total" placeholder="মোট টাকা" readonly>
 <select id="size">
-<option>Select Size</option>
-<option>S</option>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
+  <option value="">সাইজ নির্বাচন করুন</option>
+  <option>Small</option>
+  <option>Medium</option>
+  <option>Large</option>
+  <option>XL</option>
+  <option>XXL</option>
 </select>
 
 <select id="color">
-<option>Select Color</option>
-<option>Black</option>
-<option>White</option>
-<option>Blue</option>
+  <option value="">কালার নির্বাচন করুন</option>
+  <option>Red</option>
+  <option>Blue</option>
+  <option>Black</option>
+  <option>White</option>
 </select>
+
+<textarea id="address" class="full" placeholder="গ্রাম / সম্পূর্ণ ঠিকানা"></textarea>
+
+<!-- ===== DELIVERY CHARGE ===== -->
+
+<button class="order-btn" onclick="sendOrder()">
+ Confirm Order on WhatsApp
+</button>
+</div>
 
 </div>
 
-<textarea id="address"
-placeholder="Full Address"
-style="height:100px;"></textarea>
-<button class="order-btn" onclick="sendOrder()">
-  💬 Order WhatsApp Now
-</button>
+</form>
 
 </div>
 

@@ -8284,17 +8284,11 @@ images:[
 ]
 },
       
-                                        
-
-
-
-
-
-
-
+                                    
 
 
 ];
+
 
 let cart = [];
 
@@ -8427,7 +8421,6 @@ loadProducts(currentProducts);
 });
 
 let currentProduct = null;
-
 function showPopup(index){
 
 currentProduct = products[index];
@@ -8442,6 +8435,21 @@ document.getElementById("pPrice").innerText =
 
 document.getElementById("bigImg").src =
 currentProduct.images[0];
+
+// ===== Order Form Auto Fill =====
+
+document.getElementById("product").value =
+currentProduct.name;
+
+document.getElementById("price").value =
+currentProduct.price;
+
+window.currentPrice =
+currentProduct.price;
+
+updateTotal();
+
+// ==============================
 
 let imgs = "";
 
@@ -8545,7 +8553,163 @@ document.getElementById("cart")
 
 }
 
-function sendOrder(){
+// from auto kaj kore//
+const data = {
+
+   "ঢাকা বিভাগ": {
+    "ঢাকা": ["ধামরাই","দোহার","কেরানীগঞ্জ","নবাবগঞ্জ","সাভার","তেজগাঁও","গুলশান","ধানমন্ডি","মিরপুর","মোহাম্মদপুর","উত্তরা"],
+    "গাজীপুর": ["গাজীপুর সদর","কালিয়াকৈর","কালীগঞ্জ","কাপাসিয়া","শ্রীপুর"],
+    "নারায়ণগঞ্জ": ["নারায়ণগঞ্জ সদর","আড়াইহাজার","বন্দর","রূপগঞ্জ","সোনারগাঁও"],
+    "নরসিংদী": ["নরসিংদী সদর","পলাশ","শিবপুর","বেলাবো","মনোহরদী","রায়পুরা"],
+    "মানিকগঞ্জ": ["মানিকগঞ্জ সদর","সিঙ্গাইর","শিবালয়","সাটুরিয়া","হরিরামপুর","ঘিওর","দৌলতপুর"],
+    "মুন্সিগঞ্জ": ["মুন্সিগঞ্জ সদর","সিরাজদিখান","শ্রীনগর","লৌহজং","গজারিয়া","টংগীবাড়ি"],
+    "ফরিদপুর": ["ফরিদপুর সদর","আলফাডাঙ্গা","ভাঙ্গা","বোয়ালমারী","চরভদ্রাসন","মধুখালী","নগরকান্দা","সদরপুর","সালথা"],
+    "গোপালগঞ্জ": ["গোপালগঞ্জ সদর","কোটালীপাড়া","মুকসুদপুর","টুঙ্গিপাড়া","কাশিয়ানী"],
+    "মাদারীপুর": ["মাদারীপুর সদর","শিবচর","রাজৈর","কালকিনি"],
+    "রাজবাড়ী": ["রাজবাড়ী সদর","বালিয়াকান্দি","পাংশা","কালুখালী","গোয়ালন্দ"],
+    "শরীয়তপুর": ["শরীয়তপুর সদর","নড়িয়া","জাজিরা","ভেদরগঞ্জ","ডামুড্যা","গোসাইরহাট"],
+    "টাঙ্গাইল": ["টাঙ্গাইল সদর","গোপালপুর","মধুপুর","মির্জাপুর","নাগরপুর","সখিপুর","দেলদুয়ার","বাসাইল","ভূঞাপুর","কালিহাতী","ঘাটাইল","ধনবাড়ী"],
+    "কিশোরগঞ্জ": ["কিশোরগঞ্জ সদর","বাজিতপুর","ভৈরব","হোসেনপুর","ইটনা","করিমগঞ্জ","কটিয়াদী","কুলিয়ারচর","মিঠামইন","নিকলী","পাকুন্দিয়া","তারাইল"]
+  },
+
+  "চট্টগ্রাম": {
+    "চট্টগ্রাম": ["আনোয়ারা","বাঁশখালী","বোয়ালখালী","ফটিকছড়ি","হাটহাজারী"],
+    "কক্সবাজার": ["চকরিয়া","কক্সবাজার সদর","কুতুবদিয়া","মহেশখালী","টেকনাফ"]
+  },
+  "রাজশাহী বিভাগ": {
+  "রাজশাহী": ["রাজশাহী সদর","বাঘা","বাগমারা","চারঘাট","দুর্গাপুর","গোদাগাড়ী","মোহনপুর","পবা","পুঠিয়া","তানোর"],
+  "নওগাঁ": ["নওগাঁ সদর","আত্রাই","বদলগাছী","ধামইরহাট","মান্দা","মহাদেবপুর","নিয়ামতপুর","পত্নীতলা","পোরশা","রাণীনগর","সাপাহার"],
+  "নাটোর": ["নাটোর সদর","বাগাতিপাড়া","বড়াইগ্রাম","গুরুদাসপুর","লালপুর","সিংড়া"],
+  "চাঁপাইনবাবগঞ্জ": ["চাঁপাইনবাবগঞ্জ সদর","ভোলাহাট","গোমস্তাপুর","নাচোল","শিবগঞ্জ"],
+  "পাবনা": ["পাবনা সদর","আটঘরিয়া","বেড়া","ভাঙ্গুড়া","চাটমোহর","ফরিদপুর","ঈশ্বরদী","সাঁথিয়া","সুজানগর"],
+  "সিরাজগঞ্জ": ["সিরাজগঞ্জ সদর","বেলকুচি","চৌহালী","কামারখন্দ","কাজীপুর","রায়গঞ্জ","শাহজাদপুর","তাড়াশ","উল্লাপাড়া"],
+  "বগুড়া": ["বগুড়া সদর","আদমদীঘি","ধুনট","দুপচাঁচিয়া","গাবতলী","কাহালু","নন্দীগ্রাম","সারিয়াকান্দি","শাজাহানপুর","শেরপুর","শিবগঞ্জ","সোনাতলা"],
+  "জয়পুরহাট": ["জয়পুরহাট সদর","আক্কেলপুর","কালাই","ক্ষেতলাল","পাঁচবিবি"]
+},
+"খুলনা বিভাগ": {
+  "খুলনা": ["খুলনা সদর","বটিয়াঘাটা","দাকোপ","দিঘলিয়া","ডুমুরিয়া","কয়রা","পাইকগাছা","ফুলতলা","রূপসা","তেরখাদা"],
+  "বাগেরহাট": ["বাগেরহাট সদর","চিতলমারী","ফকিরহাট","কচুয়া","মোল্লাহাট","মোংলা","মোড়েলগঞ্জ","রামপাল","শরণখোলা"],
+  "সাতক্ষীরা": ["সাতক্ষীরা সদর","আশাশুনি","দেবহাটা","কলারোয়া","কালীগঞ্জ","শ্যামনগর","তালা"],
+  "যশোর": ["যশোর সদর","অভয়নগর","বাঘারপাড়া","চৌগাছা","ঝিকরগাছা","কেশবপুর","মনিরামপুর","শার্শা"],
+  "নড়াইল": ["নড়াইল সদর","কালিয়া","লোহাগড়া"],
+  "মাগুরা": ["মাগুরা সদর","মহম্মদপুর","শালিখা","শ্রীপুর"],
+  "ঝিনাইদহ": ["ঝিনাইদহ সদর","হরিণাকুন্ডু","কালীগঞ্জ","কোটচাঁদপুর","মহেশপুর","শৈলকুপা"],
+  "কুষ্টিয়া": ["কুষ্টিয়া সদর","ভেড়ামারা","দৌলতপুর","খোকসা","কুমারখালী","মিরপুর"],
+  "চুয়াডাঙ্গা": ["চুয়াডাঙ্গা সদর","আলমডাঙ্গা","দামুড়হুদা","জীবননগর"],
+  "মেহেরপুর": ["মেহেরপুর সদর","গাংনী","মুজিবনগর"]
+},
+"বরিশাল বিভাগ": {
+  "বরিশাল": ["বরিশাল সদর","আগৈলঝাড়া","বাবুগঞ্জ","বাকেরগঞ্জ","বানারীপাড়া","গৌরনদী","হিজলা","মেহেন্দিগঞ্জ","মুলাদী","উজিরপুর"],
+  "ভোলা": ["ভোলা সদর","বোরহানউদ্দিন","চরফ্যাশন","দৌলতখান","লালমোহন","মনপুরা","তজুমদ্দিন"],
+  "ঝালকাঠি": ["ঝালকাঠি সদর","কাঁঠালিয়া","নলছিটি","রাজাপুর"],
+  "পটুয়াখালী": ["পটুয়াখালী সদর","বাউফল","দশমিনা","দুমকি","গলাচিপা","কলাপাড়া","মির্জাগঞ্জ","রাঙ্গাবালী"],
+  "পিরোজপুর": ["পিরোজপুর সদর","ভান্ডারিয়া","কাউখালী","মঠবাড়িয়া","নাজিরপুর","নেছারাবাদ","জিয়ানগর"],
+  "বরগুনা": ["বরগুনা সদর","আমতলী","বামনা","বেতাগী","পাথরঘাটা","তালতলী"]
+},
+"সিলেট বিভাগ": {
+  "সিলেট": ["সিলেট সদর","বালাগঞ্জ","বিয়ানীবাজার","বিশ্বনাথ","কোম্পানীগঞ্জ","দক্ষিণ সুরমা","ফেঞ্চুগঞ্জ","গোলাপগঞ্জ","গোয়াইনঘাট","জৈন্তাপুর","কানাইঘাট","ওসমানীনগর","জকিগঞ্জ"],
+  "মৌলভীবাজার": ["মৌলভীবাজার সদর","বড়লেখা","জুড়ী","কমলগঞ্জ","কুলাউড়া","রাজনগর","শ্রীমঙ্গল"],
+  "হবিগঞ্জ": ["হবিগঞ্জ সদর","আজমিরীগঞ্জ","বানিয়াচং","বাহুবল","চুনারুঘাট","লাখাই","মাধবপুর","নবীগঞ্জ"],
+  "সুনামগঞ্জ": ["সুনামগঞ্জ সদর","বিশ্বম্ভরপুর","ছাতক","দিরাই","ধর্মপাশা","দোয়ারাবাজার","জগন্নাথপুর","জামালগঞ্জ","মধ্যনগর","শাল্লা","তাহিরপুর"]
+},
+"রংপুর বিভাগ": {
+  "রংপুর": ["রংপুর সদর","বদরগঞ্জ","গঙ্গাচড়া","কাউনিয়া","মিঠাপুকুর","পীরগঞ্জ","পীরগাছা","তারাগঞ্জ"],
+  "দিনাজপুর": ["দিনাজপুর সদর","বিরামপুর","বীরগঞ্জ","বোচাগঞ্জ","চিরিরবন্দর","ফুলবাড়ী","ঘোড়াঘাট","হাকিমপুর","কাহারোল","খানসামা","নবাবগঞ্জ","পার্বতীপুর"],
+  "কুড়িগ্রাম": ["কুড়িগ্রাম সদর","ভুরুঙ্গামারী","চর রাজিবপুর","চিলমারী","ফুলবাড়ী","নাগেশ্বরী","রাজারহাট","রৌমারী","উলিপুর"],
+  "গাইবান্ধা": ["গাইবান্ধা সদর","ফুলছড়ি","গোবিন্দগঞ্জ","পলাশবাড়ী","সাদুল্লাপুর","সাঘাটা","সুন্দরগঞ্জ"],
+  "লালমনিরহাট": ["লালমনিরহাট সদর","আদিতমারী","হাতীবান্ধা","কালীগঞ্জ","পাটগ্রাম"],
+  "নীলফামারী": ["নীলফামারী সদর","ডিমলা","ডোমার","জলঢাকা","কিশোরগঞ্জ","সৈয়দপুর"],
+  "পঞ্চগড়": ["পঞ্চগড় সদর","আটোয়ারী","বোদা","দেবীগঞ্জ","তেঁতুলিয়া"],
+  "ঠাকুরগাঁও": ["ঠাকুরগাঁও সদর","বালিয়াডাঙ্গী","হরিপুর","পীরগঞ্জ","রাণীশংকৈল"]
+},
+"ময়মনসিংহ বিভাগ": {
+  "ময়মনসিংহ": ["ময়মনসিংহ সদর","ভালুকা","ত্রিশাল","মুক্তাগাছা","ফুলপুর","গফরগাঁও","গৌরীপুর","ঈশ্বরগঞ্জ","নান্দাইল","ধোবাউড়া","ফুলবাড়িয়া","হালুয়াঘাট","তারাকান্দা"],
+  "জামালপুর": ["জামালপুর সদর","বকশীগঞ্জ","দেওয়ানগঞ্জ","ইসলামপুর","মাদারগঞ্জ","মেলান্দহ","সরিষাবাড়ী"],
+  "শেরপুর": ["শেরপুর সদর","ঝিনাইগাতী","নকলা","নালিতাবাড়ী","শ্রীবরদী"],
+  "নেত্রকোনা": ["নেত্রকোনা সদর","আটপাড়া","বারহাট্টা","দুর্গাপুর","খালিয়াজুরী","কলমাকান্দা","কেন্দুয়া","মদন","মোহনগঞ্জ","পূর্বধলা"]
+}
+
+};
+// delivari from kaj//
+function updateTotal(){
+
+let delivery = document.querySelector(
+'input[name="delivery"]:checked'
+);
+
+let deliveryCharge = 0;
+
+if(delivery.value.includes("60")){
+deliveryCharge = 60;
+}
+else{
+deliveryCharge = 100;
+}
+
+let total = Number(window.currentPrice) + deliveryCharge;
+
+document.getElementById('total').value =
+"৳ " + total;
+
+}
+document.querySelectorAll(
+'input[name="delivery"]'
+).forEach(radio => {
+
+radio.addEventListener('change', updateTotal);
+
+});
+// Load Division
+window.onload = function() {
+  let division = document.getElementById("division");
+  for (let d in data) {
+    division.innerHTML += `<option value="${d}">${d}</option>`;
+  }
+};
+
+// Load District
+function loadDistricts() {
+  let division = document.getElementById("division").value;
+  let district = document.getElementById("district");
+
+  district.innerHTML = `<option value="">জেলা নির্বাচন করুন</option>`;
+  document.getElementById("upazila").innerHTML = `<option value="">উপজেলা নির্বাচন করুন</option>`;
+
+  for (let dist in data[division]) {
+    district.innerHTML += `<option value="${dist}">${dist}</option>`;
+  }
+}
+
+// Load Upazila
+function loadUpazilas() {
+  let division = document.getElementById("division").value;
+  let district = document.getElementById("district").value;
+
+  let upazila = document.getElementById("upazila");
+  upazila.innerHTML = `<option value="">উপজেলা নির্বাচন করুন</option>`;
+
+  data[division][district].forEach(u => {
+    upazila.innerHTML += `<option>${u}</option>`;
+  });
+}
+
+// WhatsApp Order Send
+function sendWhatsApp(){
+
+let product =
+document.getElementById("product").value;
+
+let price =
+document.getElementById("price").value;
+
+let total =
+document.getElementById("total").value;
+
+let size =
+document.getElementById("size").value;
+
+let color =
+document.getElementById("color").value;
 
 let name =
 document.getElementById("name").value;
@@ -8562,85 +8726,48 @@ document.getElementById("division").value;
 let district =
 document.getElementById("district").value;
 
-let thana =
-document.getElementById("thana").value;
-
-let size =
-document.getElementById("size").value;
-
-let color =
-document.getElementById("color").value;
+let upazila =
+document.getElementById("upazila").value;
 
 let address =
 document.getElementById("address").value;
 
-let selectedDelivery =
+let delivery =
 document.querySelector(
 'input[name="delivery"]:checked'
-);
+).value;
 
-let delivery = "Dhaka City - 60 TK";
+let message =
 
-if(selectedDelivery){
+`🛒 নতুন অর্ডার
 
-delivery = selectedDelivery.value;
-
-}
-
-let deliveryCharge = 60;
-
-if(delivery.includes("100")){
-deliveryCharge = 100;
-}
-
-let total =
-currentProduct.price + deliveryCharge;
-
-let msg = `
-
-🛒 MRST Fashion Order
-
-👤 Name: ${name}
-
-📱 Phone: ${phone}
-
+👤 নাম: ${name}
+📞 ফোন: ${phone}
 📧 Gmail: ${gmail}
 
-🏢 Division: ${division}
+📦 প্রোডাক্ট: ${product}
+💰 দাম: ৳${price}
+📏 সাইজ: ${size}
+🎨 কালার: ${color}
 
-📍 District: ${district}
+🚚 ডেলিভারি: ${delivery}
+💵 মোট টাকা: ${total}
 
-🏠 Thana: ${thana}
+📍 বিভাগ: ${division}
+🏙 জেলা: ${district}
+📌 উপজেলা: ${upazila}
 
-📏 Size: ${size}
-
-🎨 Color: ${color}
-
-🚚 Delivery: ${delivery}
-
-💵 Delivery Charge: ৳${deliveryCharge}
-
-📝 Address:
+🏠 ঠিকানা:
 ${address}
 
-================
-
-🛍 Product:
-${currentProduct.name}
-
-================
-
-💰 Total: ৳${total}
-
-`;
+✅ Cash On Delivery`;
 
 let url =
-"https://wa.me/8801605019908?text="
-+ encodeURIComponent(msg);
+`https://wa.me/8801605019908?text=${encodeURIComponent(message)}`;
 
-window.open(url,"_blank");
-
+window.open(url,'_blank');
 }
+
 
 function darkMode(){
 
@@ -8674,63 +8801,22 @@ document.body.classList.toggle("dark");
 
 }
 
-let banners = [
-{
-  image: "bannarfile/cover2.jpg",
-  link: "shoes.html",
-  text: "👟 Order Shoes"
-},
-{
-  image: "bannarfile/cover3.jpg",
-  link: "pant.html",
-  text: "👕 Order T-Shirt"
-},
-{
-  image: "bannarfile/cover4.jpg",
-  link: "watch.html",
-  text: "⌚ Order Watch"
-},
-{
-  image: "bannarfile/cover1.jpg",
-  link: "Smart Electronics.html",
-  text: "Order smrt Electronics"
-},
-{
-  image: "bannarfile/cover5.jpg",
-  link: "Side-Bag.html",
-  text: " Order side bag"
-},
-{
-  image: "bannarfile/cover6.jpeg",
-  link: "new.html",
-  text: " FREE T-Thirt oder now"
-},
-{
-  image: "bannarfile/cover11.jpeg",
-  link: "Side-Bag.html",
-  text: " Order side bag"
-}
-];
+let currentSlide = 0;
 
-let bannerIndex = 0;
+const slides = document.querySelector(".slides");
+const totalSlides = document.querySelectorAll(".slide").length;
 
-function updateBanner() {
-  document.getElementById("banner").src =
-    banners[bannerIndex].image;
+function moveSlide() {
+  currentSlide++;
 
-  document.getElementById("orderBtn").href =
-    banners[bannerIndex].link;
+  if (currentSlide >= totalSlides) {
+    currentSlide = 0;
+  }
 
-  document.getElementById("orderBtn").innerHTML =
-    banners[bannerIndex].text;
+  slides.style.transform = `translateX(-${currentSlide * 100}%)`;
 }
 
-updateBanner();
-
-setInterval(() => {
-  bannerIndex = (bannerIndex + 1) % banners.length;
-  updateBanner();
-}, 8000);
+setInterval(moveSlide, 8000);
 
 
 window.open(
@@ -8804,7 +8890,7 @@ document.getElementById("profileImage").src =
 savedImage;
 }
 
+// from niye kaj korchi box//
 
-// profile jony//
 
 
