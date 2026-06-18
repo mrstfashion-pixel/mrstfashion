@@ -3,71 +3,338 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home Page</title>
+<title>Tuhin Fashion - About</title>
 
 <style>
-body{
-font-family:Arial;
+*{
 margin:0;
 padding:0;
-background:#756e6e;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
 }
 
+body{
+background:linear-gradient(135deg,#1c1c1c,#3a3a3a);
+color:#fff;
+overflow-x:hidden;
+}
+
+/* HEADER */
 .header{
-background:#b22222;
-color:white;
+background:linear-gradient(90deg,#b22222,#ff3c3c);
+padding:25px;
+text-align:center;
+font-size:30px;
+font-weight:bold;
+letter-spacing:2px;
+animation: slideDown 1s ease;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:60px 20px;
+}
+
+.hero h1{
+font-size:40px;
+margin-bottom:15px;
+animation: zoomIn 1.2s ease;
+}
+
+.hero p{
+font-size:18px;
+color:#ddd;
+max-width:700px;
+margin:auto;
+line-height:28px;
+animation: fadeIn 2s ease;
+}
+
+/* SLIDER BOX */
+.slider-box{
+max-width:800px;
+margin:40px auto;
+background:#111;
+padding:30px;
+border-radius:15px;
+box-shadow:0 0 20px rgba(255,255,255,0.1);
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.slide-text{
+font-size:22px;
+line-height:34px;
+opacity:0;
+transform:scale(0.8);
+transition:1s;
+}
+
+.slide-text.active{
+opacity:1;
+transform:scale(1);
+}
+
+/* INFO CARDS */
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+max-width:1000px;
+margin:50px auto;
+padding:0 20px;
+}
+
+.card{
+background:#1f1f1f;
+padding:25px;
+border-radius:12px;
+text-align:center;
+transition:0.4s;
+border:1px solid #333;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 10px 25px rgba(255,255,255,0.1);
+}
+
+.card h3{
+color:#ff3c3c;
+margin-bottom:10px;
+}
+
+/* FOOTER */
+.footer{
 text-align:center;
 padding:20px;
-font-size:35px;
-font-weight:bold;
+margin-top:40px;
+background:#000;
+color:#aaa;
+}
+.customer-reviews{
+background:linear-gradient(135deg,#0f0f0f,#1c1c1c);
+padding:60px 20px;
+text-align:center;
+color:#fff;
 }
 
-.box{
-max-width:900px;
+.customer-reviews h2{
+font-size:32px;
+margin-bottom:10px;
+animation:fadeDown 1s ease;
+}
+
+.review-subtitle{
+color:#aaa;
+margin-bottom:40px;
+}
+
+.review-container{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+max-width:1100px;
 margin:auto;
-background:rgb(11, 240, 228);
-padding:30px;
-margin-top:30px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.2);
 }
 
-h2{
-color:#b22222;
+/* CARD */
+.review-card{
+background:#1f1f1f;
+padding:20px;
+width:240px;
+border-radius:15px;
+border:1px solid #333;
+transition:0.5s;
+opacity:0;
+transform:scale(0.8);
+animation:showCard 0.8s forwards;
 }
 
-p{
-font-size:20px;
-line-height:35px;
+.review-card:hover{
+transform:translateY(-10px) scale(1.05);
+box-shadow:0 10px 25px rgba(255,0,0,0.2);
 }
+
+/* STAR */
+.stars{
+color:gold;
+font-size:18px;
+margin-bottom:10px;
+animation:blink 2s infinite;
+}
+
+/* CUSTOMER */
+.customer{
+margin-top:15px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+}
+
+.customer img{
+width:45px;
+height:45px;
+border-radius:50%;
+border:2px solid #b22222;
+transition:0.4s;
+}
+
+.review-card:hover .customer img{
+transform:rotate(10deg) scale(1.1);
+}
+
+/* ANIMATION */
+@keyframes showCard{
+from{opacity:0; transform:translateY(40px) scale(0.8);}
+to{opacity:1; transform:translateY(0) scale(1);}
+}
+
+@keyframes fadeDown{
+from{opacity:0; transform:translateY(-30px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes blink{
+0%,100%{opacity:1;}
+50%{opacity:0.6;}
+}
+
+/* AUTO SLIDER EFFECT */
+.review-card:nth-child(1){animation-delay:0.2s;}
+.review-card:nth-child(2){animation-delay:0.4s;}
+.review-card:nth-child(3){animation-delay:0.6s;}
+.review-card:nth-child(4){animation-delay:0.8s;}
+
+/* ANIMATION */
+@keyframes slideDown{
+from{transform:translateY(-100%);}
+to{transform:translateY(0);}
+}
+
+@keyframes zoomIn{
+from{transform:scale(0.5);opacity:0;}
+to{transform:scale(1);opacity:1;}
+}
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
 </style>
 </head>
 
 <body>
 
 <div class="header">
-TUHIN FASHION HOME
+TUHIN FASHION STORE
 </div>
 
-<div class="box">
-<h2>Welcome To My Shop</h2>
-
+<div class="hero">
+<h1>Welcome To Trusted Fashion Brand</h1>
 <p>
-আসসালামু আলাইকুম।  
-আমাদের TUHIN FASHION এ আপনাকে স্বাগতম।  
-আমাদের কাছে পাবেন Genji, Shirt, Pant, Cap, Watch, Juta সহ অনেক কিছু।
+আমরা শুধু একটা দোকান না — আমরা একটি বিশ্বস্ত অনলাইন ফ্যাশন পরিবার।  
+আপনার স্টাইল, আপনার বিশ্বাস, আমাদের দায়িত্ব।
 </p>
+</div>
+<section class="customer-reviews">
 
-<p>
-আমরা সারা বাংলাদেশে হোম ডেলিভারি করি।  
-Order করতে WhatsApp করুন:01605019908
-</p>
+    <h2>Customer Reviews</h2>
+    <p class="review-subtitle">আমাদের গ্রাহকদের ভালোবাসা ও বিশ্বাস 💖</p>
 
-<p>
-ধন্যবাদ আমাদের সাথে থাকার জন্য।
-</p>
+    <div class="review-container">
+
+        <div class="review-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>খুব ভালো কোয়ালিটির পণ্য। দামও সাশ্রয়ী এবং trusted service।</p>
+            <div class="customer">
+                <img src="https://i.pravatar.cc/80?img=1">
+                <h4>Rahim</h4>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>প্রোডাক্ট হাতে পেয়ে খুবই সন্তুষ্ট। packaging ছিল perfect।</p>
+            <div class="customer">
+                <img src="https://i.pravatar.cc/80?img=5">
+                <h4>Nusrat Jahan</h4>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>ডেলিভারি খুব দ্রুত পেয়েছি। 100% recommended shop.</p>
+            <div class="customer">
+                <img src="https://i.pravatar.cc/80?img=8">
+                <h4>Arif Hossain</h4>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>বিশ্বাসযোগ্য দোকান। আবারও অর্ডার করবো ইনশাআল্লাহ।</p>
+            <div class="customer">
+                <img src="https://i.pravatar.cc/80?img=9">
+                <h4>Mim Akter</h4>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<!-- SLIDER TEXT -->
+<div class="slider-box">
+<div class="slide-text active">🛍️ High Quality Genji, Shirt, Pant, Watch & More</div>
+<div class="slide-text">🚚 Fast Home Delivery All Over Bangladesh</div>
+<div class="slide-text">🤝 100% Trusted & Customer Satisfaction Guarantee</div>
+<div class="slide-text">💬 Easy Order Via WhatsApp: 01605019908</div>
+</div>
+
+<!-- INFO SECTION -->
+<div class="cards">
+
+<div class="card">
+<h3>Our Business</h3>
+<p>We provide premium fashion products with best quality and affordable price.</p>
+</div>
+
+<div class="card">
+<h3>Customer Trust</h3>
+<p>Thousands of happy customers trust us for daily fashion needs.</p>
+</div>
+
+<div class="card">
+<h3>Delivery</h3>
+<p>We deliver products safely and quickly across Bangladesh.</p>
+</div>
+
+<div class="card">
+<h3>Support</h3>
+<p>We are always ready to help you via WhatsApp support.</p>
+</div>
 
 </div>
+
+<div class="footer">
+© 2026 TUHIN FASHION | All Rights Reserved
+</div>
+
+<script>
+let slides = document.querySelectorAll(".slide-text");
+let index = 0;
+
+setInterval(() => {
+slides.forEach(s => s.classList.remove("active"));
+index = (index + 1) % slides.length;
+slides[index].classList.add("active");
+}, 2500);
+</script>
 
 </body>
 </html>
