@@ -2,7 +2,8 @@ const products = [
   // shoees//
 {
 name:"Zoom Wailk",
-price:599,
+price:899,
+old:1500,
 category:"shoe",
 images:[
 "shoes/code1.jpeg",
@@ -8800,7 +8801,7 @@ function darkMode(){
 document.body.classList.toggle("dark");
 
 }
-
+//  bannar kaj korbe eita diye//
 let currentSlide = 0;
 
 const slides = document.querySelector(".slides");
@@ -8890,7 +8891,7 @@ document.getElementById("profileImage").src =
 savedImage;
 }
 
-// from niye kaj korchi box//
+// custmore revies niye kaj//
 
 
 

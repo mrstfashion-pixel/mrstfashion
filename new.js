@@ -92,6 +92,7 @@ images:[
 'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=800'
 ]
 },
+
 {
 name:'Street Style Shoe',
 price:'৳ 2690',
@@ -475,15 +476,15 @@ images:[
 ]
 }
 ],
-cap:[
+freeshoe:[
 {
 name:'Black Premium T-Shirt',
 price:'৳ 790',
 desc:'Soft cotton premium stylish T-shirt.',
 images:[
-'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800',
-'https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=800',
-'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=800'
+'shoes/code1.jpeg',
+'shoes/code2.jpeg',
+'shoes/code1.jpeg'
 ]
 },
 
