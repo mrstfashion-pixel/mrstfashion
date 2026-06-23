@@ -276,6 +276,94 @@ to{transform:scale(1);opacity:1;}
 from{opacity:0;}
 to{opacity:1;}
 }
+/*  mobaile dekha jony code */
+@media (max-width:768px){
+
+.team-container{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.team-card{
+padding:15px 10px;
+}
+
+.team-card img{
+width:80px;
+height:80px;
+}
+
+.team-card h3{
+font-size:14px;
+margin-top:8px;
+}
+
+.team-card span{
+font-size:11px;
+display:block;
+margin-top:4px;
+}
+
+}
+.team-card{
+background:linear-gradient(145deg,#1a1a1a,#2b2b2b);
+border:1px solid rgba(255,60,60,.3);
+border-radius:18px;
+padding:15px;
+transition:.4s;
+}
+
+.team-card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(255,60,60,.25);
+}
+
+.team-card img{
+border:3px solid #ff3c3c;
+box-shadow:0 0 15px rgba(255,60,60,.4);
+}
+/*  custmer revies  */
+@media (max-width:768px){
+
+.review-container{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.review-card{
+width:100%;
+padding:15px;
+}
+
+.review-card p{
+font-size:13px;
+line-height:20px;
+}
+
+.customer img{
+width:35px;
+height:35px;
+}
+
+.customer h4{
+font-size:12px;
+}
+
+.stars{
+font-size:14px;
+}
+
+}
+/* 📱 Mobile responsive */
+@media (max-width: 768px){
+  .cards{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
 
 </style>
 </head>
