@@ -165,6 +165,57 @@ color:gold;
 font-size:18px;
 margin-bottom:10px;
 animation:blink 2s infinite;
+} 
+/*  addmin photo */
+.team-section{
+padding:70px 20px;
+text-align:center;
+background:#111;
+}
+
+.team-section h2{
+font-size:35px;
+margin-bottom:10px;
+}
+
+.team-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+max-width:1100px;
+margin:auto;
+margin-top:40px;
+}
+
+.team-card{
+background:#1f1f1f;
+padding:25px;
+border-radius:18px;
+border:1px solid #333;
+transition:.4s;
+}
+
+.team-card:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 30px rgba(255,60,60,.25);
+}
+
+.team-card img{
+width:130px;
+height:130px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid #ff3c3c;
+margin-bottom:15px;
+}
+
+.team-card h3{
+margin-bottom:5px;
+}
+
+.team-card span{
+color:#ff3c3c;
+font-size:14px;
 }
 
 /* CUSTOMER */
@@ -242,6 +293,40 @@ TUHIN FASHION STORE
 আপনার স্টাইল, আপনার বিশ্বাস, আমাদের দায়িত্ব।
 </p>
 </div>
+<section class="team-section">
+
+<h2>Meet Our Team</h2>
+<p>Our dedicated team works hard to provide the best service.</p>
+
+<div class="team-container">
+
+<div class="team-card">
+<img src="addmin/Boss.jpg" alt="Founder">
+<h3>Tuhin mahamud</h3>
+<span>Founder & CEO</span>
+</div>
+
+<div class="team-card">
+<img src="addmin/boss2.jpeg" alt="Co-Founder">
+<h3>kamal Hossain</h3>
+<span>Co-Founder</span>
+</div>
+
+<div class="team-card">
+<img src="addmin/boss1.jpeg" alt="Manager">
+<h3>kutub khan</h3>
+<span>Operations Manager</span>
+</div>
+
+<div class="team-card">
+<img src="admin4.jpg" alt="Support">
+<h3>Team Member</h3>
+<span>Customer Support</span>
+</div>
+
+</div>
+
+</section>
 <section class="customer-reviews">
 
     <h2>Customer Reviews</h2>
