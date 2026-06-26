@@ -6,7 +6,7 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:#59d6c1;
+background:#fdfbfb;
 color:#222;
 }
 
@@ -39,14 +39,14 @@ margin:30px 0 20px;
 .categories,
 .product-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,5fr));
 gap:25px;
 padding:20px;
 }
 
 .cat-card,
 .product-card{
-background:white;
+background:rgb(247, 222, 0);
 border-radius:22px;
 overflow:hidden;
 box-shadow:0 5px 20px rgba(0,0,0,0.1);
@@ -232,8 +232,8 @@ outline:none;
 .submit-btn{
 width:100%;
 padding:15px;
-background:#25D366;
-color:white;
+background:#ffffff;
+color:rgb(20, 13, 13);
 border:none;
 border-radius:14px;
 font-size:18px;
@@ -260,7 +260,7 @@ padding:20px;
   position:sticky;
   top:0;
   z-index:999;
-  background:#59d6c1;
+  background:#696262;
   backdrop-filter: blur(10px);
 }
 
@@ -277,7 +277,7 @@ padding:20px;
   flex-shrink:0;
   border-radius:14px;
   transition:0.3s;
-  background:#fff;
+  background:#ffc400;
   text-align:center;
   overflow:hidden;
   box-shadow:0 3px 10px rgba(0,0,0,0.08);
@@ -294,7 +294,12 @@ padding:20px;
   overflow:hidden;
   text-overflow:ellipsis;
 }
-
+.products{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr); /* 2টা করে পাশাপাশী */
+  gap:10px;
+  padding:10px;
+}
 /* smooth movement */
 @keyframes catSlide{
   0%{
