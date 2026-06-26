@@ -249,44 +249,60 @@ color:white;
 text-align:center;
 padding:20px;
 }
+/* catagori box 10     */
 
-@media(max-width:600px){
-.main-img{
-height:230px;
-}
-}
-.categories{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:10px;
-padding:10px;
-}
-
-@media(max-width:768px){
+@media (max-width:768px){
 
 .categories{
-grid-template-columns:repeat(5,1fr);
-overflow-x:auto;
-white-space:nowrap;
-display:flex;
-gap:12px;
-padding:10px;
+  display:flex;
+  gap:12px;
+  overflow:hidden; /* scroll bar hide */
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:#59d6c1;
+  backdrop-filter: blur(10px);
 }
 
+/* track animation effect */
+.categories{
+  width:max-content;
+  animation: catSlide 18s linear infinite;
+}
+
+/* card fix */
 .cat-card{
-min-width:110px;
-border-radius:16px;
-flex-shrink:0;
+  min-width:100px;   /* আগে 110px ছিল */
+  max-width:100px;
+  flex-shrink:0;
+  border-radius:14px;
+  transition:0.3s;
+  background:#fff;
+  text-align:center;
+  overflow:hidden;
+  box-shadow:0 3px 10px rgba(0,0,0,0.08);
 }
-
 .cat-card img{
-width:100%;
-height:90px;
-object-fit:cover;
+  width:100%;
+  height:70px;   /* আগে 90px ছিল */
+  object-fit:cover;
+}
+.cat-card h3{
+  font-size:12px;
+  padding:6px;
+  white-space:nowrap;   /* এক লাইনে রাখবে */
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 
-.cat-card h3{
-font-size:14px;
-padding:8px;
+/* smooth movement */
+@keyframes catSlide{
+  0%{
+    transform:translateX(0);
+  }
+  100%{
+    transform:translateX(-50%);
+  }
 }
+
 }
