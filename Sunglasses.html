@@ -396,9 +396,39 @@ min-width:300px;
 /* Mobile */
 @media(max-width:768px){
 
-.product-page{
-flex-direction:column;
+.popup{
+padding:8px;
+align-items:flex-start;
 }
+
+.popup-content{
+width:100%;
+max-width:100%;
+padding:12px;
+border-radius:18px;
+}
+
+.popup-grid{
+grid-template-columns:1fr;
+gap:15px;
+}
+
+.main-image{
+height:250px;
+}
+
+.features{
+grid-template-columns:1fr 1fr;
+gap:8px;
+}
+
+.close-btn{
+top:8px;
+right:12px;
+font-size:30px;
+}
+
+
 
 .left-side,
 .right-side{
@@ -1014,6 +1044,8 @@ transform:scale(1);
 box-shadow:0 0 0 0 rgba(37,211,102,0);
 }
 
+
+
 }
 
 
@@ -1592,7 +1624,7 @@ return;
 
 }
 
-// একবারে ৫টা products
+// একবারে 8টা products
 for(let i = loaded; i < loaded +  8 && i < products.length; i++){
 
 const p = products[i];
@@ -1633,7 +1665,7 @@ View Product
 }
 
 // পরের ৫টা
-loaded += 5;
+loaded += 8;
 
 }
 
