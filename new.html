@@ -77,75 +77,103 @@
 
 <div class="close-btn" onclick="closeForm()">×</div>
 
-<div class="product-preview" id="productPreview"></div>
 
 <form id="orderForm">
+   <div class="product-preview">
 
-<div class="form-group">
-<label>Name</label>
-<input type="text" id="name" required>
+<img id="previewImg" src="" alt="">
+
+<h3 id="productName"></h3>
+
+<p id="productDetails"></p>
+
+<h4>৳ <span id="productPrice">0</span></h4>
+
 </div>
 
 <div class="form-group">
-<label>Phone</label>
-<input type="tel" id="phone" required>
+<label>আপনার নাম</label>
+<input type="text" id="name" placeholder="আপনার নাম লিখুন" required>
+</div>
+
+<div class="form-group">
+<label>ফোন নম্বর</label>
+<input type="tel" id="phone" placeholder="01XXXXXXXXX" required>
 </div>
 
 <div class="form-group">
 <label>Gmail</label>
-<input type="email" id="gmail" required>
+<input type="email" id="gmail" placeholder="example@gmail.com">
 </div>
 
 <div class="form-group">
-<label>Bivag</label>
-<input type="text" id="bivag" required>
-</div>
-
-<div class="form-group">
-<label>Jela</label>
-<input type="text" id="jela" required>
-</div>
-
-<div class="form-group">
-<label>Thana</label>
-<input type="text" id="thana" required>
-</div>
-
-<div class="form-group">
-<label>Union</label>
-<input type="text" id="union" required>
-</div>
-
-<div class="form-group">
-<label>Gram</label>
-<input type="text" id="gram" required>
-</div>
-
-<div class="form-group">
-<label>Size</label>
-<select id="size">
-<option>S</option>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
-<option>42</option>
-<option>43</option>
-<option>44</option>
+<label>বিভাগ</label>
+<select id="division" required>
+<option value="">বিভাগ নির্বাচন করুন</option>
+<option value="ঢাকা">ঢাকা</option>
+<option value="চট্টগ্রাম">চট্টগ্রাম</option>
+<option value="রাজশাহী">রাজশাহী</option>
+<option value="খুলনা">খুলনা</option>
+<option value="বরিশাল">বরিশাল</option>
+<option value="সিলেট">সিলেট</option>
+<option value="রংপুর">রংপুর</option>
+<option value="ময়মনসিংহ">ময়মনসিংহ</option>
 </select>
 </div>
 
 <div class="form-group">
-<label>Color</label>
-<input type="text" id="color" required>
+<label>জেলা</label>
+<select id="district" required>
+<option value="">প্রথমে বিভাগ নির্বাচন করুন</option>
+</select>
 </div>
 
 <div class="form-group">
-<label>Address</label>
-<textarea id="address" rows="3" required></textarea>
+<label>থানা</label>
+<select id="thana" required>
+<option value="">প্রথমে জেলা নির্বাচন করুন</option>
+</select>
 </div>
 
-<button type="submit" class="submit-btn">Send WhatsApp Order</button>
 
+<div class="form-group">
+<label>পরিমাণ (Quantity)</label>
+
+<input
+type="number"
+id="quantity"
+value="1"
+min="1">
+</div>
+
+<div class="form-group">
+<label>ডেলিভারি</label>
+
+<select id="delivery">
+<option value="60">ঢাকা - 60 টাকা</option>
+<option value="100">সারা বাংলাদেশ - 100 টাকা</option>
+</select>
+</div>
+
+<div class="form-group">
+
+<label>মোট মূল্য</label>
+
+<input
+type="text"
+id="totalPrice"
+readonly>
+
+</div>
+
+<div class="form-group">
+<label>সম্পূর্ণ ঠিকানা</label>
+<textarea id="address" rows="4" placeholder="গ্রাম, রাস্তা, বাড়ি নম্বরসহ সম্পূর্ণ ঠিকানা লিখুন" required></textarea>
+</div>
+
+<button type="submit" class="submit-btn">
+📲 WhatsApp Order
+</button>
 </form>
 </div>
 </div>

@@ -2,8 +2,7 @@ const products = [
   // shoees//
 {
 name:"Zoom Wailk",
-price:899,
-old:1500,
+price:599,
 category:"shoe",
 images:[
 "shoes/code1.jpeg",

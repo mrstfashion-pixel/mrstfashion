@@ -1015,7 +1015,7 @@ color:white;
 }
 
 .popup-box{
-background:#729db9;
+background:#01defc;
 width:85%;
 max-width:1000px;
 max-height: 90vh;
@@ -1891,22 +1891,22 @@ color:#444;
 }
 /*  customer revies */
 .customer-reviews{
-    padding:40px 15px;
-    background:#f8fafc;
-    border-radius:20px;
-    overflow:hidden;
+    width:100%;
+    padding:70px 20px;
+    background:#f8f9fb;
+    border-radius:25px;
 }
 
 .customer-reviews h2{
     text-align:center;
-    font-size:32px;
-    margin-bottom:8px;
+    font-size:40px;
+    margin-bottom:10px;
 }
 
 .review-subtitle{
     text-align:center;
-    color:#666;
-    margin-bottom:25px;
+    color:#777;
+    margin-bottom:35px;
 }
 
 .review-slider{
@@ -1916,86 +1916,54 @@ color:#444;
 
 .review-track{
     display:flex;
-    gap:20px;
+    gap:25px;
     width:max-content;
-    animation:scrollReviews 25s linear infinite;
+    animation:scrollReviews 35s linear infinite;
 }
 
 .review-slider:hover .review-track{
     animation-play-state:paused;
 }
 
-.review-card{
-    width:300px;
-    background:#fff;
+.review-item{
+    width:340px;
     border-radius:20px;
-    padding:20px;
-    text-align:center;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    overflow:hidden;
+    background:#fff;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
     transition:.4s;
+    flex-shrink:0;
 }
 
-.review-card:hover{
-    transform:translateY(-8px);
+.review-item:hover{
+    transform:translateY(-10px) scale(1.03);
 }
 
-.stars{
-    font-size:22px;
-    margin-bottom:10px;
-}
-
-.review-card p{
-    color:#555;
-    line-height:1.7;
-    margin-bottom:15px;
-}
-
-.customer img{
-    width:70px;
-    height:70px;
-    border-radius:50%;
-    object-fit:cover;
-    margin-bottom:10px;
-    transition:.4s;
-}
-
-.review-card:hover img{
-    transform:scale(1.1);
-}
-
-.customer h4{
-    font-size:16px;
+.review-item img{
+    width:100%;
+    display:block;
 }
 
 @keyframes scrollReviews{
+
     from{
         transform:translateX(0);
     }
+
     to{
         transform:translateX(-50%);
     }
-}
 
-/* Mobile custmer */
+}
 
 @media(max-width:768px){
 
-.review-card{
-    width:170px;
-    padding:15px;
-}
-
-.customer img{
-    width:55px;
-    height:55px;
-}
-
-.review-card p{
-    font-size:12px;
+.review-item{
+    width:280px;
 }
 
 .customer-reviews h2{
-    font-size:24px;
+    font-size:30px;
 }
 
 }
@@ -2727,6 +2695,10 @@ width:40%;
   }
 }
 
+
+
+/* custmer revies box */
+
 /*  phne .popup-boxcard full */
 /* ===== POPUP MOBILE FIX ===== */
 @media (max-width:768px){
@@ -2814,7 +2786,99 @@ width:40%;
 }
 
 }
+/*  animison kaj box */
+/* Desktop আগের মতো */
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
 
+/* Box Design */
+.feature{
+  background:#fff;
+  border-radius:20px;
+  padding:25px 15px;
+  text-align:center;
+  font-size:28px;
+  font-weight:600;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+  transition:.4s;
+  cursor:pointer;
+}
+
+.feature:hover{
+  transform:translateY(-5px);
+}
+
+.feature h4{
+  margin-top:10px;
+  font-size:18px;
+  line-height:1.4;
+}
+
+/* Mobile Design */
+@media (max-width:768px){
+
+  .features{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+
+  .feature{
+    padding:15px 8px;
+    min-height:90px;
+    border-radius:16px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(135deg,#ffffff,#f8fbff);
+
+    animation:fadeUp .6s ease;
+  }
+
+ .feature h4{
+  overflow:hidden;
+  white-space:nowrap;
+  width:0;
+  animation:typing 2s steps(30,end) forwards;
+}
+
+.feature:nth-child(1) h4{animation-delay:.2s;}
+.feature:nth-child(2) h4{animation-delay:.6s;}
+.feature:nth-child(3) h4{animation-delay:1s;}
+.feature:nth-child(4) h4{animation-delay:1.4s;}
+.feature:nth-child(5) h4{animation-delay:1.8s;}
+.feature:nth-child(6) h4{animation-delay:2.2s;}
+
+@keyframes typing{
+  from{width:0;}
+  to{width:100%;}
+}
+}
+@media (max-width:768px){
+
+  .features{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:8px;
+  }
+
+  .feature{
+    padding:8px 5px;
+    min-height:65px;
+    border-radius:12px;
+  }
+
+  .feature h4{
+    font-size:11px;
+    line-height:1.2;
+    margin-top:3px;
+  }
+
+}
 
 
 
